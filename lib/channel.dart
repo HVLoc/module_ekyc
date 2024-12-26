@@ -2,10 +2,10 @@ import 'package:flutter/services.dart';
 
 import 'package:module_ekyc/module_ekyc.dart';
 
-class EasyCASDK {
+class ModuleEkyc {
   static const _platform = MethodChannel(AppConst.channelEkyc);
 
-  EasyCASDK() {
+  ModuleEkyc() {
     setNativeListeners();
   }
 
@@ -17,7 +17,8 @@ class EasyCASDK {
         case AppConst.captureCCCD:
           print("setNativeListeners captureCCCD");
         case AppConst.nfc:
-          MethodNFC.readNFC('000631');
+          print("setNativeListeners nfc");
+          await  MethodNFC().readNFC('000631');
         case AppConst.liveness:
           print("setNativeListeners liveness");
         case AppConst.faceMactching:

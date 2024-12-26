@@ -8,8 +8,9 @@ import 'package:intl/intl.dart';
 import 'package:logging/logging.dart';
 
 class MethodNFC {
-  static MrtdData? readNFC(String can) {
+  Future<MrtdData?> readNFC(String can) async {
     _initPlatformState();
+    print("_isNfcAvailable => $_isNfcAvailable");
     if (!_isNfcAvailable) return null;
 
     String errorText = "";
@@ -25,9 +26,9 @@ class MethodNFC {
     if (errorText.isNotEmpty) return null;
 
     final canKeySeed = CanKey(can);
-    _readMRTD(accessKey: canKeySeed, isPace: true);
+    MrtdData? result = await _readMRTD(accessKey: canKeySeed, isPace: true);
 
-    return _mrtdData;
+    return result;
   }
 }
 
@@ -132,7 +133,7 @@ var _alertMessage = "";
 final _log = Logger("mrtdeg.app");
 var _isNfcAvailable = false;
 
-MrtdData? _mrtdData;
+// MrtdData? _mrtdData;
 
 final NfcProvider _nfc = NfcProvider();
 
@@ -144,24 +145,25 @@ Future<void> _initPlatformState() async {
   try {
     NfcStatus status = await NfcProvider.nfcStatus;
     isNfcAvailable = status == NfcStatus.enabled;
-  } on PlatformException {
+  } on PlatformException catch (e) {
+    print(e);
     isNfcAvailable = false;
   }
 
   _isNfcAvailable = isNfcAvailable;
 }
 
-void _readMRTD({required AccessKey accessKey, bool isPace = false}) async {
+Future<MrtdData?> _readMRTD({required AccessKey accessKey, bool isPace = false}) async {
   try {
-    _mrtdData = null;
+    // _mrtdData = null;
     _alertMessage = "Waiting for Passport tag ...";
 
     try {
-      bool demo = false;
-      if (!demo) {
-        await _nfc.connect(
-            iosAlertMessage: "Hold your phone near Biometric Passport");
-      }
+      // print("nfc.connect");
+      await _nfc.connect(
+          iosAlertMessage: "Hold your phone near Biometric Passport");
+      // }
+      print("Passport");
 
       final passport = Passport(_nfc);
 
@@ -277,9 +279,11 @@ void _readMRTD({required AccessKey accessKey, bool isPace = false}) async {
       _nfc.setIosAlertMessage(formatProgressMsg("Reading EF.SOD ...", 80));
       mrtdData.sod = await passport.readEfSOD();
 
-      _mrtdData = mrtdData;
+      // _mrtdData = mrtdData;
 
       _alertMessage = "";
+
+      return mrtdData;
     } on Exception catch (e) {
       final se = e.toString().toLowerCase();
       String alertMsg = "An error has occurred while reading Passport!+\n$se";

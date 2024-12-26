@@ -7,55 +7,70 @@ import 'package:dmrtd/src/proto/can_key.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'module_ekyc.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:logging/logging.dart';
 
-class MrtdData {
-  EfCardAccess? cardAccess;
-  EfCardSecurity? cardSecurity;
-  EfCOM? com;
-  EfSOD? sod;
-  EfDG1? dg1;
-  EfDG2? dg2;
-  EfDG3? dg3;
-  EfDG4? dg4;
-  EfDG5? dg5;
-  EfDG6? dg6;
-  EfDG7? dg7;
-  EfDG8? dg8;
-  EfDG9? dg9;
-  EfDG10? dg10;
-  EfDG11? dg11;
-  EfDG12? dg12;
-  EfDG13? dg13;
-  EfDG14? dg14;
-  EfDG15? dg15;
-  EfDG16? dg16;
-  Uint8List? aaSig;
-  bool? isPACE;
-  bool? isDBA;
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Logger.root.level = Level.ALL;
+  Logger.root.logSensitiveData = true;
+  Logger.root.onRecord.listen((record) {
+    print(
+        '${record.loggerName} ${record.level.name}: ${record.time}: ${record.message}');
+  });
+  // ModuleEkyc();
+  runApp(const MrtdEgApp());
 }
 
-final Map<DgTag, String> dgTagToString = {
-  EfDG1.TAG: 'EF.DG1',
-  EfDG2.TAG: 'EF.DG2',
-  EfDG3.TAG: 'EF.DG3',
-  EfDG4.TAG: 'EF.DG4',
-  EfDG5.TAG: 'EF.DG5',
-  EfDG6.TAG: 'EF.DG6',
-  EfDG7.TAG: 'EF.DG7',
-  EfDG8.TAG: 'EF.DG8',
-  EfDG9.TAG: 'EF.DG9',
-  EfDG10.TAG: 'EF.DG10',
-  EfDG11.TAG: 'EF.DG11',
-  EfDG12.TAG: 'EF.DG12',
-  EfDG13.TAG: 'EF.DG13',
-  EfDG14.TAG: 'EF.DG14',
-  EfDG15.TAG: 'EF.DG15',
-  EfDG16.TAG: 'EF.DG16'
-};
+// class MrtdData {
+//   EfCardAccess? cardAccess;
+//   EfCardSecurity? cardSecurity;
+//   EfCOM? com;
+//   EfSOD? sod;
+//   EfDG1? dg1;
+//   EfDG2? dg2;
+//   EfDG3? dg3;
+//   EfDG4? dg4;
+//   EfDG5? dg5;
+//   EfDG6? dg6;
+//   EfDG7? dg7;
+//   EfDG8? dg8;
+//   EfDG9? dg9;
+//   EfDG10? dg10;
+//   EfDG11? dg11;
+//   EfDG12? dg12;
+//   EfDG13? dg13;
+//   EfDG14? dg14;
+//   EfDG15? dg15;
+//   EfDG16? dg16;
+//   Uint8List? aaSig;
+//   bool? isPACE;
+//   bool? isDBA;
+// }
+//
+// final Map<DgTag, String> dgTagToString = {
+//   EfDG1.TAG: 'EF.DG1',
+//   EfDG2.TAG: 'EF.DG2',
+//   EfDG3.TAG: 'EF.DG3',
+//   EfDG4.TAG: 'EF.DG4',
+//   EfDG5.TAG: 'EF.DG5',
+//   EfDG6.TAG: 'EF.DG6',
+//   EfDG7.TAG: 'EF.DG7',
+//   EfDG8.TAG: 'EF.DG8',
+//   EfDG9.TAG: 'EF.DG9',
+//   EfDG10.TAG: 'EF.DG10',
+//   EfDG11.TAG: 'EF.DG11',
+//   EfDG12.TAG: 'EF.DG12',
+//   EfDG13.TAG: 'EF.DG13',
+//   EfDG14.TAG: 'EF.DG14',
+//   EfDG15.TAG: 'EF.DG15',
+//   EfDG16.TAG: 'EF.DG16'
+// };
 
 Widget _makeMrtdAccessDataWidget(
     {required String header,
@@ -141,16 +156,6 @@ String formatProgressMsg(String message, int percentProgress) {
   return "$message\n\n$full$empty";
 }
 
-void main() {
-  Logger.root.level = Level.ALL;
-  Logger.root.logSensitiveData = true;
-  Logger.root.onRecord.listen((record) {
-    print(
-        '${record.loggerName} ${record.level.name}: ${record.time}: ${record.message}');
-  });
-  runApp(const MrtdEgApp());
-}
-
 class MrtdEgApp extends StatelessWidget {
   const MrtdEgApp({super.key});
 
@@ -202,6 +207,8 @@ class _MrtdHomePageState extends State<MrtdHomePage>
 
   String rawData13 = '';
 
+  MethodNFC methodNFC = MethodNFC();
+
   @override
   void initState() {
     super.initState();
@@ -215,6 +222,7 @@ class _MrtdHomePageState extends State<MrtdHomePage>
     ]);
 
     _initPlatformState();
+    print("_isNfcAvailable => $_isNfcAvailable");
 
     // Update platform state every 3 sec
     // _timerStateUpdater = Timer.periodic(Duration(seconds: 3), (Timer t) {
@@ -274,7 +282,9 @@ class _MrtdHomePageState extends State<MrtdHomePage>
 
   void _buttonPressed() async {
     print("Button pressed");
-    //Check on what tab we are
+  //   MrtdData? re =await methodNFC.readNFC('000631');
+  // _mrtdData =re;
+    // Check on what tab we are
     if (_tabController.index == 0) {
       //DBA tab
       String errorText = "";
@@ -313,6 +323,7 @@ class _MrtdHomePageState extends State<MrtdHomePage>
       if (errorText.isNotEmpty) return;
 
       final canKeySeed = CanKey(_can.text);
+      print("_readMRTD");
       _readMRTD(accessKey: canKeySeed, isPace: true);
     }
   }
@@ -325,12 +336,15 @@ class _MrtdHomePageState extends State<MrtdHomePage>
         _isReading = true;
       });
       try {
-        bool demo = false;
-        if (!demo) {
-          await _nfc.connect(
-              iosAlertMessage: "Hold your phone near Biometric Passport");
-        }
 
+
+        // bool demo = false;
+        // if (!demo) {
+        // print("nfc.connect");
+        await _nfc.connect(
+            iosAlertMessage: "Hold your phone near Biometric Passport");
+        // }
+        print("Passport");
         final passport = Passport(_nfc);
 
         setState(() {
@@ -369,6 +383,7 @@ class _MrtdHomePageState extends State<MrtdHomePage>
                   .parseHex(); //TODO: gía trị fix cứng
 
           EfCardAccess efCardAccess = EfCardAccess.fromBytes(efCardAccessData);
+          print("startSessionPACE");
           //PACE session
           await passport.startSessionPACE(accessKey, efCardAccess);
         } else {
