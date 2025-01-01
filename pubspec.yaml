@@ -18,8 +18,14 @@ publish_to: none
 # on any other native host app that you embed your Flutter project into.
 version: 1.0.0+1
 
+_internal_variables_:
+  - &syncfusion_ver "23.2.4"
+
 environment:
   sdk: '>=3.4.0 <4.0.0'
+
+dependency_overrides:
+  dio: ^5.4.2+1
 
 dependencies:
   flutter:
@@ -28,15 +34,61 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  another_flushbar: ^1.12.30
+  app_settings: ^5.1.1
+  intl: 0.18.0
+  asn1lib: ^1.5.3
+  auto_size_text: ^3.0.0
+  badges: ^3.1.2
+  cached_network_image: ^3.3.1
+  camera: ^0.10.5+9
+  device_info_plus: 9.1.2
+  dio_log_fork:
+    git:
+      url: https://github.com/hvlocgh/dio_log_fork
+      ref: master
   dmrtd:
     git:
       url: https://github.com/HVLoc/dmrtd
       ref: master
-
+  dotted_border: ^2.1.0
+  dropdown_button2: ^2.3.9
+  # flutter_localizations:
+  #   sdk: flutter
+  flutter_multi_formatter: ^2.12.4
+  flutter_nfc_kit: 3.4.2
+  flutter_pdfview: ^1.2.7
+  flutter_secure_storage: ^9.0.0
+  flutter_svg: ^2.0.10+1
+  flutter_tts: ^4.0.2
+  flutter_widget_from_html: ^0.15.2
+  fluttertoast: ^8.2.5
   get: ^4.6.6
-  intl: ^0.19.0
-  logging: ^1.0.2
-  asn1lib: ^1.5.3
+  google_fonts: 6.1.0
+  google_mlkit_face_detection: ^0.9.0
+  hive: ^2.2.3
+  image: ^4.1.3
+  image_picker: ^1.0.5
+  just_audio: ^0.9.38
+  loading_overlay_pro: ^2.1.1
+  local_auth: ^2.2.0
+  logger: ^2.2.0
+  mobile_scanner: ^3.5.2
+  nfc_manager: ^3.4.0
+  package_info_plus: ^4.2.0
+  percent_indicator: ^4.2.3
+  permission_handler: ^8.1.6
+  pull_to_refresh: ^2.0.0
+  qr_flutter: ^4.1.0
+  screenshot: ^2.3.0
+  sds_assets_generator:
+    git:
+      url: https://github.com/toannmdev/sds_assets_generator.git
+      ref: master
+  syncfusion_flutter_core: 23.2.4
+  syncfusion_flutter_datepicker: 23.2.4
+  syncfusion_flutter_pdfviewer: 23.2.4
+  url_launcher: ^6.2.1
 
 dev_dependencies:
   flutter_test:
