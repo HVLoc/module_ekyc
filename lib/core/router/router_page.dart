@@ -19,10 +19,7 @@ import 'app_route.dart';
 
 class RouteAppPage {
   static var route = [
-    GetPage(
-      name: AppRoutes.routeDioLog,
-      page: () => const HttpLogListWidget(),
-    ),
+
     GetPage(
       name: AppRoutes.initApp,
       page: () => const SplashPage(),

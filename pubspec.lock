@@ -345,15 +345,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.7.0"
-  dio_log_fork:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: master
-      resolved-ref: "2c37d69522cef224e270a0dc673a686521354b8c"
-      url: "https://github.com/hvlocgh/dio_log_fork"
-    source: git
-    version: "5.0.0"
   dio_web_adapter:
     dependency: transitive
     description:
@@ -480,6 +471,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  flutter_localizations:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_multi_formatter:
     dependency: "direct main"
     description:
@@ -811,7 +807,7 @@ packages:
     source: hosted
     version: "0.2.1+1"
   intl:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       name: intl
       sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
@@ -1254,10 +1250,10 @@ packages:
     dependency: "direct main"
     description:
       name: screenshot
-      sha256: d448f43130f49bc7eead1b267b3ea0291cb2450f037bb0a0ecce7aa4c65e2aee
+      sha256: "63817697a7835e6ce82add4228e15d233b74d42975c143ad8cfe07009fab866b"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.0"
+    version: "3.0.0"
   sds_assets_generator:
     dependency: "direct main"
     description:

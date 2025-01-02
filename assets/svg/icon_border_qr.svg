@@ -1,0 +1,10 @@
+<svg width="284" height="291" viewBox="0 0 284 291" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 4.6543L2 50.0672" stroke="#1548A2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M43.801 6.6543C44.9056 6.6543 45.801 5.75887 45.801 4.6543C45.801 3.54973 44.9056 2.6543 43.801 2.6543V6.6543ZM3.97892 2.6543L1.97892 2.6543V6.6543H3.97892V2.6543ZM43.801 2.6543L3.97892 2.6543V6.6543L43.801 6.6543V2.6543Z" fill="#1548A2"/>
+    <path d="M2 243.073L2 288.486" stroke="#1548A2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M43.801 290.485C44.9056 290.485 45.801 289.59 45.801 288.485C45.801 287.381 44.9056 286.485 43.801 286.485V290.485ZM3.97892 286.485H1.97892V290.485H3.97892V286.485ZM43.801 286.485H3.97892V290.485H43.801V286.485Z" fill="#1548A2"/>
+    <path d="M282 243.073V288.486" stroke="#1548A2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M282 288.485H237.2" stroke="#1548A2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M282 4.6543V50.0672" stroke="#1548A2" stroke-width="4" stroke-linecap="round"/>
+    <path d="M282 4.6543L237.2 4.6543" stroke="#1548A2" stroke-width="4" stroke-linecap="round"/>
+</svg>

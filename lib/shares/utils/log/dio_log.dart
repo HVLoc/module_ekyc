@@ -24,7 +24,7 @@ class Diolog {
 
     if (!needToShow) return;
 
-    showDebugBtn(Get.context!);
+    // showDebugBtn(Get.context!);
 
     Get.toNamed(AppRoutes.routeDioLog);
   }

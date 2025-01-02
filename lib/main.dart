@@ -48,9 +48,9 @@ class _Application extends State<Application> {
               child: child ?? Container()),
         ),
         localizationsDelegates: const [
-          // GlobalCupertinoLocalizations.delegate,
-          // GlobalMaterialLocalizations.delegate,
-          // GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
           DefaultCupertinoLocalizations.delegate
         ],
         supportedLocales: const [

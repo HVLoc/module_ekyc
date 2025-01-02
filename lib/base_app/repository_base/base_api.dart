@@ -14,9 +14,9 @@ class BaseApi {
     Dio dio = Dio();
 
     dio.options = buildDefaultOptions();
-    if (Diolog().showDebug) {
-      dio.interceptors.add(DioLogForkInterceptor());
-    }
+    // if (Diolog().showDebug) {
+    //   dio.interceptors.add(DioLogForkInterceptor());
+    // }
     dio.httpClientAdapter = IOHttpClientAdapter(
       createHttpClient: () {
         final client = HttpClient();
