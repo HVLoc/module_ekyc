@@ -124,28 +124,30 @@ class NfcInformationUserController extends BaseGetxController {
   }
 
   Future<void> goPage() async {
-    if (appController.typeAuthentication == AppConst.typeRegister) {
-      Get.toNamed(AppRoutes.routeRegisterInfo);
-    } else if (appController.typeAuthentication == AppConst.typeForgotPass) {
-      await Biometrics().authenticate(
-          // localizedReasonStr: "Quý khách vui lòng quét vân tay hoặc khuôn mặt để xác thực",
-          onDeviceUnlockUnavailable: () async {
-        // await gotoPage();
-        Get.toNamed(AppRoutes.routeForgotPass);
-      }, onAfterLimit: () {
-        Fluttertoast.showToast(
-            msg: LocaleKeys.biometric_msgLimit.tr,
-            toastLength: Toast.LENGTH_LONG);
-      }).then((isAuthenticated) async {
-        if (isAuthenticated ?? false) {
-          // await gotoPage();
-          Get.toNamed(AppRoutes.routeForgotPass);
-        }
-      });
-    } else if (appController.typeAuthentication ==
-        AppConst.typeAuthentication) {
-      Get.toNamed(AppRoutes.routeLiveNessKyc);
-    }
+    //TODO: Chuyển liveness
+    Get.toNamed(AppRoutes.routeLiveNessKyc);
+    // if (appController.typeAuthentication == AppConst.typeRegister) {
+    //   Get.toNamed(AppRoutes.routeRegisterInfo);
+    // } else if (appController.typeAuthentication == AppConst.typeForgotPass) {
+    //   await Biometrics().authenticate(
+    //       // localizedReasonStr: "Quý khách vui lòng quét vân tay hoặc khuôn mặt để xác thực",
+    //       onDeviceUnlockUnavailable: () async {
+    //     // await gotoPage();
+    //     Get.toNamed(AppRoutes.routeForgotPass);
+    //   }, onAfterLimit: () {
+    //     Fluttertoast.showToast(
+    //         msg: LocaleKeys.biometric_msgLimit.tr,
+    //         toastLength: Toast.LENGTH_LONG);
+    //   }).then((isAuthenticated) async {
+    //     if (isAuthenticated ?? false) {
+    //       // await gotoPage();
+    //       Get.toNamed(AppRoutes.routeForgotPass);
+    //     }
+    //   });
+    // } else if (appController.typeAuthentication ==
+    //     AppConst.typeAuthentication) {
+    //   Get.toNamed(AppRoutes.routeLiveNessKyc);
+    // }
 
     // if (convertStringToDate(
     //       sendNfcRequestModel.doe,

@@ -18,6 +18,7 @@ import 'package:module_ekyc/modules/authentication_kyc/qr_kyc/qr_kyc.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/verify_profile_ca/models/login_ca_model/login_ca_model.src.dart';
 import 'package:module_ekyc/modules/login/login.src.dart';
 import 'package:module_ekyc/shares/shares.src.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 late Box hiveApp;
 
@@ -53,19 +54,8 @@ class AppController extends GetxController {
   Future<void> onInit() async {
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
-      try {
-        // LoginController loginController = Get.put(LoginController());
-        // await loginController.loginUserFromLogin(
-        //     LoginModelRequest(
-        //       username: hiveApp.get(AppConst.userName),
-        //       password: hiveApp.get(AppConst.password),
-        //     ),
-        //     isLoginFromApp:
-        //         true);
-        Get.offAndToNamed(AppRoutes.routeLogin);
-      } catch (e) {
-        Get.offAndToNamed(AppRoutes.routeLogin);
-      }
+
+      await checkPermissionApp();
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
     if (Platform.isIOS) {
@@ -75,9 +65,11 @@ class AppController extends GetxController {
     }
     var biometrics = await Biometrics().getAvailableBiometrics();
     cameras = await availableCameras();
-    if (biometrics != null) {
-      isFaceID = biometrics.contains(BiometricType.face);
-    }
+    // if (biometrics != null) {
+    //   isFaceID = biometrics.contains(BiometricType.face);
+    // }
+
+
     super.onInit();
   }
 
@@ -128,4 +120,21 @@ Future<void> initHive() async {
 
 Future<void> openBox() async {
   hiveUserLogin = await Hive.openBox(HiveAdapters.loginCaRequestModel);
+}
+
+Future<void> checkPermissionApp() async {
+  PermissionStatus permissionStatus =
+  await checkPermission([Permission.camera]);
+  switch (permissionStatus) {
+    case PermissionStatus.granted:
+      {
+        Get.toNamed(AppRoutes.routeQrKyc);
+      }
+      break;
+    case PermissionStatus.permanentlyDenied:
+      ShowDialog.openAppSetting();
+      break;
+    default:
+      return;
+  }
 }
