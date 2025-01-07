@@ -17,7 +17,7 @@ class AppColors {
 
   static Color accentColorTheme(bool isDark) =>
       isDark ? basicGrey4 : basicGrey4;
-
+  static const Color colorGreenText = Color(0xFF3DA000);
   static const Color basicGrey4 = Colors.white;
   static const Color basicWhite = Colors.white;
   static const Color basicGrey3 = Color(0xFFDBDBDB);

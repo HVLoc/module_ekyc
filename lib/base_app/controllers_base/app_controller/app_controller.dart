@@ -22,6 +22,7 @@ import 'package:module_ekyc/modules/authentication_kyc/qr_kyc/qr_kyc.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/verify_profile_ca/models/login_ca_model/login_ca_model.src.dart';
 import 'package:module_ekyc/modules/login/login.src.dart';
 import 'package:module_ekyc/shares/shares.src.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 late Box hiveApp;
@@ -58,13 +59,13 @@ class AppController extends GetxController {
   // Hàm gửi dữ liệu về native
   void sendDataToNative() async {
     try {
-      SdkResponseModel sdkResponseModel = SdkResponseModel(
-        userInfoModel: userInfoModel,
-        sendNfcRequestModel: sendNfcRequestGlobalModel,
-      );
+      // SdkResponseModel sdkResponseModel = SdkResponseModel(
+      //   userInfoModel: userInfoModel,
+      //   sendNfcRequestModel: sendNfcRequestGlobalModel,
+      // );
 
       await platform
-          .invokeMethod('sendData', {"value": sdkResponseModel.toJson()});
+          .invokeMethod('sendData', {"value": sendNfcRequestGlobalModel.toJson()});
     } on PlatformException catch (e) {
       print("Error sending data: ${e.message}");
     }

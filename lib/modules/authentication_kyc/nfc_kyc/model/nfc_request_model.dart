@@ -32,6 +32,10 @@ class SendNfcRequestModel {
   String? aaSignature;
   String? aaPublicKey;
   String? keyAlg;
+  String? imgLiveNess;
+  String? faceMatching;
+  bool? isFaceMatching;
+
 
   ///base64
   String? sodData;

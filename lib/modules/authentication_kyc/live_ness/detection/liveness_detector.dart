@@ -1,6 +1,6 @@
-import 'package:module_ekyc/generated/locales.g.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
+import 'package:module_ekyc/generated/locales.g.dart';
 import 'package:module_ekyc/modules/authentication_kyc/live_ness/live_ness_kyc.src.dart';
 
 class LiveNessDetector {
@@ -50,6 +50,7 @@ class LiveNessDetector {
     // print("yawAngleTraiPhai---$yawAngle");
 
     // print("hhhh--$z");
+
 
     if (type == LocaleKeys.live_ness_faceSmile.tr) {
       if (percentSmile > 0.7) {
