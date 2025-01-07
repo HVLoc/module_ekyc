@@ -105,7 +105,7 @@ class NfcInformationUserController extends BaseGetxController {
 
   void getToHome() {
     Get.close(1);
-    appController.sendDataToNative("true");
+    appController.sendDataToNative();
   }
 
   Future<void> goPage() async {

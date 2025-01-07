@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:camera/camera.dart';
@@ -7,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:module_ekyc/modules/sdk/sdk.src.dart';
+import 'package:module_ekyc/modules/sdk/sdk_request_model.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'package:module_ekyc/base_app/base_app.src.dart';
@@ -40,6 +43,7 @@ class AppController extends GetxController {
   QrUserInformation qrUserInformation = QrUserInformation();
   SendNfcRequestModel sendNfcRequestGlobalModel = SendNfcRequestModel();
   UserInfoModel userInfoModel = UserInfoModel();
+  SdkRequestModel sdkModel = SdkRequestModel();
   String typeAuthentication = "";
   int tabIndex = 0;
   RxBool isFingerprintOrFaceID = false.obs;
@@ -52,23 +56,25 @@ class AppController extends GetxController {
   static const platform = MethodChannel('2id.ekyc');
 
   // Hàm gửi dữ liệu về native
-  void sendDataToNative(String data) async {
+  void sendDataToNative() async {
     try {
-      await platform.invokeMethod('sendData', {"value": data});
+      SdkResponseModel sdkResponseModel = SdkResponseModel(
+        userInfoModel: userInfoModel,
+        sendNfcRequestModel: sendNfcRequestGlobalModel,
+      );
+
+      await platform
+          .invokeMethod('sendData', {"value": sdkResponseModel.toJson()});
     } on PlatformException catch (e) {
       print("Error sending data: ${e.message}");
     }
   }
 
-
   @override
   Future<void> onInit() async {
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
-      final initialRoute = Get.parameters['CCCD'];
-      if (initialRoute != null) {
-        qrUserInformation.documentNumber = initialRoute;
-      }
+      getDataInit();
       await checkPermissionApp();
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
@@ -105,8 +111,26 @@ class AppController extends GetxController {
     }
   }
 
-  void changeBusinessType() {
-    isBusinessHousehold.toggle();
+  void getDataInit() {
+    // Nhận giá trị từ native
+    final payload = Get.parameters['payload'];
+//     final payload = """
+//     {
+//         "key":"89f797ab-ec41-446a-8dc1-1dfda5e7e93d",
+//         "secretKey":"63f81c69722acaa42f622ec16d702fdb",
+//         "CCCD":"020098007724"
+//     }
+// """;
+    if (payload != null) {
+      final data = jsonDecode(Uri.decodeComponent(payload));
+
+      sdkModel = SdkRequestModel(
+        key: data['key'] ?? "",
+        secretKey: data['secretKey'] ?? "",
+      );
+      qrUserInformation.documentNumber = data['CCCD'];
+      print("CCCD: ${qrUserInformation.documentNumber}");
+    }
   }
 
   Future<void> initCamera() async {
