@@ -35,11 +35,11 @@
         {
           "name": "webview_flutter_android_profile-1.0.aar",
           "url": "webview_flutter_android_profile-1.0.aar",
-          "size": 148045,
-          "sha512": "6da5a230552226cfc94f5ba8ac4817d26bb08e485b7442f11f5874a2891a10d67a3acd3e50b415f29a4cd4478a94ea8b6c8aca70bddac39759611d13f630e031",
-          "sha256": "8cf8076637764bf72181a506f73cd9e6c8d55c40a40b7dd387c032816a5d4abc",
-          "sha1": "cc51ccce66381571f5ed2ab6cdec72ae8f3db27b",
-          "md5": "600d744823680ebac5c7deb060b0375d"
+          "size": 148048,
+          "sha512": "d722384ead91cb76ce320c88186bb3a40d8297d3500ee534c9ceec52c2485a1aaf3019635c73c4fc4eba9411730bdef9672fd7b4fcdd924f241c8892c52e276b",
+          "sha256": "db09d29ec5fa768078dc55c5a9309f0cf28c0bd016b34e5a90f463b8642760aa",
+          "sha1": "b14c0eea79ded2b412b675894818e31e8db334cf",
+          "md5": "6c0271b4e840d2450080bd570c597f43"
         }
       ]
     },
@@ -78,11 +78,11 @@
         {
           "name": "webview_flutter_android_profile-1.0.aar",
           "url": "webview_flutter_android_profile-1.0.aar",
-          "size": 148045,
-          "sha512": "6da5a230552226cfc94f5ba8ac4817d26bb08e485b7442f11f5874a2891a10d67a3acd3e50b415f29a4cd4478a94ea8b6c8aca70bddac39759611d13f630e031",
-          "sha256": "8cf8076637764bf72181a506f73cd9e6c8d55c40a40b7dd387c032816a5d4abc",
-          "sha1": "cc51ccce66381571f5ed2ab6cdec72ae8f3db27b",
-          "md5": "600d744823680ebac5c7deb060b0375d"
+          "size": 148048,
+          "sha512": "d722384ead91cb76ce320c88186bb3a40d8297d3500ee534c9ceec52c2485a1aaf3019635c73c4fc4eba9411730bdef9672fd7b4fcdd924f241c8892c52e276b",
+          "sha256": "db09d29ec5fa768078dc55c5a9309f0cf28c0bd016b34e5a90f463b8642760aa",
+          "sha1": "b14c0eea79ded2b412b675894818e31e8db334cf",
+          "md5": "6c0271b4e840d2450080bd570c597f43"
         }
       ]
     }

@@ -35,11 +35,11 @@
         {
           "name": "flutter_nfc_kit_debug-1.0.aar",
           "url": "flutter_nfc_kit_debug-1.0.aar",
-          "size": 49808,
-          "sha512": "ebe3ee5b9de0588ddba6d4a2f5a7b36697c403db61a06998462b3e88b240bd043d5d4d69b27ead81a24caf28a7abedb03627fdd54f57e4d57b57ca27d5acbfd7",
-          "sha256": "65bf4efaca8ff39c20f18bde219752dfa0b7b2540c5cd31aa218efffe150d959",
-          "sha1": "dcbc8a7f5b972a715248ff59cb39f2bf9bd295d8",
-          "md5": "20b7921a0cd7e67df5d480fc8339948c"
+          "size": 49810,
+          "sha512": "19340d728758a2bc4b6becf1738e62bee493334f456e280989f8de5b56d8dd1cd60dc9ce144e23c2b3029f7928af130b62581dc64f6579cc1850b9060a145e2c",
+          "sha256": "930bd531a1e41313a301bb433003c4c7246dbecd8e39cc8ec28b509498f853f1",
+          "sha1": "e811c689779bdcf49280a9db7910acc993ab4b9a",
+          "md5": "70321ae7f2fb9b993b2b087ee8ba8df1"
         }
       ]
     },
@@ -85,11 +85,11 @@
         {
           "name": "flutter_nfc_kit_debug-1.0.aar",
           "url": "flutter_nfc_kit_debug-1.0.aar",
-          "size": 49808,
-          "sha512": "ebe3ee5b9de0588ddba6d4a2f5a7b36697c403db61a06998462b3e88b240bd043d5d4d69b27ead81a24caf28a7abedb03627fdd54f57e4d57b57ca27d5acbfd7",
-          "sha256": "65bf4efaca8ff39c20f18bde219752dfa0b7b2540c5cd31aa218efffe150d959",
-          "sha1": "dcbc8a7f5b972a715248ff59cb39f2bf9bd295d8",
-          "md5": "20b7921a0cd7e67df5d480fc8339948c"
+          "size": 49810,
+          "sha512": "19340d728758a2bc4b6becf1738e62bee493334f456e280989f8de5b56d8dd1cd60dc9ce144e23c2b3029f7928af130b62581dc64f6579cc1850b9060a145e2c",
+          "sha256": "930bd531a1e41313a301bb433003c4c7246dbecd8e39cc8ec28b509498f853f1",
+          "sha1": "e811c689779bdcf49280a9db7910acc993ab4b9a",
+          "md5": "70321ae7f2fb9b993b2b087ee8ba8df1"
         }
       ]
     }

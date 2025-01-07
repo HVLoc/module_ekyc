@@ -104,23 +104,8 @@ class NfcInformationUserController extends BaseGetxController {
   }
 
   void getToHome() {
-    Get.until((route) => Get.currentRoute == AppRoutes.routeHome);
-    if (Get.isRegistered<HomeController>()) {
-      HomeController homeController = Get.find<HomeController>();
-      homeController.funcPageChange(0);
-    }
-    if (Get.isRegistered<OverviewController>()) {
-      OverviewController overviewController = Get.find<OverviewController>();
-      overviewController.tabController.animateTo(0);
-    }
-    // if (Get.isRegistered<ClientController>()) {
-    //   ClientController clientController = Get.find<ClientController>();
-    //   clientController.initDocument();
-    // }
-    // if (Get.isRegistered<OverviewController>()) {
-    //   OverviewController overviewController = Get.find<OverviewController>();
-    //   overviewController.getUserInfo();
-    // }
+    Get.close(1);
+    appController.sendDataToNative("true");
   }
 
   Future<void> goPage() async {

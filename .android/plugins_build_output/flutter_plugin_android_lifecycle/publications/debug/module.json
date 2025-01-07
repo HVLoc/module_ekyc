@@ -35,11 +35,11 @@
         {
           "name": "flutter_plugin_android_lifecycle_debug-1.0.aar",
           "url": "flutter_plugin_android_lifecycle_debug-1.0.aar",
-          "size": 4783,
-          "sha512": "26abbcbea380d10b7d812e7a9fea4ce353071a8f2eb52d45b7408429cda1b46fe0fe1edf4bdda88c1bcc73e1b8ecbf24f26df6990ed53e7ad74aa4aada13a504",
-          "sha256": "2f4091860442a17274cb58fc0552c74af34f463abc5c90a534d71383fb5d2fba",
-          "sha1": "0d4a0a4fdc9dff66ae3db94fab5e8721c8a356a5",
-          "md5": "eb45dd1b29bc7fcedf9873a69cf9c6ad"
+          "size": 4787,
+          "sha512": "96fa2fd0c3df55acaa1365bbf88c5c6f12c422413a983d4094541c5ac8379d27b4ca806f3f8cecdada433b38b63f39365f72093a9e4f83d1b77515bb9f7fe9cd",
+          "sha256": "e15584d995f367c01ec4509e0476fbba5a169b270fa6715d6f20db4e2ad574d7",
+          "sha1": "8c40416f1a94348124ee8686409fb72336a4586c",
+          "md5": "2175c44fedbb47bd171c374922b64d43"
         }
       ]
     },
@@ -71,11 +71,11 @@
         {
           "name": "flutter_plugin_android_lifecycle_debug-1.0.aar",
           "url": "flutter_plugin_android_lifecycle_debug-1.0.aar",
-          "size": 4783,
-          "sha512": "26abbcbea380d10b7d812e7a9fea4ce353071a8f2eb52d45b7408429cda1b46fe0fe1edf4bdda88c1bcc73e1b8ecbf24f26df6990ed53e7ad74aa4aada13a504",
-          "sha256": "2f4091860442a17274cb58fc0552c74af34f463abc5c90a534d71383fb5d2fba",
-          "sha1": "0d4a0a4fdc9dff66ae3db94fab5e8721c8a356a5",
-          "md5": "eb45dd1b29bc7fcedf9873a69cf9c6ad"
+          "size": 4787,
+          "sha512": "96fa2fd0c3df55acaa1365bbf88c5c6f12c422413a983d4094541c5ac8379d27b4ca806f3f8cecdada433b38b63f39365f72093a9e4f83d1b77515bb9f7fe9cd",
+          "sha256": "e15584d995f367c01ec4509e0476fbba5a169b270fa6715d6f20db4e2ad574d7",
+          "sha1": "8c40416f1a94348124ee8686409fb72336a4586c",
+          "md5": "2175c44fedbb47bd171c374922b64d43"
         }
       ]
     }

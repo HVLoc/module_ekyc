@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -48,13 +49,26 @@ class AppController extends GetxController {
 
   Timer? timer;
 
-  // PackageInfoResponse packageInfoResponse = PackageInfoResponse();
+  static const platform = MethodChannel('2id.ekyc');
+
+  // Hàm gửi dữ liệu về native
+  void sendDataToNative(String data) async {
+    try {
+      await platform.invokeMethod('sendData', {"value": data});
+    } on PlatformException catch (e) {
+      print("Error sending data: ${e.message}");
+    }
+  }
+
 
   @override
   Future<void> onInit() async {
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
-
+      final initialRoute = Get.parameters['CCCD'];
+      if (initialRoute != null) {
+        qrUserInformation.documentNumber = initialRoute;
+      }
       await checkPermissionApp();
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
@@ -68,7 +82,6 @@ class AppController extends GetxController {
     // if (biometrics != null) {
     //   isFaceID = biometrics.contains(BiometricType.face);
     // }
-
 
     super.onInit();
   }
@@ -105,12 +118,36 @@ class AppController extends GetxController {
     );
     await cameraController.initialize();
   }
+
+  Future<void> checkPermissionApp() async {
+    PermissionStatus permissionStatus =
+        await checkPermission([Permission.camera]);
+    switch (permissionStatus) {
+      case PermissionStatus.granted:
+        {
+          goToEKYC();
+        }
+        break;
+      case PermissionStatus.permanentlyDenied:
+        ShowDialog.openAppSetting();
+        break;
+      default:
+        return;
+    }
+  }
+
+  void goToEKYC() {
+    if (qrUserInformation.documentNumber.isStringNotEmpty) {
+      Get.toNamed(AppRoutes.routeScanNfcKyc);
+    } else {
+      Get.offAllNamed(AppRoutes.routeQrKyc);
+    }
+  }
 }
 
 Future<void> initHive() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final appDocumentDirectory =
-      await getApplicationDocumentsDirectory();
+  final appDocumentDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
   hiveApp = await Hive.openBox(LocaleKeys.app_name.tr);
   registerAdapters();
@@ -120,21 +157,4 @@ Future<void> initHive() async {
 
 Future<void> openBox() async {
   hiveUserLogin = await Hive.openBox(HiveAdapters.loginCaRequestModel);
-}
-
-Future<void> checkPermissionApp() async {
-  PermissionStatus permissionStatus =
-  await checkPermission([Permission.camera]);
-  switch (permissionStatus) {
-    case PermissionStatus.granted:
-      {
-        Get.toNamed(AppRoutes.routeQrKyc);
-      }
-      break;
-    case PermissionStatus.permanentlyDenied:
-      ShowDialog.openAppSetting();
-      break;
-    default:
-      return;
-  }
 }

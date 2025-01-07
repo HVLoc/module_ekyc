@@ -56,11 +56,11 @@
         {
           "name": "local_auth_android_release-1.0.aar",
           "url": "local_auth_android_release-1.0.aar",
-          "size": 40321,
-          "sha512": "1fc4dfd241fcf69ba445ff7a5322d9b879f2b286a4ae85e5b820cf9aca68244d8dbf35096b76480fef7208421f031c1ddccd7d4636f5d1eb0111d69b3cbc2ada",
-          "sha256": "3815e62429d07e5728dd53d143c0628bab51fa5258802ae5dec4bbd907da458e",
-          "sha1": "3d4382d9e174b52d4e98cb7646757dc20f199c85",
-          "md5": "f40e446cefa8434a0ab783820641d7f6"
+          "size": 40323,
+          "sha512": "35f914158f0ba0e19882afd3810cd8a07c1da70eaae2d7a44130821719cbcfdb56c2a1ca6c8292be60db6c7411ab654b16deae9051537a5f8661e9692fb764fc",
+          "sha256": "6f8c1f4473d5a371fc4707c0d80c89a42647d9ce51d01be81daafe945cc38165",
+          "sha1": "c5c043b7d4760602dae2b5814578c36043c8c6b4",
+          "md5": "8714f0182de5b7568e07caff5f39585f"
         }
       ]
     },
@@ -124,11 +124,11 @@
         {
           "name": "local_auth_android_release-1.0.aar",
           "url": "local_auth_android_release-1.0.aar",
-          "size": 40321,
-          "sha512": "1fc4dfd241fcf69ba445ff7a5322d9b879f2b286a4ae85e5b820cf9aca68244d8dbf35096b76480fef7208421f031c1ddccd7d4636f5d1eb0111d69b3cbc2ada",
-          "sha256": "3815e62429d07e5728dd53d143c0628bab51fa5258802ae5dec4bbd907da458e",
-          "sha1": "3d4382d9e174b52d4e98cb7646757dc20f199c85",
-          "md5": "f40e446cefa8434a0ab783820641d7f6"
+          "size": 40323,
+          "sha512": "35f914158f0ba0e19882afd3810cd8a07c1da70eaae2d7a44130821719cbcfdb56c2a1ca6c8292be60db6c7411ab654b16deae9051537a5f8661e9692fb764fc",
+          "sha256": "6f8c1f4473d5a371fc4707c0d80c89a42647d9ce51d01be81daafe945cc38165",
+          "sha1": "c5c043b7d4760602dae2b5814578c36043c8c6b4",
+          "md5": "8714f0182de5b7568e07caff5f39585f"
         }
       ]
     }

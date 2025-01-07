@@ -35,11 +35,11 @@
         {
           "name": "flutter_plugin_android_lifecycle_release-1.0.aar",
           "url": "flutter_plugin_android_lifecycle_release-1.0.aar",
-          "size": 4667,
-          "sha512": "2b30c0ce590a7f219258c8b7b8b83dcfa5b054950c01b1d590477f523dd6c011ccc6384b3c22aef75e4ef221ba54eaa99c871955a2fcdcceb3f7472ae3827bff",
-          "sha256": "a7a1c42d54b610ca6a1bda1a1b4f9f28db54ee3842ba7b73d3797b82bc827c59",
-          "sha1": "7c04db3c5dd9041dbf0a22416f581c44718378ca",
-          "md5": "b3e60c48e8562aed20cdff6c954837af"
+          "size": 4671,
+          "sha512": "3d074b83bb499050e2c97fb60e221d9f8beb68aa65360327f8c0b7c5cc4bc523edc28defb594e5798c36530679354e90a6b9149c006fdcb3fd9173290bec6fd0",
+          "sha256": "8ee0bd2b6f6860bdaeea55306c58d0a142cf4cd781694f3fc57e150ed9984d6b",
+          "sha1": "fa28cac74b45033d68f61a4b9a19aaa312f51ce7",
+          "md5": "74485b0b9add292f479675b856d4ff39"
         }
       ]
     },
@@ -71,11 +71,11 @@
         {
           "name": "flutter_plugin_android_lifecycle_release-1.0.aar",
           "url": "flutter_plugin_android_lifecycle_release-1.0.aar",
-          "size": 4667,
-          "sha512": "2b30c0ce590a7f219258c8b7b8b83dcfa5b054950c01b1d590477f523dd6c011ccc6384b3c22aef75e4ef221ba54eaa99c871955a2fcdcceb3f7472ae3827bff",
-          "sha256": "a7a1c42d54b610ca6a1bda1a1b4f9f28db54ee3842ba7b73d3797b82bc827c59",
-          "sha1": "7c04db3c5dd9041dbf0a22416f581c44718378ca",
-          "md5": "b3e60c48e8562aed20cdff6c954837af"
+          "size": 4671,
+          "sha512": "3d074b83bb499050e2c97fb60e221d9f8beb68aa65360327f8c0b7c5cc4bc523edc28defb594e5798c36530679354e90a6b9149c006fdcb3fd9173290bec6fd0",
+          "sha256": "8ee0bd2b6f6860bdaeea55306c58d0a142cf4cd781694f3fc57e150ed9984d6b",
+          "sha1": "fa28cac74b45033d68f61a4b9a19aaa312f51ce7",
+          "md5": "74485b0b9add292f479675b856d4ff39"
         }
       ]
     }

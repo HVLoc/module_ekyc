@@ -35,11 +35,11 @@
         {
           "name": "app_settings_release-1.0.aar",
           "url": "app_settings_release-1.0.aar",
-          "size": 8911,
-          "sha512": "7ec5cd48696fde732cdeecac9e7cfe8428c261c13cebc2adeb7787d0a9d2ff667c3ea17c976b2cc822f6494f0d9201b0c85138018b4471040f4f2214725ec2a1",
-          "sha256": "ea67772d753926389322524f3a19c78d448ae889072427d87d0d6172cc5d04a8",
-          "sha1": "60eda6e3af983d554cf6b7468051872987148ec8",
-          "md5": "da328ccb5b05986ea60474d252a66dbd"
+          "size": 8915,
+          "sha512": "9da202479eb1155ea50f34d37d33e4bbcf42f5ee53c4f469c985120da078321cfc74140577b7a7ba3808afdd19e50524552357932e2fb77848e3db3ff02baf62",
+          "sha256": "5786f284c64298e96703edabc8b4c7af75590fb4a9a1454e9ae2f8fe8a74564d",
+          "sha1": "63507d045de5e48a5a888dd4524d937a6f9caa8f",
+          "md5": "394387032a4e0f72bf99d2a0ea8018c7"
         }
       ]
     },
@@ -71,11 +71,11 @@
         {
           "name": "app_settings_release-1.0.aar",
           "url": "app_settings_release-1.0.aar",
-          "size": 8911,
-          "sha512": "7ec5cd48696fde732cdeecac9e7cfe8428c261c13cebc2adeb7787d0a9d2ff667c3ea17c976b2cc822f6494f0d9201b0c85138018b4471040f4f2214725ec2a1",
-          "sha256": "ea67772d753926389322524f3a19c78d448ae889072427d87d0d6172cc5d04a8",
-          "sha1": "60eda6e3af983d554cf6b7468051872987148ec8",
-          "md5": "da328ccb5b05986ea60474d252a66dbd"
+          "size": 8915,
+          "sha512": "9da202479eb1155ea50f34d37d33e4bbcf42f5ee53c4f469c985120da078321cfc74140577b7a7ba3808afdd19e50524552357932e2fb77848e3db3ff02baf62",
+          "sha256": "5786f284c64298e96703edabc8b4c7af75590fb4a9a1454e9ae2f8fe8a74564d",
+          "sha1": "63507d045de5e48a5a888dd4524d937a6f9caa8f",
+          "md5": "394387032a4e0f72bf99d2a0ea8018c7"
         }
       ]
     }

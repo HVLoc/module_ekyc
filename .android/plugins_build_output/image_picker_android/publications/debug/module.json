@@ -35,11 +35,11 @@
         {
           "name": "image_picker_android_debug-1.0.aar",
           "url": "image_picker_android_debug-1.0.aar",
-          "size": 73166,
-          "sha512": "b1c59d2d82b3ebaae290139c183c92239dbdbc3ba7b7b29ede717104937fed72e02b2f9969b5687efa0a535fb30095aaf7021a8d77e45fd75396535196cbc2ee",
-          "sha256": "4b152f539ef207a67ada7ffd51e327ae6e5c1e49739bf1f18cf1f85ca690f370",
-          "sha1": "6bbbe25573ce9f15872d7017c05f81d8f955e7c2",
-          "md5": "7cfab937aef6a6028f222e948066d8ad"
+          "size": 73170,
+          "sha512": "14b6b93a0e32f3d3087a3d81311a7d2c023ac2b94f2f619423e83e6b6d3ba6100f9836cf651a044827bf5d6c39e5b2c4e96613733edad277301f9c4b4c38c4ba",
+          "sha256": "80623f2ca8ca82ee21d8099adb0e8468b88c7abef3c2e71a9af148eb21a5fa66",
+          "sha1": "ad94297f78928e70085bff3de64111ee14811f5e",
+          "md5": "1c5a6d8d88ca44fefb9417e0fbce7e28"
         }
       ]
     },
@@ -110,11 +110,11 @@
         {
           "name": "image_picker_android_debug-1.0.aar",
           "url": "image_picker_android_debug-1.0.aar",
-          "size": 73166,
-          "sha512": "b1c59d2d82b3ebaae290139c183c92239dbdbc3ba7b7b29ede717104937fed72e02b2f9969b5687efa0a535fb30095aaf7021a8d77e45fd75396535196cbc2ee",
-          "sha256": "4b152f539ef207a67ada7ffd51e327ae6e5c1e49739bf1f18cf1f85ca690f370",
-          "sha1": "6bbbe25573ce9f15872d7017c05f81d8f955e7c2",
-          "md5": "7cfab937aef6a6028f222e948066d8ad"
+          "size": 73170,
+          "sha512": "14b6b93a0e32f3d3087a3d81311a7d2c023ac2b94f2f619423e83e6b6d3ba6100f9836cf651a044827bf5d6c39e5b2c4e96613733edad277301f9c4b4c38c4ba",
+          "sha256": "80623f2ca8ca82ee21d8099adb0e8468b88c7abef3c2e71a9af148eb21a5fa66",
+          "sha1": "ad94297f78928e70085bff3de64111ee14811f5e",
+          "md5": "1c5a6d8d88ca44fefb9417e0fbce7e28"
         }
       ]
     }

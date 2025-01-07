@@ -35,11 +35,11 @@
         {
           "name": "google_mlkit_commons_release-1.0.aar",
           "url": "google_mlkit_commons_release-1.0.aar",
-          "size": 8810,
-          "sha512": "5c3aea6bf23d1a29c989af276cf85cac40b94d21d71dd8df468ec49665d185506b6c892c1939b374f584b6a4d97c39c8092e4cb0a4c9e74de7e297c3df91da6c",
-          "sha256": "23289ce6127552137bf2d97880bcd5ba292f7e72116f322eec35049af780a58a",
-          "sha1": "ee796d53fed84d542f3294f90caedba7a44827c3",
-          "md5": "8ca03a10f0ba084f86433bd95cebce56"
+          "size": 8814,
+          "sha512": "51a8c3596261ca69239d29c9a08908ca4ff0d0dfdf4977f008860045453fffe2ee74751c7091515ac6e06d902606afd838c70e17828fbde2cc892f0e48694572",
+          "sha256": "a6cd6ef3623e1d2277313504a0465011d84130379a2260d2adf541a60aba8d47",
+          "sha1": "04b0cae17fe60b38ada59ee8d605116d65474d5b",
+          "md5": "259cb6567d601ce7fae419b63fb75145"
         }
       ]
     },
@@ -71,11 +71,11 @@
         {
           "name": "google_mlkit_commons_release-1.0.aar",
           "url": "google_mlkit_commons_release-1.0.aar",
-          "size": 8810,
-          "sha512": "5c3aea6bf23d1a29c989af276cf85cac40b94d21d71dd8df468ec49665d185506b6c892c1939b374f584b6a4d97c39c8092e4cb0a4c9e74de7e297c3df91da6c",
-          "sha256": "23289ce6127552137bf2d97880bcd5ba292f7e72116f322eec35049af780a58a",
-          "sha1": "ee796d53fed84d542f3294f90caedba7a44827c3",
-          "md5": "8ca03a10f0ba084f86433bd95cebce56"
+          "size": 8814,
+          "sha512": "51a8c3596261ca69239d29c9a08908ca4ff0d0dfdf4977f008860045453fffe2ee74751c7091515ac6e06d902606afd838c70e17828fbde2cc892f0e48694572",
+          "sha256": "a6cd6ef3623e1d2277313504a0465011d84130379a2260d2adf541a60aba8d47",
+          "sha1": "04b0cae17fe60b38ada59ee8d605116d65474d5b",
+          "md5": "259cb6567d601ce7fae419b63fb75145"
         }
       ]
     }
