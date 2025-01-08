@@ -128,8 +128,9 @@ class LiveNessKycController extends BaseGetxController {
 
   Future<void> closePros() async {
     isStreamingImage = false;
-    // if (cameraController.value.isStreamingImages) {
-    await cameraController.stopImageStream();
+    if (cameraController.value.isStreamingImages) {
+      await cameraController.stopImageStream();
+    }
     await _faceDetector.close();
     await cameraController.dispose();
     // }

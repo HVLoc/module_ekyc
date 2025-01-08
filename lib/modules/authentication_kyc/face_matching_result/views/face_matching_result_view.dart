@@ -188,7 +188,8 @@ Widget _itemBody(FaceMatchingResultController controller) {
             );
           },
           isLoading: controller.isShowLoading.value,
-          backgroundColor: AppColors.colorGreenText,
+          width: AppDimens.sizeImg,
+          // backgroundColor: AppColors.colorGreenText,
         ),
       ),
       GetPlatform.isAndroid ? sdsSBHeight10 : sdsSBHeight15,

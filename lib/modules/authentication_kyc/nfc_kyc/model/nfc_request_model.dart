@@ -35,7 +35,7 @@ class SendNfcRequestModel {
   String? imgLiveNess;
   String? faceMatching;
   bool? isFaceMatching;
-
+  bool verifyDocumentNumber = false; ///xác thư c06 chưa
 
   ///base64
   String? sodData;

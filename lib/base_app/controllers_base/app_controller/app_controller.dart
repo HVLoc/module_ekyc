@@ -7,11 +7,6 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
-import 'package:local_auth/local_auth.dart';
-import 'package:module_ekyc/modules/sdk/sdk.src.dart';
-import 'package:module_ekyc/modules/sdk/sdk_request_model.dart';
-import 'package:package_info_plus/package_info_plus.dart';
-
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
@@ -59,8 +54,8 @@ class AppController extends GetxController {
   // Hàm gửi dữ liệu về native
   void sendDataToNative() async {
     try {
-      await platform
-          .invokeMethod('dataUser', {"value": sendNfcRequestGlobalModel.toJson()});
+      await platform.invokeMethod(
+          'dataUser', {"value": sendNfcRequestGlobalModel.toJson()});
     } on PlatformException catch (e) {
       print("Error sending data: ${e.message}");
     }
@@ -70,7 +65,7 @@ class AppController extends GetxController {
   Future<void> onInit() async {
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
-      await getDataInit();
+      // await getDataInit();
       await checkPermissionApp();
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
@@ -104,7 +99,6 @@ class AppController extends GetxController {
   }
 
   Future<void> getDataInit() async {
-
     final payload = await platform.invokeMethod('setInitial');
     if (payload != null) {
       final data = jsonDecode(Uri.decodeComponent(payload));

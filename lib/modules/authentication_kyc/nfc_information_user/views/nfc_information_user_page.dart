@@ -26,7 +26,7 @@ class NfcInformationUserPage extends BaseGetWidget {
             ? LocaleKeys.nfcInformationUserPage_resultAuthentication.tr
             : LocaleKeys.nfcInformationUserPage_information.tr,
         isColorGradient: false,
-        centerTitle: true,
+        // centerTitle: true,
         leading: true,
         backgroundColor: AppColors.colorTransparent,
       ),

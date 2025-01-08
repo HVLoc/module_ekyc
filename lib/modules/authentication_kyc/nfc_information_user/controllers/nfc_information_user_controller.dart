@@ -82,7 +82,6 @@ class NfcInformationUserController extends BaseGetxController {
         //     authenticationVisible.value = true;
         //   });
         // }
-        print(sendNfcRequestModel.isFaceMatching);
         if (sendNfcRequestModel.isFaceMatching ?? false) {
           successSDK = true;
           authenticationFake();

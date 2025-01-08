@@ -30,8 +30,8 @@ Widget _buildCapturePage(LiveNessKycController controller) {
           _positionedAppbar(controller),
           _warningFace(controller),
           Positioned(
-            left: AppDimens.padding5,
-            right: AppDimens.padding5,
+            left: AppDimens.padding15,
+            right: AppDimens.padding15,
             bottom: Get.height / 2.2 - Get.width / 2 - 30,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -244,8 +244,8 @@ Visibility _actionWidget(LiveNessKycController controller) {
                       ? ""
                       : controller
                           .questionTemp[controller.currentStep.value - 1],
-                  availableStyle: StyleEnum.body14,
-                  color: AppColors.colorGreenText,
+                  availableStyle: StyleEnum.subNormal,
+                  color: AppColors.primaryBlue1,
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -310,19 +310,23 @@ Visibility _actionWidget(LiveNessKycController controller) {
 Visibility _buttonStart(LiveNessKycController controller) {
   return Visibility(
     visible: controller.currentStep.value == 0,
-    child: Positioned(
-      left: AppDimens.padding8,
-      right: AppDimens.padding8,
-      bottom: AppDimens.padding8,
-      child: ButtonUtils.buildButton(
-        LocaleKeys.live_ness_action.tr,
-        () async {
-          await controller.startStreamPicture();
-        },
-        isLoading: controller.isShowLoading.value,
-        backgroundColor: AppColors.colorGreenText,
-        borderRadius: BorderRadius.circular(AppDimens.padding12),
-        colorText: AppColors.basicWhite,
+    child: Align(
+      alignment: Alignment.bottomCenter,
+      child: Positioned(
+        // left: AppDimens.padding8,
+        // right: AppDimens.padding8,
+        bottom: AppDimens.padding15,
+        child: ButtonUtils.buildButton(
+          LocaleKeys.live_ness_action.tr,
+          () async {
+            await controller.startStreamPicture();
+          },
+          width: AppDimens.sizeImg,
+          isLoading: controller.isShowLoading.value,
+          // backgroundColor: AppColors.colorGreenText,
+          borderRadius: BorderRadius.circular(AppDimens.padding12),
+          colorText: AppColors.basicWhite,
+        ).paddingOnly(bottom: AppDimens.padding10),
       ),
     ),
   );
