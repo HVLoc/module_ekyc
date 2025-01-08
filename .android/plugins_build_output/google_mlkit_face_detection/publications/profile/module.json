@@ -35,11 +35,11 @@
         {
           "name": "google_mlkit_face_detection_profile-1.0.aar",
           "url": "google_mlkit_face_detection_profile-1.0.aar",
-          "size": 9484,
-          "sha512": "74a3b9f1625e0da516805b6d2a17e4df740ddb76685b1e8c29afbd28640b702a0c801132f570409148752b2c35d4ced27493f738b7ac02aa051557fd2a795fb0",
-          "sha256": "6d0cfc603d86c513c8abfcdeb3f040233c9009966c1d791178e463e4d2ba4185",
-          "sha1": "dbe5308781f411350578b97c4f47fa479b8efa8e",
-          "md5": "77489ef8ddc14908e2a9542b50a18869"
+          "size": 9480,
+          "sha512": "fe5a4f95ca875fb31b8cecce4760e6ea8f08b69c9bc99ecaf073a381ee4401cf4aec1ed1990bb607933d383169e9b8f353c5f1dab78d967806b981bb21205536",
+          "sha256": "24eca2a995ab7881ef94400dcb428a43955859ff3a498163951d46c4229205a4",
+          "sha1": "114c3640cad950b16cf94bf89393a8c0720d2bd2",
+          "md5": "bd6182516858790d0851b39df4fb2226"
         }
       ]
     },
@@ -78,11 +78,11 @@
         {
           "name": "google_mlkit_face_detection_profile-1.0.aar",
           "url": "google_mlkit_face_detection_profile-1.0.aar",
-          "size": 9484,
-          "sha512": "74a3b9f1625e0da516805b6d2a17e4df740ddb76685b1e8c29afbd28640b702a0c801132f570409148752b2c35d4ced27493f738b7ac02aa051557fd2a795fb0",
-          "sha256": "6d0cfc603d86c513c8abfcdeb3f040233c9009966c1d791178e463e4d2ba4185",
-          "sha1": "dbe5308781f411350578b97c4f47fa479b8efa8e",
-          "md5": "77489ef8ddc14908e2a9542b50a18869"
+          "size": 9480,
+          "sha512": "fe5a4f95ca875fb31b8cecce4760e6ea8f08b69c9bc99ecaf073a381ee4401cf4aec1ed1990bb607933d383169e9b8f353c5f1dab78d967806b981bb21205536",
+          "sha256": "24eca2a995ab7881ef94400dcb428a43955859ff3a498163951d46c4229205a4",
+          "sha1": "114c3640cad950b16cf94bf89393a8c0720d2bd2",
+          "md5": "bd6182516858790d0851b39df4fb2226"
         }
       ]
     }

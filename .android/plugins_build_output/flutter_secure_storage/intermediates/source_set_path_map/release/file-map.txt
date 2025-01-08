@@ -1,0 +1,13 @@
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-0 /Users/apple/.gradle/caches/transforms-3/1a1dd5b809cec79ea0d1440b813f634c/transformed/core-1.6.0/res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-window-1.0.0-beta04-1 /Users/apple/.gradle/caches/transforms-3/1ba8d05a0965080943586c494e0aa4b2/transformed/jetified-window-1.0.0-beta04/res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-security-crypto-1.1.0-alpha06-2 /Users/apple/.gradle/caches/transforms-3/72aa117670d8d3091c5855972a84d560/transformed/jetified-security-crypto-1.1.0-alpha06/res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-annotation-experimental-1.1.0-3 /Users/apple/.gradle/caches/transforms-3/7dd871ca80fb2c2b00f249ead490a8eb/transformed/jetified-annotation-experimental-1.1.0/res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-window-java-1.0.0-beta04-4 /Users/apple/.gradle/caches/transforms-3/c132967ebfb7143f82aaee5ad8c6043e/transformed/jetified-window-java-1.0.0-beta04/res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-main-5 /Users/apple/.pub-cache/hosted/pub.dev/flutter_secure_storage-9.2.2/android/src/main/res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-release-6 /Users/apple/.pub-cache/hosted/pub.dev/flutter_secure_storage-9.2.2/android/src/release/res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-pngs-7 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_secure_storage/generated/res/pngs/release
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-resValues-8 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_secure_storage/generated/res/resValues/release
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-rs-9 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_secure_storage/generated/res/rs/release
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-mergeReleaseResources-10 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_secure_storage/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-mergeReleaseResources-11 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_secure_storage/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-12 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_secure_storage/intermediates/merged_res/release

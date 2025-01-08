@@ -35,11 +35,11 @@
         {
           "name": "just_audio_profile-1.0.aar",
           "url": "just_audio_profile-1.0.aar",
-          "size": 29091,
-          "sha512": "975e15fd863e5f50124c594fcf787b048da15d02685395ce42cd1c3effadd02d9515aaa3cc3f114f511318e31cca6b71ea08b0c9e8dc0a79c08096038b9d8bda",
-          "sha256": "97881425623a9f255ce5da99a4879f65270c2dddc8f99552aa88c407cd4722fc",
-          "sha1": "4970772b01b994694b06f2261f91654af64dd737",
-          "md5": "c7980ae2ab93b5ae76b0e189aabb682e"
+          "size": 29088,
+          "sha512": "87edb261542d8fd0c28cbcaac9c5a7311815c80b5f68c42aa8a9470f4a54f2a139ba72c1909b1b1370dc3043b8a3004721aebf73187183c762870c50a917e8f1",
+          "sha256": "8f7dcc205d0725a9d4a565235a15aa77b597229b518d159fe0088ac8416ab8db",
+          "sha1": "783abb8cb3e9d4a4695a1384dfed6b5b5780d7be",
+          "md5": "7ca5ecffa154d5410d0d9108ac2eabe9"
         }
       ]
     },
@@ -99,11 +99,11 @@
         {
           "name": "just_audio_profile-1.0.aar",
           "url": "just_audio_profile-1.0.aar",
-          "size": 29091,
-          "sha512": "975e15fd863e5f50124c594fcf787b048da15d02685395ce42cd1c3effadd02d9515aaa3cc3f114f511318e31cca6b71ea08b0c9e8dc0a79c08096038b9d8bda",
-          "sha256": "97881425623a9f255ce5da99a4879f65270c2dddc8f99552aa88c407cd4722fc",
-          "sha1": "4970772b01b994694b06f2261f91654af64dd737",
-          "md5": "c7980ae2ab93b5ae76b0e189aabb682e"
+          "size": 29088,
+          "sha512": "87edb261542d8fd0c28cbcaac9c5a7311815c80b5f68c42aa8a9470f4a54f2a139ba72c1909b1b1370dc3043b8a3004721aebf73187183c762870c50a917e8f1",
+          "sha256": "8f7dcc205d0725a9d4a565235a15aa77b597229b518d159fe0088ac8416ab8db",
+          "sha1": "783abb8cb3e9d4a4695a1384dfed6b5b5780d7be",
+          "md5": "7ca5ecffa154d5410d0d9108ac2eabe9"
         }
       ]
     }

@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:module_ekyc/generated/locales.g.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
+import 'base_app/controllers_base/app_controller/app_controller.dart';
 import 'core/core.src.dart';
 import 'shares/shares.src.dart';
 

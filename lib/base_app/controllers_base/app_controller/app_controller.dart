@@ -62,9 +62,8 @@ class AppController extends GetxController {
         userInfoModel: userInfoModel,
         sendNfcRequestModel: sendNfcRequestGlobalModel,
       );
-
       await platform
-          .invokeMethod('sendData', {"value": sdkResponseModel.toJson()});
+          .invokeMethod('dataUser', {"value": sdkResponseModel.toJson()});
     } on PlatformException catch (e) {
       print("Error sending data: ${e.message}");
     }
@@ -74,7 +73,7 @@ class AppController extends GetxController {
   Future<void> onInit() async {
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
-      getDataInit();
+      await getDataInit();
       await checkPermissionApp();
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
@@ -83,11 +82,7 @@ class AppController extends GetxController {
     } else {
       androidDeviceInfo = await deviceInfoPlugin.androidInfo;
     }
-    var biometrics = await Biometrics().getAvailableBiometrics();
     cameras = await availableCameras();
-    // if (biometrics != null) {
-    //   isFaceID = biometrics.contains(BiometricType.face);
-    // }
 
     super.onInit();
   }
@@ -111,16 +106,9 @@ class AppController extends GetxController {
     }
   }
 
-  void getDataInit() {
-    // Nhận giá trị từ native
-    final payload = Get.parameters['payload'];
-//     final payload = """
-//     {
-//         "key":"89f797ab-ec41-446a-8dc1-1dfda5e7e93d",
-//         "secretKey":"63f81c69722acaa42f622ec16d702fdb",
-//         "CCCD":"020098007724"
-//     }
-// """;
+  Future<void> getDataInit() async {
+
+    final payload = await platform.invokeMethod('setInitial');
     if (payload != null) {
       final data = jsonDecode(Uri.decodeComponent(payload));
 
@@ -129,7 +117,6 @@ class AppController extends GetxController {
         secretKey: data['secretKey'] ?? "",
       );
       qrUserInformation.documentNumber = data['CCCD'];
-      print("CCCD: ${qrUserInformation.documentNumber}");
     }
   }
 

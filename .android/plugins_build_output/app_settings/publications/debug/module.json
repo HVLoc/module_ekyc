@@ -35,11 +35,11 @@
         {
           "name": "app_settings_debug-1.0.aar",
           "url": "app_settings_debug-1.0.aar",
-          "size": 9332,
-          "sha512": "938e3c3993ec040c9ce9b837fcfcb2480e4ded0c1276ee671261480d5d504f7f184caf84c055efb9a6f091604b8eb4486cf81b2a4b09017e8bfb10f3b47ff869",
-          "sha256": "c820175fa42258dc0818e014bee419ba8ff3ddafe8ef7aa5705253e34a4d266a",
-          "sha1": "7f0764f252408ca8c72ea0ee18e94233ed83389d",
-          "md5": "682f47867430b2c0de3fc1a0bd24ebca"
+          "size": 9328,
+          "sha512": "662e7277994b5e6e1a61370be5682672c041524bb5d1d9fdb84d884f3cc1ab79c2865f868338473556acd66870a769cadd010d7ea91b985d02ab2d889d5e251a",
+          "sha256": "2deabf5ccd113b28a2301dff6167ee35150e212619c7f87725c97a0a1b40f4f0",
+          "sha1": "0c79b9ed4472d82fa98f116d93d1884ec8f22686",
+          "md5": "ae2608d1306a574b9d7087365272d7dc"
         }
       ]
     },
@@ -71,11 +71,11 @@
         {
           "name": "app_settings_debug-1.0.aar",
           "url": "app_settings_debug-1.0.aar",
-          "size": 9332,
-          "sha512": "938e3c3993ec040c9ce9b837fcfcb2480e4ded0c1276ee671261480d5d504f7f184caf84c055efb9a6f091604b8eb4486cf81b2a4b09017e8bfb10f3b47ff869",
-          "sha256": "c820175fa42258dc0818e014bee419ba8ff3ddafe8ef7aa5705253e34a4d266a",
-          "sha1": "7f0764f252408ca8c72ea0ee18e94233ed83389d",
-          "md5": "682f47867430b2c0de3fc1a0bd24ebca"
+          "size": 9328,
+          "sha512": "662e7277994b5e6e1a61370be5682672c041524bb5d1d9fdb84d884f3cc1ab79c2865f868338473556acd66870a769cadd010d7ea91b985d02ab2d889d5e251a",
+          "sha256": "2deabf5ccd113b28a2301dff6167ee35150e212619c7f87725c97a0a1b40f4f0",
+          "sha1": "0c79b9ed4472d82fa98f116d93d1884ec8f22686",
+          "md5": "ae2608d1306a574b9d7087365272d7dc"
         }
       ]
     }

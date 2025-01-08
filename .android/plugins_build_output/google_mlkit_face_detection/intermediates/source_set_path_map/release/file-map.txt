@@ -1,0 +1,15 @@
+com.google_mlkit_face_detection-core-1.6.0-0 /Users/apple/.gradle/caches/transforms-3/1a1dd5b809cec79ea0d1440b813f634c/transformed/core-1.6.0/res
+com.google_mlkit_face_detection-jetified-window-1.0.0-beta04-1 /Users/apple/.gradle/caches/transforms-3/1ba8d05a0965080943586c494e0aa4b2/transformed/jetified-window-1.0.0-beta04/res
+com.google_mlkit_face_detection-jetified-play-services-base-18.1.0-2 /Users/apple/.gradle/caches/transforms-3/26122ed33b1a29cda1765a3c6ed39a08/transformed/jetified-play-services-base-18.1.0/res
+com.google_mlkit_face_detection-jetified-annotation-experimental-1.1.0-3 /Users/apple/.gradle/caches/transforms-3/7dd871ca80fb2c2b00f249ead490a8eb/transformed/jetified-annotation-experimental-1.1.0/res
+com.google_mlkit_face_detection-jetified-play-services-basement-18.1.0-4 /Users/apple/.gradle/caches/transforms-3/8435c608dc11aec23a8235e2884813fc/transformed/jetified-play-services-basement-18.1.0/res
+com.google_mlkit_face_detection-jetified-window-java-1.0.0-beta04-5 /Users/apple/.gradle/caches/transforms-3/c132967ebfb7143f82aaee5ad8c6043e/transformed/jetified-window-java-1.0.0-beta04/res
+com.google_mlkit_face_detection-main-6 /Users/apple/.pub-cache/hosted/pub.dev/google_mlkit_face_detection-0.9.0/android/src/main/res
+com.google_mlkit_face_detection-release-7 /Users/apple/.pub-cache/hosted/pub.dev/google_mlkit_face_detection-0.9.0/android/src/release/res
+com.google_mlkit_face_detection-packaged_res-8 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/google_mlkit_commons/intermediates/packaged_res/release
+com.google_mlkit_face_detection-pngs-9 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/google_mlkit_face_detection/generated/res/pngs/release
+com.google_mlkit_face_detection-resValues-10 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/google_mlkit_face_detection/generated/res/resValues/release
+com.google_mlkit_face_detection-rs-11 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/google_mlkit_face_detection/generated/res/rs/release
+com.google_mlkit_face_detection-mergeReleaseResources-12 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/google_mlkit_face_detection/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.google_mlkit_face_detection-mergeReleaseResources-13 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/google_mlkit_face_detection/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.google_mlkit_face_detection-merged_res-14 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/google_mlkit_face_detection/intermediates/merged_res/release

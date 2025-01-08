@@ -1,0 +1,14 @@
+com.tundralabs.fluttertts.flutter_tts-jetified-window-1.0.0-beta04-0 /Users/apple/.gradle/caches/transforms-3/1ba8d05a0965080943586c494e0aa4b2/transformed/jetified-window-1.0.0-beta04/res
+com.tundralabs.fluttertts.flutter_tts-jetified-core-ktx-1.8.0-1 /Users/apple/.gradle/caches/transforms-3/30436ab12de47ca1dfe66d1bd2ef53e6/transformed/jetified-core-ktx-1.8.0/res
+com.tundralabs.fluttertts.flutter_tts-jetified-annotation-experimental-1.1.0-2 /Users/apple/.gradle/caches/transforms-3/7dd871ca80fb2c2b00f249ead490a8eb/transformed/jetified-annotation-experimental-1.1.0/res
+com.tundralabs.fluttertts.flutter_tts-core-1.8.0-3 /Users/apple/.gradle/caches/transforms-3/a46da01c806cf00aeb8626ba410e5458/transformed/core-1.8.0/res
+com.tundralabs.fluttertts.flutter_tts-jetified-window-java-1.0.0-beta04-4 /Users/apple/.gradle/caches/transforms-3/c132967ebfb7143f82aaee5ad8c6043e/transformed/jetified-window-java-1.0.0-beta04/res
+com.tundralabs.fluttertts.flutter_tts-lifecycle-runtime-2.3.1-5 /Users/apple/.gradle/caches/transforms-3/d8adf09754d9400d948dbb9ae6e0843b/transformed/lifecycle-runtime-2.3.1/res
+com.tundralabs.fluttertts.flutter_tts-main-6 /Users/apple/.pub-cache/hosted/pub.dev/flutter_tts-4.2.1/android/src/main/res
+com.tundralabs.fluttertts.flutter_tts-release-7 /Users/apple/.pub-cache/hosted/pub.dev/flutter_tts-4.2.1/android/src/release/res
+com.tundralabs.fluttertts.flutter_tts-pngs-8 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_tts/generated/res/pngs/release
+com.tundralabs.fluttertts.flutter_tts-resValues-9 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_tts/generated/res/resValues/release
+com.tundralabs.fluttertts.flutter_tts-rs-10 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_tts/generated/res/rs/release
+com.tundralabs.fluttertts.flutter_tts-mergeReleaseResources-11 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_tts/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.tundralabs.fluttertts.flutter_tts-mergeReleaseResources-12 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_tts/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.tundralabs.fluttertts.flutter_tts-merged_res-13 /Users/apple/LocHV/Flutter/module_ekyc/.android/plugins_build_output/flutter_tts/intermediates/merged_res/release

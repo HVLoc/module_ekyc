@@ -35,11 +35,11 @@
         {
           "name": "mobile_scanner_release-1.0.aar",
           "url": "mobile_scanner_release-1.0.aar",
-          "size": 74258,
-          "sha512": "bde78e398fa5eca48e1a2f03def0b4dd63df64a5532fb313a89dc098f8be2127c5a33998abe6991a65bfb06dbbee51b4a339f52630a17363a80bd4d7e8021aba",
-          "sha256": "94d8ad49ba2941722c4f493be853ed88b10f4037e3f457f65fbec3eba7d9669f",
-          "sha1": "3350193003696452233e7c88814b05f817836735",
-          "md5": "fe6c7cb3a7a02f63ed2ad363a20678fd"
+          "size": 74255,
+          "sha512": "cd9fb487c12ac51271543fa456dcb3103a9a84fa2cc2a7aeb68e8e2a0461eaa1bb859428856fc006b9786f2164a73d7c1a7bcf230691000d9758a1cb90abe7f4",
+          "sha256": "dee5da9c01fbbb46c7f9d65ee012dbd7c6ef0b07566d13bec9d14d4aaaa30ca4",
+          "sha1": "c2a8d1a42e366be94c77181a3ac7cb276145fe25",
+          "md5": "3e8e7efc7314bbcab5e7a3cf43976d8b"
         }
       ]
     },
@@ -92,11 +92,11 @@
         {
           "name": "mobile_scanner_release-1.0.aar",
           "url": "mobile_scanner_release-1.0.aar",
-          "size": 74258,
-          "sha512": "bde78e398fa5eca48e1a2f03def0b4dd63df64a5532fb313a89dc098f8be2127c5a33998abe6991a65bfb06dbbee51b4a339f52630a17363a80bd4d7e8021aba",
-          "sha256": "94d8ad49ba2941722c4f493be853ed88b10f4037e3f457f65fbec3eba7d9669f",
-          "sha1": "3350193003696452233e7c88814b05f817836735",
-          "md5": "fe6c7cb3a7a02f63ed2ad363a20678fd"
+          "size": 74255,
+          "sha512": "cd9fb487c12ac51271543fa456dcb3103a9a84fa2cc2a7aeb68e8e2a0461eaa1bb859428856fc006b9786f2164a73d7c1a7bcf230691000d9758a1cb90abe7f4",
+          "sha256": "dee5da9c01fbbb46c7f9d65ee012dbd7c6ef0b07566d13bec9d14d4aaaa30ca4",
+          "sha1": "c2a8d1a42e366be94c77181a3ac7cb276145fe25",
+          "md5": "3e8e7efc7314bbcab5e7a3cf43976d8b"
         }
       ]
     }

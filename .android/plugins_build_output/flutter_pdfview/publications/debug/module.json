@@ -35,11 +35,11 @@
         {
           "name": "flutter_pdfview_debug-1.0.aar",
           "url": "flutter_pdfview_debug-1.0.aar",
-          "size": 14142,
-          "sha512": "b5e333d93e0da1a67999b1f7178c8ae7e1d3e667717e210278ccfffed954cf689c89aa64abf239a01d1c2d74560fda167c64091ec41edf49f5a7cbb585c31dca",
-          "sha256": "49546e1f715de3277e01f5ee795135645683d4e1808996c885f245b0e233edf9",
-          "sha1": "95f83f91c52a66d45a0de1dc64c5f3f7f1112397",
-          "md5": "8f4e9f0f30113b4e4de283037ede985c"
+          "size": 14139,
+          "sha512": "435cce9712370402a65f74cb6d5c10b5b2989d38b25f8b9c94d263a175ab726748667672407f42e49fe7fecdfab8fa29bba8439f3ca4fd6f954a0d2eac4daeab",
+          "sha256": "a2e2bf9ab0a77dc8e9420cfd5341cf3a1460fcbbac7ddfb54eadc4b532fa568a",
+          "sha1": "1b3d925eb9a106c0064b713c0847264c3e717de0",
+          "md5": "5b8b5c83dd582326c405451157c676b1"
         }
       ]
     },
@@ -71,11 +71,11 @@
         {
           "name": "flutter_pdfview_debug-1.0.aar",
           "url": "flutter_pdfview_debug-1.0.aar",
-          "size": 14142,
-          "sha512": "b5e333d93e0da1a67999b1f7178c8ae7e1d3e667717e210278ccfffed954cf689c89aa64abf239a01d1c2d74560fda167c64091ec41edf49f5a7cbb585c31dca",
-          "sha256": "49546e1f715de3277e01f5ee795135645683d4e1808996c885f245b0e233edf9",
-          "sha1": "95f83f91c52a66d45a0de1dc64c5f3f7f1112397",
-          "md5": "8f4e9f0f30113b4e4de283037ede985c"
+          "size": 14139,
+          "sha512": "435cce9712370402a65f74cb6d5c10b5b2989d38b25f8b9c94d263a175ab726748667672407f42e49fe7fecdfab8fa29bba8439f3ca4fd6f954a0d2eac4daeab",
+          "sha256": "a2e2bf9ab0a77dc8e9420cfd5341cf3a1460fcbbac7ddfb54eadc4b532fa568a",
+          "sha1": "1b3d925eb9a106c0064b713c0847264c3e717de0",
+          "md5": "5b8b5c83dd582326c405451157c676b1"
         }
       ]
     }

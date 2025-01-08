@@ -35,11 +35,11 @@
         {
           "name": "google_mlkit_face_detection_release-1.0.aar",
           "url": "google_mlkit_face_detection_release-1.0.aar",
-          "size": 9485,
-          "sha512": "04d503dfc0e391e3ee8bc9ceb4bd4498ca215ca1b3779d94091351ceeef1333096ba52372f37965339dd5fb170931240c1f833752a56bafb9bd842023c0cdd8f",
-          "sha256": "1d537dab9f5f399d4193eab5123a662abcf3fb1fc56baf3dcf28621b746d599d",
-          "sha1": "5126017cce93aacd5626e300d8fe997f39521aa5",
-          "md5": "d8d90eb250efa7b0f7690827f80bf1f3"
+          "size": 9481,
+          "sha512": "6ad2023ec8dc3c65765193db0f2522f92e65f73b75cabbc082fe05ab0cfb7e35dd22c89a536a5f6371978c7f0250d29eff12d82b541a41add46af581109c86d7",
+          "sha256": "1388dd68ffca20326da7f234619b9ab3f33264acccff9c63985336c6e01c4c47",
+          "sha1": "4f9cb565911ca0884d916f29a45ba99f57e70f1d",
+          "md5": "358412bdb130cfcc8efa9bdc507c8de7"
         }
       ]
     },
@@ -78,11 +78,11 @@
         {
           "name": "google_mlkit_face_detection_release-1.0.aar",
           "url": "google_mlkit_face_detection_release-1.0.aar",
-          "size": 9485,
-          "sha512": "04d503dfc0e391e3ee8bc9ceb4bd4498ca215ca1b3779d94091351ceeef1333096ba52372f37965339dd5fb170931240c1f833752a56bafb9bd842023c0cdd8f",
-          "sha256": "1d537dab9f5f399d4193eab5123a662abcf3fb1fc56baf3dcf28621b746d599d",
-          "sha1": "5126017cce93aacd5626e300d8fe997f39521aa5",
-          "md5": "d8d90eb250efa7b0f7690827f80bf1f3"
+          "size": 9481,
+          "sha512": "6ad2023ec8dc3c65765193db0f2522f92e65f73b75cabbc082fe05ab0cfb7e35dd22c89a536a5f6371978c7f0250d29eff12d82b541a41add46af581109c86d7",
+          "sha256": "1388dd68ffca20326da7f234619b9ab3f33264acccff9c63985336c6e01c4c47",
+          "sha1": "4f9cb565911ca0884d916f29a45ba99f57e70f1d",
+          "md5": "358412bdb130cfcc8efa9bdc507c8de7"
         }
       ]
     }
