@@ -59,11 +59,6 @@ class AppController extends GetxController {
   // Hàm gửi dữ liệu về native
   void sendDataToNative() async {
     try {
-      // SdkResponseModel sdkResponseModel = SdkResponseModel(
-      //   userInfoModel: userInfoModel,
-      //   sendNfcRequestModel: sendNfcRequestGlobalModel,
-      // );
-
       await platform
           .invokeMethod('dataUser', {"value": sendNfcRequestGlobalModel.toJson()});
     } on PlatformException catch (e) {
