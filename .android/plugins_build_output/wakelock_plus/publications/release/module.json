@@ -1,0 +1,97 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.fluttercommunity.plus.wakelock",
+    "module": "wakelock_plus_release",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "wakelock_plus_release-1.0.aar",
+          "url": "wakelock_plus_release-1.0.aar",
+          "size": 18560,
+          "sha512": "91a4dee4daba5d435d2c778cf0aea751cfbdbf93f5c11bc0690ca6dbd25fc548c890c49f782fafb213db962b67086786b0be4da0e517d81ea028d3b61794736c",
+          "sha256": "6e321fd61e22f0df9a240099e42dfb9c0aad21fa168cf5b433b1e43c8749c847",
+          "sha1": "8e74eeb804a467fd9dcd4b4860c8d88f4a021338",
+          "md5": "f071c2d761f5a31c489921b539cebaf7"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "dev.fluttercommunity.plus.packageinfo",
+          "module": "package_info_plus_release",
+          "version": {
+            "requires": "1.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "wakelock_plus_release-1.0.aar",
+          "url": "wakelock_plus_release-1.0.aar",
+          "size": 18560,
+          "sha512": "91a4dee4daba5d435d2c778cf0aea751cfbdbf93f5c11bc0690ca6dbd25fc548c890c49f782fafb213db962b67086786b0be4da0e517d81ea028d3b61794736c",
+          "sha256": "6e321fd61e22f0df9a240099e42dfb9c0aad21fa168cf5b433b1e43c8749c847",
+          "sha1": "8e74eeb804a467fd9dcd4b4860c8d88f4a021338",
+          "md5": "f071c2d761f5a31c489921b539cebaf7"
+        }
+      ]
+    }
+  ]
+}

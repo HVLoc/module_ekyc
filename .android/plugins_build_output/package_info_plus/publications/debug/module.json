@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.fluttercommunity.plus.packageinfo",
+    "module": "package_info_plus_debug",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "debugVariantDebugApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_debug",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "package_info_plus_debug-1.0.aar",
+          "url": "package_info_plus_debug-1.0.aar",
+          "size": 8217,
+          "sha512": "b44d9cb217562f402916eaa8ceb357908cc9887753a82f631fdd8bbdb4f95e95667d921eba655fadfeede688789a7dcd996039b938b9d2120e37dc759346256f",
+          "sha256": "5b514f9bc7349b25c146d22ea0412da2f0183d879bf6084537d56c341fccebed",
+          "sha1": "2b7b82a4337f1e674d23c4304a1baec377965b29",
+          "md5": "98e967dbc392a615366fcbc736dc6eed"
+        }
+      ]
+    },
+    {
+      "name": "debugVariantDebugRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_debug",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.7.22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "package_info_plus_debug-1.0.aar",
+          "url": "package_info_plus_debug-1.0.aar",
+          "size": 8217,
+          "sha512": "b44d9cb217562f402916eaa8ceb357908cc9887753a82f631fdd8bbdb4f95e95667d921eba655fadfeede688789a7dcd996039b938b9d2120e37dc759346256f",
+          "sha256": "5b514f9bc7349b25c146d22ea0412da2f0183d879bf6084537d56c341fccebed",
+          "sha1": "2b7b82a4337f1e674d23c4304a1baec377965b29",
+          "md5": "98e967dbc392a615366fcbc736dc6eed"
+        }
+      ]
+    }
+  ]
+}

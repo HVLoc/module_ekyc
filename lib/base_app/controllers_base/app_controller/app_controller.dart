@@ -54,6 +54,7 @@ class AppController extends GetxController {
   // Hàm gửi dữ liệu về native
   void sendDataToNative() async {
     try {
+      print(sendNfcRequestGlobalModel.toJson());
       await platform.invokeMethod(
           'dataUser', {"value": sendNfcRequestGlobalModel.toJson()});
     } on PlatformException catch (e) {
@@ -65,7 +66,7 @@ class AppController extends GetxController {
   Future<void> onInit() async {
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
-      // await getDataInit();
+      await getDataInit();
       await checkPermissionApp();
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
@@ -99,16 +100,18 @@ class AppController extends GetxController {
   }
 
   Future<void> getDataInit() async {
-    final payload = await platform.invokeMethod('setInitial');
-    if (payload != null) {
-      final data = jsonDecode(Uri.decodeComponent(payload));
+    try {
+      final payload = await platform.invokeMethod('setInitial');
+      if (payload != null) {
+        final data = jsonDecode(Uri.decodeComponent(payload));
 
-      sdkModel = SdkRequestModel(
-        key: data['key'] ?? "",
-        secretKey: data['secretKey'] ?? "",
-      );
-      qrUserInformation.documentNumber = data['CCCD'];
-    }
+        sdkModel = SdkRequestModel(
+          key: data['key'] ?? "",
+          secretKey: data['secretKey'] ?? "",
+        );
+        qrUserInformation.documentNumber = data['CCCD'];
+      }
+    } catch (e) {}
   }
 
   Future<void> initCamera() async {
