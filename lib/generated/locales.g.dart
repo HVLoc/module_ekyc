@@ -227,11 +227,11 @@ class LocaleKeys {
   static const nfc_nfcAuthenticationSanbox2Fail =
       'nfc_nfcAuthenticationSanbox2Fail';
   static const live_ness_instructTitle = 'live_ness_instructTitle';
+  static const live_ness_Step = 'live_ness_Step';
   static const live_ness_Step1 = 'live_ness_Step1';
   static const live_ness_Step2 = 'live_ness_Step2';
-  static const live_ness_Step3 = 'live_ness_Step3';
-  static const live_ness_Step4 = 'live_ness_Step4';
   static const live_ness_agree = 'live_ness_agree';
+  static const live_ness_action = 'live_ness_action';
   static const live_ness_capture = 'live_ness_capture';
   static const live_ness_titleTakePicture = 'live_ness_titleTakePicture';
   static const live_ness_titleAppbar = 'live_ness_titleAppbar';
@@ -255,10 +255,10 @@ class LocaleKeys {
   static const live_ness_takePortraitPhoto = 'live_ness_takePortraitPhoto';
   static const live_ness_instructLiveNess = 'live_ness_instructLiveNess';
   static const live_ness_actionFaceBlink = 'live_ness_actionFaceBlink';
-  static const live_ness_takePicture = 'live_ness_takePicture';
-  static const live_ness_authentication = 'live_ness_authentication';
-  static const live_ness_takeBody = 'live_ness_takeBody';
-  static const live_ness_takeError = 'live_ness_takeError';
+  static const live_ness_titleAction = 'live_ness_titleAction';
+  static const live_ness_titleSchedule = 'live_ness_titleSchedule';
+  static const live_ness_matchingFailContent = 'live_ness_matchingFailContent';
+  static const live_ness_matchingFailTitle = 'live_ness_matchingFailTitle';
   static const home_homeTitle = 'home_homeTitle';
   static const home_user = 'home_user';
   static const home_servicePackage = 'home_servicePackage';
@@ -495,6 +495,15 @@ class LocaleKeys {
   static const support_email = 'support_email';
   static const support_web = 'support_web';
   static const support_title = 'support_title';
+  static const live_ness_result_appbar = 'live_ness_result_appbar';
+  static const live_ness_result_step3 = 'live_ness_result_step3';
+  static const live_ness_result_titleStep = 'live_ness_result_titleStep';
+  static const live_ness_result_title = 'live_ness_result_title';
+  static const live_ness_result_signSuccess = 'live_ness_result_signSuccess';
+  static const live_ness_result_signFail = 'live_ness_result_signFail';
+  static const live_ness_result_nextSuccess = 'live_ness_result_nextSuccess';
+  static const live_ness_result_nextFail = 'live_ness_result_nextFail';
+  static const live_ness_result_button = 'live_ness_result_button';
 }
 
 class Locales {
@@ -696,14 +705,12 @@ class Locales {
         'Hệ thống phát hiện dữ liệu trong chip CCCD có thể đã bị ',
     'nfc_nfcAuthenticationSanbox2Fail': 'thay đổi hoặc hỏng hóc.',
     'live_ness_instructTitle': 'Hướng dẫn sử dụng tính năng Liveness',
-    'live_ness_Step1': 'Bấm vào nút BẮT ĐẦU để tiến hành quét',
+    'live_ness_Step': '*Lưu ý:',
+    'live_ness_Step1': 'Đảm bảo ánh sáng đầy đủ trong quá trình xác thực.',
     'live_ness_Step2':
-        'Định vị khuôn mặt của bạn đặt trong khung hình định sẵn, sau đó thực hiện 5 hành vi trên màn hình',
-    'live_ness_Step3':
-        'Kết thúc 5 hành vi, chụp một tấm ảnh chân dung để hoàn thành.',
-    'live_ness_Step4':
-        '*Lưu ý: Đảm bảo đầy đủ ánh sáng, không có vật thể, khẩu trang che trước mặt trong quá trình Liveness',
+        'Không che mặt bằng bất kỳ vật dụng nào (ví dụ: khẩu trang).',
     'live_ness_agree': 'Đồng ý',
+    'live_ness_action': 'Bắt đầu',
     'live_ness_capture': 'Chụp lại',
     'live_ness_titleTakePicture': 'Chụp hình chân dung để hoàn tất',
     'live_ness_titleAppbar': 'Xác thực khuôn mặt',
@@ -727,12 +734,12 @@ class Locales {
     'live_ness_liveNessSuccess': 'Bạn đã thực hiện thao tác thành công',
     'live_ness_takePortraitPhoto': 'Chụp ảnh chân dung',
     'live_ness_instructLiveNess':
-        'Điều chỉnh cho khuôn mặt của bạn nằm trong khung hình không có vật thể che trước mặt kính hoặc khẩu trang',
+        'Hãy điều chỉnh sao cho khuôn mặt của bạn nằm trong hình tròn',
     'live_ness_actionFaceBlink': 'Nháy mắt',
-    'live_ness_takePicture': 'Chụp hình',
-    'live_ness_authentication': 'Xác thực',
-    'live_ness_takeBody': 'Chụp toàn thân',
-    'live_ness_takeError': 'Chụp ảnh không thành công',
+    'live_ness_titleAction': 'Xác thực khuôn mặt',
+    'live_ness_titleSchedule': 'Vui lòng bấm bắt đầu để tực hiện xác thực',
+    'live_ness_matchingFailContent': 'Vui lòng thử lại!',
+    'live_ness_matchingFailTitle': 'Hình ảnh xác thực khuôn mặt không khớp',
     'home_homeTitle': 'Trang chủ',
     'home_user': 'Lịch sử',
     'home_servicePackage': 'Gói dịch vụ',
@@ -933,5 +940,14 @@ class Locales {
     'support_email': 'Email:',
     'support_web': 'Website:',
     'support_title': 'Thông tin liên hệ',
+    'live_ness_result_appbar': 'Xác thực CCCD',
+    'live_ness_result_step3': 'Bước 3: ',
+    'live_ness_result_titleStep': 'Xác nhận thông tin',
+    'live_ness_result_title': 'Hình ảnh khuôn mặt khớp ảnh CCCD',
+    'live_ness_result_signSuccess': 'Ký hồ sơ thành công!',
+    'live_ness_result_signFail': 'Ký hồ sơ thất bại!',
+    'live_ness_result_nextSuccess': 'Phê duyệt hồ sơ thành công!',
+    'live_ness_result_nextFail': 'Phê duyệt hồ sơ thất bại!',
+    'live_ness_result_button': 'Tiếp tục',
   };
 }

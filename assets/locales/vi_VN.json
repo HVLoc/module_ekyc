@@ -197,11 +197,11 @@
   },
   "live_ness": {
     "instructTitle": "Hướng dẫn sử dụng tính năng Liveness",
-    "Step1": "Bấm vào nút BẮT ĐẦU để tiến hành quét",
-    "Step2": "Định vị khuôn mặt của bạn đặt trong khung hình định sẵn, sau đó thực hiện 5 hành vi trên màn hình",
-    "Step3": "Kết thúc 5 hành vi, chụp một tấm ảnh chân dung để hoàn thành.",
-    "Step4": "*Lưu ý: Đảm bảo đầy đủ ánh sáng, không có vật thể, khẩu trang che trước mặt trong quá trình Liveness",
+    "Step": "*Lưu ý:",
+    "Step1": "Đảm bảo ánh sáng đầy đủ trong quá trình xác thực.",
+    "Step2": "Không che mặt bằng bất kỳ vật dụng nào (ví dụ: khẩu trang).",
     "agree": "Đồng ý",
+    "action": "Bắt đầu",
     "capture": "Chụp lại",
     "titleTakePicture": "Chụp hình chân dung để hoàn tất",
     "titleAppbar": "Xác thực khuôn mặt",
@@ -223,13 +223,12 @@
     "liveNessManyFace": "Quá nhiều khuôn mặt nằm trong khung hình",
     "liveNessSuccess": "Bạn đã thực hiện thao tác thành công",
     "takePortraitPhoto": "Chụp ảnh chân dung",
-    "instructLiveNess": "Điều chỉnh cho khuôn mặt của bạn nằm trong khung hình không có vật thể che trước mặt kính hoặc khẩu trang",
+    "instructLiveNess": "Hãy điều chỉnh sao cho khuôn mặt của bạn nằm trong hình tròn",
     "actionFaceBlink": "Nháy mắt",
-    "takePicture": "Chụp hình",
-    "authentication": "Xác thực",
-    "takeBody": "Chụp toàn thân",
-    "takeError": "Chụp ảnh không thành công"
-
+    "titleAction": "Xác thực khuôn mặt",
+    "titleSchedule": "Vui lòng bấm bắt đầu để tực hiện xác thực",
+    "matchingFailContent": "Vui lòng thử lại!",
+    "matchingFailTitle": "Hình ảnh xác thực khuôn mặt không khớp"
   },
   "home": {
     "homeTitle": "Trang chủ",
@@ -457,5 +456,16 @@
     "email": "Email:",
     "web": "Website:",
     "title": "Thông tin liên hệ"
+  },
+  "live_ness_result": {
+    "appbar": "Xác thực CCCD",
+    "step3": "Bước 3: ",
+    "titleStep": "Xác nhận thông tin",
+    "title": "Hình ảnh khuôn mặt khớp ảnh CCCD",
+    "signSuccess": "Ký hồ sơ thành công!",
+    "signFail": "Ký hồ sơ thất bại!",
+    "nextSuccess": "Phê duyệt hồ sơ thành công!",
+    "nextFail": "Phê duyệt hồ sơ thất bại!",
+    "button": "Tiếp tục"
   }
 }

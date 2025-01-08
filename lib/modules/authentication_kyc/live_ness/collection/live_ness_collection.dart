@@ -1,6 +1,7 @@
+
+import 'package:get/get.dart';
 import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
-import 'package:get/get_utils/get_utils.dart';
 
 class LiveNessCollection {
   static List<String> questions = [
@@ -21,16 +22,16 @@ class LiveNessCollection {
     LocaleKeys.live_ness_faceOpen.tr
   ];
 
-  static List<String> listFaceDetach = [
-    Assets.ASSETS_SVG_ICON_FACE_LEFT_SVG,
-    Assets.ASSETS_SVG_ICON_FACE_RIGHT_SVG,
-    Assets.ASSETS_SVG_ICON_FACE_BETWEEN_SVG,
-    Assets.ASSETS_SVG_ICON_FACE_UP_SVG,
-    Assets.ASSETS_SVG_ICON_FACE_SMILE_SVG,
-    Assets.ASSETS_SVG_ICON_FACE_BLINK_SVG,
-  ];
+  // static List<String> listFaceDetach = [
+  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_LEFT_SVG,
+  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_RIGHT_SVG,
+  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_BETWEEN_SVG,
+  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_UP_SVG,
+  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_SMILE_SVG,
+  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_BLINK_SVG,
+  // ];
 
-  static Map<String, String> listMapOderAction = {
+  static Map<String, String> listMapOderActionApi = {
     LocaleKeys.live_ness_actionFaceLeft.tr: "TRAI",
     LocaleKeys.live_ness_actionFaceRight.tr: "PHAI",
     LocaleKeys.live_ness_actionFaceUp.tr: "TREN",
@@ -46,5 +47,14 @@ class LiveNessCollection {
     LocaleKeys.live_ness_actionFaceSmile.tr: "SMILE",
     LocaleKeys.live_ness_actionFaceBetween.tr: "BETWEEN",
     LocaleKeys.live_ness_actionFaceBlink.tr: "BLINK",
+  };
+
+  static Map<String, int> listMapOderAction = {
+    "TRAI": 0,
+    "PHAI": 1,
+    "TREN": 2,
+    "GIUA": 3,
+    "CUOI": 4,
+    "NHAY": 5,
   };
 }

@@ -1,4 +1,5 @@
 import 'package:module_ekyc/modules/authentication_kyc/change_password/change_password.src.dart';
+import 'package:module_ekyc/modules/authentication_kyc/face_matching_result/face_matching_result.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/forgot_password/forgot_password.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/live_ness/live_ness_kyc.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/nfc_information_user/nfc_information_user_src.dart';
@@ -43,11 +44,11 @@ class RouteAppPage {
       page: () => const LiveNessKycPage(),
       transition: Transition.rightToLeft,
     ),
-    GetPage(
-      name: AppRoutes.routeInstructLiveNessKyc,
-      page: () => const InstructLiveNessKycPage(),
-      transition: Transition.rightToLeft,
-    ),
+    // GetPage(
+    //   name: AppRoutes.routeInstructLiveNessKyc,
+    //   page: () => const InstructLiveNessKycPage(),
+    //   transition: Transition.rightToLeft,
+    // ),
     GetPage(
       name: AppRoutes.routeNfcInformationUser,
       page: () => const NfcInformationUserPage(),
@@ -100,6 +101,11 @@ class RouteAppPage {
     GetPage(
       name: AppRoutes.routeSupport,
       page: () => const SupportPage(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: AppRoutes.routeFaceMatchingResult,
+      page: () => const FaceMatchingResultPage(),
       transition: Transition.rightToLeft,
     ),
   ];
