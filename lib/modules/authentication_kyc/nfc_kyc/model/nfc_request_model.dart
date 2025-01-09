@@ -35,7 +35,9 @@ class SendNfcRequestModel {
   String? imgLiveNess;
   String? faceMatching;
   bool? isFaceMatching;
-  bool verifyDocumentNumber = false; ///xác thư c06 chưa
+  bool verifyDocumentNumber = false;
+
+  ///xác thư c06 chưa
 
   ///base64
   String? sodData;
@@ -124,5 +126,56 @@ class SendNfcRequestModel {
         "identity": otherPaper,
         "raw": raw,
         "couple": nameCouple,
+      };
+
+  Map<String, dynamic> toJsonFull() => {
+        "sessionId": sessionId,
+        "type": type,
+        "number": number,
+        "name": name,
+        "firstName": firstName,
+        "lastName": lastName,
+        "dob": dob,
+        "sex": sex,
+        "nationality": nationality,
+        "doe": doe,
+        "MRZ": mrz,
+        "file": file,
+        "aaSignature": aaSignature,
+        "aaPublicKey": aaPublicKey,
+        "keyAlg": keyAlg != null ? keyAlg!.split('.').last : null,
+        "imgLiveNess": imgLiveNess,
+        "faceMatching": faceMatching,
+        "isFaceMatching": isFaceMatching,
+        "verifyDocumentNumber": verifyDocumentNumber,
+        "sodData": sodData,
+        "dg1DataB64": dg1DataB64,
+        "dg2DataB64": dg2DataB64,
+        "dg13DataB64": dg13DataB64,
+        "dg14DataB64": dg14DataB64,
+        "fileId": fileId,
+        "bodyFileId": bodyFileId,
+        "numberVMN": numberVMN,
+        "nameVNM": nameVNM,
+        "dobVMN": dobVMN,
+        "sexVMN": sexVMN,
+        "nationalityVMN": nationalityVMN,
+        "nationVNM": nationVNM,
+        "religionVMN": religionVMN,
+        "homeTownVMN": homeTownVMN,
+        "residentVMN": residentVMN,
+        "identificationSignsVNM": identificationSignsVNM,
+        "registrationDateVMN": registrationDateVMN,
+        "doeVMN": doeVMN,
+        "nameDadVMN": nameDadVMN,
+        "nameMomVMN": nameMomVMN,
+        "otherPaper": otherPaper,
+        "nameCouple": nameCouple,
+        "raw": raw,
+        "phone": phone,
+        "isView": isView,
+        "statusSuccess": statusSuccess,
+        "visibleButtonDetail": visibleButtonDetail,
+        "kind": kind,
       };
 }

@@ -54,9 +54,8 @@ class AppController extends GetxController {
   // Hàm gửi dữ liệu về native
   void sendDataToNative() async {
     try {
-      print(sendNfcRequestGlobalModel.toJson());
       await platform.invokeMethod(
-          'dataUser', {"value": sendNfcRequestGlobalModel.toJson()});
+          'dataUser', {"value": sendNfcRequestGlobalModel.toJsonFull()});
     } on PlatformException catch (e) {
       print("Error sending data: ${e.message}");
     }
@@ -104,12 +103,13 @@ class AppController extends GetxController {
       final payload = await platform.invokeMethod('setInitial');
       if (payload != null) {
         final data = jsonDecode(Uri.decodeComponent(payload));
+        qrUserInformation.documentNumber = data['CCCD'];
 
         sdkModel = SdkRequestModel(
           key: data['key'] ?? "",
           secretKey: data['secretKey'] ?? "",
+          isProd: data['isProd'] ?? false,
         );
-        qrUserInformation.documentNumber = data['CCCD'];
       }
     } catch (e) {}
   }

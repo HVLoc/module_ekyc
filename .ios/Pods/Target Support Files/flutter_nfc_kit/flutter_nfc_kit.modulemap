@@ -1,0 +1,6 @@
+framework module flutter_nfc_kit {
+  umbrella header "flutter_nfc_kit-umbrella.h"
+
+  export *
+  module * { export * }
+}
