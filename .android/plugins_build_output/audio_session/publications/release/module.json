@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.ryanheise.audio_session",
+    "module": "audio_session_release",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "audio_session_release-1.0.aar",
+          "url": "audio_session_release-1.0.aar",
+          "size": 20669,
+          "sha512": "75ae96bcf35c229cae062f480ac182e2742c00259a30e90891339f8fa2e92c533718e252615a9c358a23d3b2416fd158fa917a848c014735ebbc7e45a86bdd1a",
+          "sha256": "a851f00158ab79df640561adf3a004e1ab1247bcb9228433b02df0af5b938c25",
+          "sha1": "5a826a5930dfcf25598cbfda2b2c3dddb78a45f7",
+          "md5": "e1beab53d782d95a729e436d4312679a"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "androidx.media",
+          "module": "media",
+          "version": {
+            "requires": "1.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "audio_session_release-1.0.aar",
+          "url": "audio_session_release-1.0.aar",
+          "size": 20669,
+          "sha512": "75ae96bcf35c229cae062f480ac182e2742c00259a30e90891339f8fa2e92c533718e252615a9c358a23d3b2416fd158fa917a848c014735ebbc7e45a86bdd1a",
+          "sha256": "a851f00158ab79df640561adf3a004e1ab1247bcb9228433b02df0af5b938c25",
+          "sha1": "5a826a5930dfcf25598cbfda2b2c3dddb78a45f7",
+          "md5": "e1beab53d782d95a729e436d4312679a"
+        }
+      ]
+    }
+  ]
+}

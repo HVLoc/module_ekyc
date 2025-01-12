@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.endigo.plugins.pdfview",
+    "module": "flutter_pdfview_debug",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "debugVariantDebugApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_debug",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flutter_pdfview_debug-1.0.aar",
+          "url": "flutter_pdfview_debug-1.0.aar",
+          "size": 14142,
+          "sha512": "b5e333d93e0da1a67999b1f7178c8ae7e1d3e667717e210278ccfffed954cf689c89aa64abf239a01d1c2d74560fda167c64091ec41edf49f5a7cbb585c31dca",
+          "sha256": "49546e1f715de3277e01f5ee795135645683d4e1808996c885f245b0e233edf9",
+          "sha1": "95f83f91c52a66d45a0de1dc64c5f3f7f1112397",
+          "md5": "8f4e9f0f30113b4e4de283037ede985c"
+        }
+      ]
+    },
+    {
+      "name": "debugVariantDebugRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_debug",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "com.github.mhiew",
+          "module": "android-pdf-viewer",
+          "version": {
+            "requires": "3.2.0-beta.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flutter_pdfview_debug-1.0.aar",
+          "url": "flutter_pdfview_debug-1.0.aar",
+          "size": 14142,
+          "sha512": "b5e333d93e0da1a67999b1f7178c8ae7e1d3e667717e210278ccfffed954cf689c89aa64abf239a01d1c2d74560fda167c64091ec41edf49f5a7cbb585c31dca",
+          "sha256": "49546e1f715de3277e01f5ee795135645683d4e1808996c885f245b0e233edf9",
+          "sha1": "95f83f91c52a66d45a0de1dc64c5f3f7f1112397",
+          "md5": "8f4e9f0f30113b4e4de283037ede985c"
+        }
+      ]
+    }
+  ]
+}

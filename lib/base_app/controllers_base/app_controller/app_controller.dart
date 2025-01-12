@@ -47,15 +47,17 @@ class AppController extends GetxController {
   bool isEnablePay = false;
   bool isEnablePackage = false;
 
-  Timer? timer;
+  bool isOnlyNFC = false;
 
   static const platform = MethodChannel('2id.ekyc');
 
-  // Hàm gửi dữ liệu về native
+  ///  Hàm gửi dữ liệu về native
+  /// [isOnlyNFC] = true dữ liệu NFC về native không cần liveness và xác thực
   void sendDataToNative() async {
     try {
+      String methodData = isOnlyNFC ? 'dataNFC' : 'dataUser';
       await platform.invokeMethod(
-          'dataUser', {"value": sendNfcRequestGlobalModel.toJsonFull()});
+          methodData, {"value": sendNfcRequestGlobalModel.toJsonFull()});
     } on PlatformException catch (e) {
       print("Error sending data: ${e.message}");
     }
@@ -65,7 +67,12 @@ class AppController extends GetxController {
   Future<void> onInit() async {
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
-      await getDataInit();
+      clearData();
+      await getDataNFCInit();
+      if (!isOnlyNFC) {
+        await getDataInit();
+      }
+
       await checkPermissionApp();
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
@@ -79,20 +86,11 @@ class AppController extends GetxController {
     super.onInit();
   }
 
-  void startTimer(VoidCallback action) {
-    const duration = Duration(minutes: AppConst.timeoutKyc);
-    timer = Timer(duration, () {
-      action();
-      timer?.cancel();
-    });
-  }
-
   void clearData({bool clearUserInfo = false}) {
-    tabIndex = 0;
     qrUserInformation = QrUserInformation();
     sendNfcRequestGlobalModel = SendNfcRequestModel();
-    // hiveApp.delete(AppKey.sessionId);
-    typeAuthentication = "";
+    isOnlyNFC = false;
+
     if (clearUserInfo) {
       userInfoModel = UserInfoModel();
     }
@@ -110,6 +108,15 @@ class AppController extends GetxController {
           secretKey: data['secretKey'] ?? "",
           isProd: data['isProd'] ?? false,
         );
+      }
+    } catch (e) {}
+  }
+
+  Future<void> getDataNFCInit() async {
+    try {
+      final payload = await platform.invokeMethod('setInitialNFC');
+      if (payload != null) {
+        isOnlyNFC = true;
       }
     } catch (e) {}
   }

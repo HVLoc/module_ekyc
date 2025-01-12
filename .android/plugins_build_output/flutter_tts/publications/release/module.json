@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.tundralabs.fluttertts",
+    "module": "flutter_tts_release",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flutter_tts_release-1.0.aar",
+          "url": "flutter_tts_release-1.0.aar",
+          "size": 21519,
+          "sha512": "09ad8303b3c4e7e50410f2610ff8c2d7601f85bba18bed22e631156f01a5f74d138b61919258465f28289048d83c0d9a322072546995c9cfcbe5922e48400133",
+          "sha256": "737b86fd5e69e2ff05bf44b7f0aebc0427e7ba9cb071e81e2acf65e58c24d767",
+          "sha1": "a0229a3a16b2285ae962af54facc4d3692eaecf1",
+          "md5": "8db1113e56701005c8c02cea3ad4d88e"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flutter_tts_release-1.0.aar",
+          "url": "flutter_tts_release-1.0.aar",
+          "size": 21519,
+          "sha512": "09ad8303b3c4e7e50410f2610ff8c2d7601f85bba18bed22e631156f01a5f74d138b61919258465f28289048d83c0d9a322072546995c9cfcbe5922e48400133",
+          "sha256": "737b86fd5e69e2ff05bf44b7f0aebc0427e7ba9cb071e81e2acf65e58c24d767",
+          "sha1": "a0229a3a16b2285ae962af54facc4d3692eaecf1",
+          "md5": "8db1113e56701005c8c02cea3ad4d88e"
+        }
+      ]
+    }
+  ]
+}

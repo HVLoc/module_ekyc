@@ -64,7 +64,7 @@ class NfcInformationUserPage extends BaseGetWidget {
                     : LocaleKeys.registerCa_continue.tr,
                 () async {
                   if (controller.authenticationVisible.value) {
-                    controller.getToHome();
+                    controller.returnToNative();
                   } else {
                     await controller.goPage();
                   }

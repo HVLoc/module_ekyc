@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.google_mlkit_face_detection",
+    "module": "google_mlkit_face_detection_profile",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "profileVariantProfileApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_profile",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "google_mlkit_face_detection_profile-1.0.aar",
+          "url": "google_mlkit_face_detection_profile-1.0.aar",
+          "size": 9484,
+          "sha512": "74a3b9f1625e0da516805b6d2a17e4df740ddb76685b1e8c29afbd28640b702a0c801132f570409148752b2c35d4ced27493f738b7ac02aa051557fd2a795fb0",
+          "sha256": "6d0cfc603d86c513c8abfcdeb3f040233c9009966c1d791178e463e4d2ba4185",
+          "sha1": "dbe5308781f411350578b97c4f47fa479b8efa8e",
+          "md5": "77489ef8ddc14908e2a9542b50a18869"
+        }
+      ]
+    },
+    {
+      "name": "profileVariantProfileRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_profile",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "com.google.mlkit",
+          "module": "face-detection",
+          "version": {
+            "requires": "16.1.5"
+          }
+        },
+        {
+          "group": "com.google_mlkit_commons",
+          "module": "google_mlkit_commons_profile",
+          "version": {
+            "requires": "1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "google_mlkit_face_detection_profile-1.0.aar",
+          "url": "google_mlkit_face_detection_profile-1.0.aar",
+          "size": 9484,
+          "sha512": "74a3b9f1625e0da516805b6d2a17e4df740ddb76685b1e8c29afbd28640b702a0c801132f570409148752b2c35d4ced27493f738b7ac02aa051557fd2a795fb0",
+          "sha256": "6d0cfc603d86c513c8abfcdeb3f040233c9009966c1d791178e463e4d2ba4185",
+          "sha1": "dbe5308781f411350578b97c4f47fa479b8efa8e",
+          "md5": "77489ef8ddc14908e2a9542b50a18869"
+        }
+      ]
+    }
+  ]
+}

@@ -89,101 +89,101 @@ class NfcInformationUserController extends BaseGetxController {
       }
     }
   }
-    void authenticationFake() async {
-      authenticationSuccess = true;
+
+  void authenticationFake() async {
+    authenticationSuccess = true;
+    authenticationVisible.value = true;
+  }
+
+  Future<void> authentication(String id, String bodyFileId) async {
+    sendNfcRequestModel.fileId = id;
+    sendNfcRequestModel.bodyFileId = bodyFileId;
+    await nfcRepository.sendNfcRepository(sendNfcRequestModel).then((value) {
+      authenticationSuccess = value.data?.result ?? false;
       authenticationVisible.value = true;
-    }
-
-    Future<void> authentication(String id, String bodyFileId) async {
-      sendNfcRequestModel.fileId = id;
-      sendNfcRequestModel.bodyFileId = bodyFileId;
-      await nfcRepository.sendNfcRepository(sendNfcRequestModel).then((value) {
-        authenticationSuccess = value.data?.result ?? false;
-        authenticationVisible.value = true;
-        packageKind = value.data?.packageKind ?? AppConst.typeSanbox;
-        if (Get.isRegistered<ClientController>()) {
-          ClientController clientController = Get.find<ClientController>();
-          clientController.initDocument();
-        }
-        if (Get.isRegistered<OverviewController>()) {
-          OverviewController overviewController = Get.find<
-              OverviewController>();
-          overviewController.getUserInfo();
-        }
-      });
-    }
-
-    void getToHome() {
-      // Get.close(1);
-      appController.sendDataToNative();
-    }
-
-    Future<void> goPage() async {
-      if(successSDK){
-        getToHome();
-      }else{
-        Get.offNamed(AppRoutes.routeLiveNessKyc);
+      packageKind = value.data?.packageKind ?? AppConst.typeSanbox;
+      if (Get.isRegistered<ClientController>()) {
+        ClientController clientController = Get.find<ClientController>();
+        clientController.initDocument();
       }
-      // if (appController.typeAuthentication == AppConst.typeRegister) {
-      //   Get.toNamed(AppRoutes.routeRegisterInfo);
-      // } else if (appController.typeAuthentication == AppConst.typeForgotPass) {
-      //   await Biometrics().authenticate(
-      //       // localizedReasonStr: "Quý khách vui lòng quét vân tay hoặc khuôn mặt để xác thực",
-      //       onDeviceUnlockUnavailable: () async {
-      //     // await gotoPage();
-      //     Get.toNamed(AppRoutes.routeForgotPass);
-      //   }, onAfterLimit: () {
-      //     Fluttertoast.showToast(
-      //         msg: LocaleKeys.biometric_msgLimit.tr,
-      //         toastLength: Toast.LENGTH_LONG);
-      //   }).then((isAuthenticated) async {
-      //     if (isAuthenticated ?? false) {
-      //       // await gotoPage();
-      //       Get.toNamed(AppRoutes.routeForgotPass);
-      //     }
-      //   });
-      // } else if (appController.typeAuthentication ==
-      //     AppConst.typeAuthentication) {
-      //   Get.toNamed(AppRoutes.routeLiveNessKyc);
-      // }
-
-      // if (convertStringToDate(
-      //       sendNfcRequestModel.doe,
-      //       pattern5,
-      //     )?.isAfter(DateTime.now()) ??
-      //     true) {
-      //   showLoading();
-      //   await nfcRepository.sendNfcRepository(sendNfcRequestModel);
-      //   appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
-      //   hideLoading();
-      //   Get.toNamed(
-      //     AppRoutes.routeInstructLiveNessKyc,
-      //   );
-      //   // Get.toNamed(AppRoutes.routeAwaitOCRData);
-      // } else {
-      //   if (appController.configCertificateModel.isCreateCertificate) {
-      //     if (Get.isRegistered<RegisterAccountController>()) {
-      //       Get.until(
-      //           (route) => route.settings.name == AppRoutes.routeRegisterAccount);
-      //     }
-      //   } else {
-      //     if (Get.isRegistered<VerifyProfileController>()) {
-      //       Get.until(
-      //           (route) => route.settings.name == AppRoutes.routeVerifyProfile);
-      //     }
-      //   }
-      //   showSnackBar(LocaleKeys.nfc_nfc_expired_message.tr);
-      // }
-    }
-
-    Future<void> gotoPage() async {
-      if (appController.typeAuthentication == AppConst.typeRegister) {
-        Get.toNamed(AppRoutes.routeRegisterInfo);
-      } else if (appController.typeAuthentication == AppConst.typeForgotPass) {
-        Get.toNamed(AppRoutes.routeForgotPass);
-      } else if (appController.typeAuthentication ==
-          AppConst.typeAuthentication) {
-        Get.toNamed(AppRoutes.routeLiveNessKyc);
+      if (Get.isRegistered<OverviewController>()) {
+        OverviewController overviewController = Get.find<OverviewController>();
+        overviewController.getUserInfo();
       }
+    });
+  }
+
+  void returnToNative() {
+    // Get.close(1);
+    appController.sendDataToNative();
+  }
+
+  Future<void> goPage() async {
+    if (successSDK || appController.isOnlyNFC) {
+      returnToNative();
+    } else {
+      Get.offNamed(AppRoutes.routeLiveNessKyc);
+    }
+    // if (appController.typeAuthentication == AppConst.typeRegister) {
+    //   Get.toNamed(AppRoutes.routeRegisterInfo);
+    // } else if (appController.typeAuthentication == AppConst.typeForgotPass) {
+    //   await Biometrics().authenticate(
+    //       // localizedReasonStr: "Quý khách vui lòng quét vân tay hoặc khuôn mặt để xác thực",
+    //       onDeviceUnlockUnavailable: () async {
+    //     // await gotoPage();
+    //     Get.toNamed(AppRoutes.routeForgotPass);
+    //   }, onAfterLimit: () {
+    //     Fluttertoast.showToast(
+    //         msg: LocaleKeys.biometric_msgLimit.tr,
+    //         toastLength: Toast.LENGTH_LONG);
+    //   }).then((isAuthenticated) async {
+    //     if (isAuthenticated ?? false) {
+    //       // await gotoPage();
+    //       Get.toNamed(AppRoutes.routeForgotPass);
+    //     }
+    //   });
+    // } else if (appController.typeAuthentication ==
+    //     AppConst.typeAuthentication) {
+    //   Get.toNamed(AppRoutes.routeLiveNessKyc);
+    // }
+
+    // if (convertStringToDate(
+    //       sendNfcRequestModel.doe,
+    //       pattern5,
+    //     )?.isAfter(DateTime.now()) ??
+    //     true) {
+    //   showLoading();
+    //   await nfcRepository.sendNfcRepository(sendNfcRequestModel);
+    //   appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+    //   hideLoading();
+    //   Get.toNamed(
+    //     AppRoutes.routeInstructLiveNessKyc,
+    //   );
+    //   // Get.toNamed(AppRoutes.routeAwaitOCRData);
+    // } else {
+    //   if (appController.configCertificateModel.isCreateCertificate) {
+    //     if (Get.isRegistered<RegisterAccountController>()) {
+    //       Get.until(
+    //           (route) => route.settings.name == AppRoutes.routeRegisterAccount);
+    //     }
+    //   } else {
+    //     if (Get.isRegistered<VerifyProfileController>()) {
+    //       Get.until(
+    //           (route) => route.settings.name == AppRoutes.routeVerifyProfile);
+    //     }
+    //   }
+    //   showSnackBar(LocaleKeys.nfc_nfc_expired_message.tr);
+    // }
+  }
+
+  Future<void> gotoPage() async {
+    if (appController.typeAuthentication == AppConst.typeRegister) {
+      Get.toNamed(AppRoutes.routeRegisterInfo);
+    } else if (appController.typeAuthentication == AppConst.typeForgotPass) {
+      Get.toNamed(AppRoutes.routeForgotPass);
+    } else if (appController.typeAuthentication ==
+        AppConst.typeAuthentication) {
+      Get.toNamed(AppRoutes.routeLiveNessKyc);
     }
   }
+}

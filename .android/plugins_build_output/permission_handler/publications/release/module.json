@@ -1,0 +1,76 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.baseflow.permissionhandler",
+    "module": "permission_handler_release",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "permission_handler_release-1.0.aar",
+          "url": "permission_handler_release-1.0.aar",
+          "size": 25301,
+          "sha512": "3bcc48b22b188cf078ac0481f5ab911eba2d60d053c0bebed8ea738ab2046dc58c3f644008e79096f5c71a04e60a48e716ffa5c6ea46d11a31a09ae698dc8df8",
+          "sha256": "ac2c10922fe909cc585b0c46704c447cbae0f4592ab9c03277dd137cd421226a",
+          "sha1": "9d74b499f42fe4310fa3c83b15eadb412878ca4c",
+          "md5": "555d6fe9e4dbda9c6a334d81f3f9bc0d"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_release",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "permission_handler_release-1.0.aar",
+          "url": "permission_handler_release-1.0.aar",
+          "size": 25301,
+          "sha512": "3bcc48b22b188cf078ac0481f5ab911eba2d60d053c0bebed8ea738ab2046dc58c3f644008e79096f5c71a04e60a48e716ffa5c6ea46d11a31a09ae698dc8df8",
+          "sha256": "ac2c10922fe909cc585b0c46704c447cbae0f4592ab9c03277dd137cd421226a",
+          "sha1": "9d74b499f42fe4310fa3c83b15eadb412878ca4c",
+          "md5": "555d6fe9e4dbda9c6a334d81f3f9bc0d"
+        }
+      ]
+    }
+  ]
+}

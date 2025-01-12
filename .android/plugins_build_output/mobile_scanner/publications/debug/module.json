@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.steenbakker.mobile_scanner",
+    "module": "mobile_scanner_debug",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "debugVariantDebugApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_debug",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mobile_scanner_debug-1.0.aar",
+          "url": "mobile_scanner_debug-1.0.aar",
+          "size": 77580,
+          "sha512": "b9aa6ae6e405bf63255f22ad59e09af38292e89a896591673c297714e3009e5b3b00f086f03fee5b226f2963d2859633713b0ee3af680a12da662946d4dd13bb",
+          "sha256": "62c7be8d95d405758f75aaf8144b16c413744f7ef307699a9ff96a86ead87c20",
+          "sha1": "cfb88ffe04850dbd75da907f56ef2d644efd95d4",
+          "md5": "03c12474f2bb14e16e73961fd04f6b6f"
+        }
+      ]
+    },
+    {
+      "name": "debugVariantDebugRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_debug",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk7",
+          "version": {
+            "requires": "1.7.22"
+          }
+        },
+        {
+          "group": "com.google.mlkit",
+          "module": "barcode-scanning",
+          "version": {
+            "requires": "17.2.0"
+          }
+        },
+        {
+          "group": "androidx.camera",
+          "module": "camera-camera2",
+          "version": {
+            "requires": "1.3.1"
+          }
+        },
+        {
+          "group": "androidx.camera",
+          "module": "camera-lifecycle",
+          "version": {
+            "requires": "1.3.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mobile_scanner_debug-1.0.aar",
+          "url": "mobile_scanner_debug-1.0.aar",
+          "size": 77580,
+          "sha512": "b9aa6ae6e405bf63255f22ad59e09af38292e89a896591673c297714e3009e5b3b00f086f03fee5b226f2963d2859633713b0ee3af680a12da662946d4dd13bb",
+          "sha256": "62c7be8d95d405758f75aaf8144b16c413744f7ef307699a9ff96a86ead87c20",
+          "sha1": "cfb88ffe04850dbd75da907f56ef2d644efd95d4",
+          "md5": "03c12474f2bb14e16e73961fd04f6b6f"
+        }
+      ]
+    }
+  ]
+}

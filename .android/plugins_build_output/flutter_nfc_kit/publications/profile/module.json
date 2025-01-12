@@ -1,0 +1,97 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "im.nfc.flutter_nfc_kit",
+    "module": "flutter_nfc_kit_profile",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "profileVariantProfileApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_profile",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flutter_nfc_kit_profile-1.0.aar",
+          "url": "flutter_nfc_kit_profile-1.0.aar",
+          "size": 48054,
+          "sha512": "17aa2fa367df41417fd48065b4e06677f6330c466d706f11e440f3ce07dc8e0036f4d289b0451359a8757a57fabdf178f141628916a9da914bbeca1d855c1b38",
+          "sha256": "a62cbb366a43eb3793ad3e82d2392cf60f55cb6c8a76aaab48cb45cf8b908332",
+          "sha1": "8d84671906da3ccbe04a9cc1c4b77243aa2417ba",
+          "md5": "28f9f8c78e3aa1d8d546c92029bbb973"
+        }
+      ]
+    },
+    {
+      "name": "profileVariantProfileRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_profile",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.10.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flutter_nfc_kit_profile-1.0.aar",
+          "url": "flutter_nfc_kit_profile-1.0.aar",
+          "size": 48054,
+          "sha512": "17aa2fa367df41417fd48065b4e06677f6330c466d706f11e440f3ce07dc8e0036f4d289b0451359a8757a57fabdf178f141628916a9da914bbeca1d855c1b38",
+          "sha256": "a62cbb366a43eb3793ad3e82d2392cf60f55cb6c8a76aaab48cb45cf8b908332",
+          "sha1": "8d84671906da3ccbe04a9cc1c4b77243aa2417ba",
+          "md5": "28f9f8c78e3aa1d8d546c92029bbb973"
+        }
+      ]
+    }
+  ]
+}
