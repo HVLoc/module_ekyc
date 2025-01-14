@@ -20,6 +20,8 @@ import 'package:module_ekyc/shares/shares.src.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../../main.dart';
+
 late Box hiveApp;
 
 late PackageInfo packageInfo;
@@ -31,8 +33,6 @@ AndroidDeviceInfo? androidDeviceInfo;
 late Box<LoginCaRequestModel> hiveUserLogin;
 
 const platform = MethodChannel('2id.ekyc');
-
-bool isOnlyNFC = false;
 
 class AppController extends GetxController {
   RxBool isBusinessHousehold = false.obs;
@@ -51,6 +51,8 @@ class AppController extends GetxController {
   bool isEnablePay = false;
   bool isEnablePackage = false;
 
+  bool isOnlyNFC = false;
+
   ///  Hàm gửi dữ liệu về native
   /// [isOnlyNFC] = true dữ liệu NFC về native không cần liveness và xác thực
   void sendDataToNative() async {
@@ -65,29 +67,12 @@ class AppController extends GetxController {
 
   @override
   Future<void> onInit() async {
-    // initialize();
-    initHive().then((value) async {
-      Get.put(BaseApi(), permanent: true);
-      clearData();
-      await getDataNFCInit();
-      print("isOnlyNFC=>>>>> $isOnlyNFC");
-      if (isOnlyNFC) {
-
-        // Get.offAllNamed(AppRoutes.routeLogin);
-      } else {
-        await getDataInit();
-
-
-        // await checkPermissionApp();
-      }
+    Get.put(BaseApi(), permanent: true);
+    initializeMethod((value) {
+      isOnlyNFC = value;
     });
-    DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
-    if (Platform.isIOS) {
-      iosDeviceInfo = await deviceInfoPlugin.iosInfo;
-    } else {
-      androidDeviceInfo = await deviceInfoPlugin.androidInfo;
-    }
-    cameras = await availableCameras();
+    initHive().then((value) async {
+    });
 
     super.onInit();
   }
@@ -95,47 +80,41 @@ class AppController extends GetxController {
   void clearData({bool clearUserInfo = false}) {
     qrUserInformation = QrUserInformation();
     sendNfcRequestGlobalModel = SendNfcRequestModel();
-    isOnlyNFC = false;
 
     if (clearUserInfo) {
       userInfoModel = UserInfoModel();
     }
   }
 
-  Future<void> getDataInit() async {
-    try {
-      final payload = await platform.invokeMethod('setInitial');
-      if (payload != null) {
-        final data = jsonDecode(Uri.decodeComponent(payload));
-        qrUserInformation.documentNumber = data['CCCD'];
-
-        sdkModel = SdkRequestModel(
-          key: data['key'] ?? "",
-          secretKey: data['secretKey'] ?? "",
-          isProd: data['isProd'] ?? false,
-        );
-
-        await checkPermissionApp();
-      }
-    } catch (e) {}
-  }
-
-  Future<void> getDataNFCInit() async {
-    try {
-      final payload = await platform.invokeMethod('setInitialNFC');
-      if (payload != null) {
-        print("Received from iOS: payload");
-
+  void initializeMethod(Function(bool) nfcResult) {
+    platform.setMethodCallHandler((MethodCall call) async {
+      if (call.method == 'setInitialNFC') {
+        // final String? data = call.arguments as String?;
+        // Xử lý dữ liệu từ iOS
         isOnlyNFC = true;
-        try {
+        nfcResult(true);
+
           await checkPermissionApp();
-          // Get.offAllNamed(AppRoutes.routeLogin);
-        } catch (e) {
-          print("Error navigating: $e");
+
+      } else if (call.method == 'setInitial') {
+        if (call.arguments != null) {
+          print("Received from iOS call.arguments: ${call.arguments}");
+          final data = jsonDecode(Uri.decodeComponent(call.arguments));
+          qrUserInformation.documentNumber = data['CCCD'];
+
+          sdkModel = SdkRequestModel(
+            key: data['key'] ?? "",
+            secretKey: data['secretKey'] ?? "",
+            isProd: data['isProd'] ?? false,
+          );
+
+          await checkPermissionApp();
         }
       }
-    } catch (e) {}
+      return null;
+    });
   }
+
 
   Future<void> initCamera() async {
     cameras = await availableCameras();

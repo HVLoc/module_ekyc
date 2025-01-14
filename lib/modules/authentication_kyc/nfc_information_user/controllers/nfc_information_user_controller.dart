@@ -115,14 +115,15 @@ class NfcInformationUserController extends BaseGetxController {
   }
 
   void returnToNative() {
-    if(isOnlyNFC) {
+    if (appController.isOnlyNFC) {
       SystemNavigator.pop();
     }
     appController.sendDataToNative();
   }
 
   Future<void> goPage() async {
-    if (successSDK || isOnlyNFC) {
+    print("isOnlyNFC KYC=>>>>> ${appController.isOnlyNFC}");
+    if (successSDK || appController.isOnlyNFC) {
       returnToNative();
     } else {
       Get.offNamed(AppRoutes.routeLiveNessKyc);

@@ -121,106 +121,6 @@ Stack _warningFace(LiveNessKycController controller) {
   );
 }
 
-// Stack _buildWidgetHaveImage(LiveNessKycController controller) {
-//   return Stack(
-//     children: [
-//       Positioned.fill(
-//           child: Container(
-//         color: AppColors.colorBlack,
-//       )),
-//       Positioned(
-//         left: AppDimens.padding25,
-//         right: AppDimens.padding25,
-//         top: Get.height / 3.3 - Get.height / 6,
-//         child: Screenshot(
-//           controller: controller.screenshotControllerResult,
-//           child: SizedBox(
-//             width: Get.size.width - AppDimens.padding50,
-//             height: Get.size.height / 2,
-//             child: ClipRect(
-//               child: OverflowBox(
-//                 maxWidth: Get.size.width,
-//                 maxHeight: Get.size.height,
-//                 child: FractionalTranslation(
-//                   translation: const Offset(0.00, 0.01),
-//                   child: Container(
-//                     decoration: BoxDecoration(
-//                       border: Border.all(
-//                         color: AppColors.basicBlack, // Màu của border
-//                         width: AppDimens.btnSmall, // Độ dày của border
-//                       ),
-//                     ),
-//                     child: Image.memory(
-//                       controller.imageTemp.value!,
-//                       // fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//       _buildFinish(controller),
-//     ],
-//   );
-// }
-
-// Widget _buildFinish(LiveNessKycController controller) {
-//   return Positioned(
-//     left: AppDimens.sizeTextSmallest,
-//     right: AppDimens.sizeTextSmallest,
-//     bottom: AppDimens.padding6,
-//     child: Column(
-//       children: [
-//         ButtonUtils.buildButton(LocaleKeys.live_ness_agree.tr, () async {
-//           await controller.finishLiveNess();
-//         },
-//                 isLoading: controller.isShowLoading.value,
-//                 backgroundColor: AppColors.primaryCam1,
-//                 borderRadius: BorderRadius.circular(AppDimens.radius4),
-//                 colorText: AppColors.basicWhite)
-//             .paddingSymmetric(
-//           horizontal: AppDimens.padding8,
-//         ),
-//         ButtonUtils.buildButton(
-//           LocaleKeys.live_ness_capture.tr,
-//           () async {
-//             await controller.returnPhotos();
-//           },
-//           // isLoading: controller.isShowLoading.value,
-//           backgroundColor: AppColors.colorTransparent,
-//           border: Border.all(width: 1, color: AppColors.primaryCam1),
-//           borderRadius: BorderRadius.circular(AppDimens.radius4),
-//           colorText: AppColors.primaryCam1,
-//         ).paddingAll(AppDimens.padding8),
-//       ],
-//     ),
-//   );
-// }
-
-// Visibility _buttonTakePicture(LiveNessKycController controller) {
-//   return Visibility(
-//     visible: controller.isSuccessLiveNess.value &&
-//         controller.imageTemp.value == null,
-//     child: Positioned(
-//       left: AppDimens.padding40,
-//       right: AppDimens.padding40,
-//       bottom: AppDimens.padding8,
-//       child: GestureDetector(
-//         onTap: () async {
-//           if (!controller.isManyFace.value && !controller.isFaceEmpty.value) {
-//             await controller.takePicture();
-//           }
-//         },
-//         child: Center(
-//           child: SvgPicture.asset(Assets.ASSETS_SVG_ICON_TAKE_PICTURE_SVG),
-//         ),
-//       ),
-//     ),
-//   );
-// }
-
 Visibility _actionWidget(LiveNessKycController controller) {
   return Visibility(
     visible: controller.isSuccessLiveNess.isFalse,
@@ -273,61 +173,22 @@ Visibility _actionWidget(LiveNessKycController controller) {
   );
 }
 
-// Row _itemAction(LiveNessKycController controller) {
-//   return Row(
-//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//     children: [
-//       ...List.generate(
-//         controller.listFaceDetectionTemp.length,
-//         (index) => Column(
-//           children: [
-//             SvgPicture.asset(
-//               controller.listFaceDetectionTemp[index],
-//               colorFilter: ColorFilter.mode(
-//                   index <= controller.currentStep.value - 1
-//                       ? index == controller.currentStep.value - 1
-//                           ? AppColors.colorErrorText
-//                           : AppColors.colorSemantic2
-//                       : AppColors.basicWhite,
-//                   BlendMode.srcIn),
-//             ).paddingOnly(bottom: AppDimens.paddingSmallest),
-//             // TextUtils(
-//             //   text: controller.questionTemp[index],
-//             //   availableStyle: StyleEnum.body14,
-//             //   color: index <= controller.currentStep.value - 1
-//             //       ? index == controller.currentStep.value - 1
-//             //           ? AppColors.colorErrorText
-//             //           : AppColors.colorSemantic2
-//             //       : AppColors.basicWhite,
-//             // ),
-//           ],
-//         ),
-//       ),
-//     ],
-//   );
-// }
-
 Visibility _buttonStart(LiveNessKycController controller) {
   return Visibility(
     visible: controller.currentStep.value == 0,
     child: Align(
       alignment: Alignment.bottomCenter,
-      child: Positioned(
-        // left: AppDimens.padding8,
-        // right: AppDimens.padding8,
-        bottom: AppDimens.padding15,
-        child: ButtonUtils.buildButton(
-          LocaleKeys.live_ness_action.tr,
-          () async {
-            await controller.startStreamPicture();
-          },
-          width: AppDimens.sizeImg,
-          isLoading: controller.isShowLoading.value,
-          // backgroundColor: AppColors.colorGreenText,
-          borderRadius: BorderRadius.circular(AppDimens.padding12),
-          colorText: AppColors.basicWhite,
-        ).paddingOnly(bottom: AppDimens.padding10),
-      ),
+      child: ButtonUtils.buildButton(
+        LocaleKeys.live_ness_action.tr,
+        () async {
+          await controller.startStreamPicture();
+        },
+        width: AppDimens.sizeImg,
+        isLoading: controller.isShowLoading.value,
+        // backgroundColor: AppColors.colorGreenText,
+        borderRadius: BorderRadius.circular(AppDimens.padding12),
+        colorText: AppColors.basicWhite,
+      ).paddingOnly(bottom: AppDimens.padding10),
     ),
   );
 }

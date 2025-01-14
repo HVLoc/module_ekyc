@@ -75,12 +75,16 @@ class LiveNessKycController extends BaseGetxController {
         isUpdateLiveNess = Get.arguments;
       }
     }
-    showLoadingOverlay();
-    liveNessRepository = LiveNessRepository(this);
-    await initCamera();
-    await _getListSequence();
-    randomListQuestion();
-    hideLoadingOverlay();
+
+    try {
+      showLoadingOverlay();
+      liveNessRepository = LiveNessRepository(this);
+      await initCamera();
+      await _getListSequence();
+      randomListQuestion();
+    } finally {
+      hideLoadingOverlay();
+    }
   }
 
   @override
