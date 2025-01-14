@@ -56,11 +56,11 @@
         {
           "name": "local_auth_android_profile-1.0.aar",
           "url": "local_auth_android_profile-1.0.aar",
-          "size": 40322,
-          "sha512": "49168c80a3041fde26bb7f70e6a5d6b84f0f5b36ed27fecca0cc352c0c660cbd5f4267607a466ec91bfc8bcb08b6f13dde5e195aee494d027d9ac8406696e221",
-          "sha256": "1a1690f5f8ffa11ae212687a8a7553b457de7312e67b5fa99e00219dd863f3e3",
-          "sha1": "690b38004b2b374c1c285a88ee37f9b932f5042a",
-          "md5": "ca5607bffc15c66b4dfaead1e85c7859"
+          "size": 40320,
+          "sha512": "2d19cce9f2934addaf2dec05ae7c625b241cc61790c2271f58fb5a781c4d446096ae17e72cf1b481938a441a962612926f1e22249b699123fb70502d466229d9",
+          "sha256": "25b5f0464612731d15cabe1d6b0d50bbd875e6ce7a00e93c61872816d3acf4d8",
+          "sha1": "13dcb4b6c62d4c3aeaa356c3079957c403aa74f0",
+          "md5": "f64e53997abc52b40bd13d0667ece6a8"
         }
       ]
     },
@@ -124,11 +124,11 @@
         {
           "name": "local_auth_android_profile-1.0.aar",
           "url": "local_auth_android_profile-1.0.aar",
-          "size": 40322,
-          "sha512": "49168c80a3041fde26bb7f70e6a5d6b84f0f5b36ed27fecca0cc352c0c660cbd5f4267607a466ec91bfc8bcb08b6f13dde5e195aee494d027d9ac8406696e221",
-          "sha256": "1a1690f5f8ffa11ae212687a8a7553b457de7312e67b5fa99e00219dd863f3e3",
-          "sha1": "690b38004b2b374c1c285a88ee37f9b932f5042a",
-          "md5": "ca5607bffc15c66b4dfaead1e85c7859"
+          "size": 40320,
+          "sha512": "2d19cce9f2934addaf2dec05ae7c625b241cc61790c2271f58fb5a781c4d446096ae17e72cf1b481938a441a962612926f1e22249b699123fb70502d466229d9",
+          "sha256": "25b5f0464612731d15cabe1d6b0d50bbd875e6ce7a00e93c61872816d3acf4d8",
+          "sha1": "13dcb4b6c62d4c3aeaa356c3079957c403aa74f0",
+          "md5": "f64e53997abc52b40bd13d0667ece6a8"
         }
       ]
     }

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +10,90 @@ import 'core/core.src.dart';
 import 'shares/shares.src.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // initialize();
   runApp(const Application());
+  // runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  static const platform = MethodChannel('2id.ekyc');
+  String? argument;
+
+  @override
+  void initState() {
+    super.initState();
+    initialize();
+    // platform.setMethodCallHandler((call) async {
+    //   if (call.method == "getArguments") {
+    //     setState(() {
+    //       argument = call.arguments['key'];
+    //       print("Received from iOS: $argument");
+    //     });
+    //   }
+    // });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text(argument ?? "No argument received"),
+        ),
+      ),
+    );
+  }
+
+  void initialize() {
+    platform.setMethodCallHandler((MethodCall call) async {
+      // if (call.method == "setInitialNFC") {
+      //   setState(() {
+      //     argument = call.arguments['key'];
+      //     print("Received from iOS: $argument");
+      //   });
+      // }
+      if (call.method == 'setInitialNFC') {
+        final String? data = call.arguments['key'];
+
+        setState(() {
+          argument = data;
+          print("Received from iOS: $argument");
+        });
+        // Xử lý dữ liệu từ iOS
+
+        isOnlyNFC = true;
+        // Trả kết quả về nếu cần
+        // return 'Flutter đã nhận dữ liệu';
+      }
+      return null;
+    });
+  }
+}
+
+void initialize() {
+  platform.setMethodCallHandler((MethodCall call) async {
+    if (call.method == 'setInitialNFC') {
+      // final String? data = call.arguments as String?;
+      // Xử lý dữ liệu từ iOS
+      print("Received from iOS: true");
+      isOnlyNFC = true;
+
+      try {
+        Get.offAllNamed(AppRoutes.routeLogin);
+      } catch (e) {
+        print("Error navigating: $e");
+      }
+    }
+    return null;
+  });
 }
 
 class Application extends StatefulWidget {
@@ -22,6 +106,7 @@ class Application extends StatefulWidget {
 class _Application extends State<Application> {
   @override
   void initState() {
+    // initialize();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);

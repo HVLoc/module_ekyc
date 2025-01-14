@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
@@ -114,12 +115,14 @@ class NfcInformationUserController extends BaseGetxController {
   }
 
   void returnToNative() {
-    // Get.close(1);
+    if(isOnlyNFC) {
+      SystemNavigator.pop();
+    }
     appController.sendDataToNative();
   }
 
   Future<void> goPage() async {
-    if (successSDK || appController.isOnlyNFC) {
+    if (successSDK || isOnlyNFC) {
       returnToNative();
     } else {
       Get.offNamed(AppRoutes.routeLiveNessKyc);

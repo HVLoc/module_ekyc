@@ -30,6 +30,10 @@ AndroidDeviceInfo? androidDeviceInfo;
 
 late Box<LoginCaRequestModel> hiveUserLogin;
 
+const platform = MethodChannel('2id.ekyc');
+
+bool isOnlyNFC = false;
+
 class AppController extends GetxController {
   RxBool isBusinessHousehold = false.obs;
   late List<CameraDescription> cameras;
@@ -47,10 +51,6 @@ class AppController extends GetxController {
   bool isEnablePay = false;
   bool isEnablePackage = false;
 
-  bool isOnlyNFC = false;
-
-  static const platform = MethodChannel('2id.ekyc');
-
   ///  Hàm gửi dữ liệu về native
   /// [isOnlyNFC] = true dữ liệu NFC về native không cần liveness và xác thực
   void sendDataToNative() async {
@@ -65,15 +65,21 @@ class AppController extends GetxController {
 
   @override
   Future<void> onInit() async {
+    // initialize();
     initHive().then((value) async {
       Get.put(BaseApi(), permanent: true);
       clearData();
       await getDataNFCInit();
-      if (!isOnlyNFC) {
-        await getDataInit();
-      }
+      print("isOnlyNFC=>>>>> $isOnlyNFC");
+      if (isOnlyNFC) {
 
-      await checkPermissionApp();
+        // Get.offAllNamed(AppRoutes.routeLogin);
+      } else {
+        await getDataInit();
+
+
+        // await checkPermissionApp();
+      }
     });
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
     if (Platform.isIOS) {
@@ -108,6 +114,8 @@ class AppController extends GetxController {
           secretKey: data['secretKey'] ?? "",
           isProd: data['isProd'] ?? false,
         );
+
+        await checkPermissionApp();
       }
     } catch (e) {}
   }
@@ -116,7 +124,15 @@ class AppController extends GetxController {
     try {
       final payload = await platform.invokeMethod('setInitialNFC');
       if (payload != null) {
+        print("Received from iOS: payload");
+
         isOnlyNFC = true;
+        try {
+          await checkPermissionApp();
+          // Get.offAllNamed(AppRoutes.routeLogin);
+        } catch (e) {
+          print("Error navigating: $e");
+        }
       }
     } catch (e) {}
   }

@@ -42,11 +42,11 @@
         {
           "name": "wakelock_plus_release-1.0.aar",
           "url": "wakelock_plus_release-1.0.aar",
-          "size": 18563,
-          "sha512": "528c9140e04eca06059065aebe233edb1255d103db3fde1ccb1946778d45c2894a8e6a539398a8bec0d99e2ec66d1a03d5f1afaac269012012fe852c92aef61e",
-          "sha256": "f2f17d1197c91114b042acf00be98ff8ed8228cf15b7c47d770015829cd580a0",
-          "sha1": "5dc6e43d4ff14d7a3953b3e3d671bdbe97a13bc7",
-          "md5": "6ba7ef09de78c3f7320ab4f78fc1f09a"
+          "size": 18560,
+          "sha512": "91a4dee4daba5d435d2c778cf0aea751cfbdbf93f5c11bc0690ca6dbd25fc548c890c49f782fafb213db962b67086786b0be4da0e517d81ea028d3b61794736c",
+          "sha256": "6e321fd61e22f0df9a240099e42dfb9c0aad21fa168cf5b433b1e43c8749c847",
+          "sha1": "8e74eeb804a467fd9dcd4b4860c8d88f4a021338",
+          "md5": "f071c2d761f5a31c489921b539cebaf7"
         }
       ]
     },
@@ -85,11 +85,11 @@
         {
           "name": "wakelock_plus_release-1.0.aar",
           "url": "wakelock_plus_release-1.0.aar",
-          "size": 18563,
-          "sha512": "528c9140e04eca06059065aebe233edb1255d103db3fde1ccb1946778d45c2894a8e6a539398a8bec0d99e2ec66d1a03d5f1afaac269012012fe852c92aef61e",
-          "sha256": "f2f17d1197c91114b042acf00be98ff8ed8228cf15b7c47d770015829cd580a0",
-          "sha1": "5dc6e43d4ff14d7a3953b3e3d671bdbe97a13bc7",
-          "md5": "6ba7ef09de78c3f7320ab4f78fc1f09a"
+          "size": 18560,
+          "sha512": "91a4dee4daba5d435d2c778cf0aea751cfbdbf93f5c11bc0690ca6dbd25fc548c890c49f782fafb213db962b67086786b0be4da0e517d81ea028d3b61794736c",
+          "sha256": "6e321fd61e22f0df9a240099e42dfb9c0aad21fa168cf5b433b1e43c8749c847",
+          "sha1": "8e74eeb804a467fd9dcd4b4860c8d88f4a021338",
+          "md5": "f071c2d761f5a31c489921b539cebaf7"
         }
       ]
     }
