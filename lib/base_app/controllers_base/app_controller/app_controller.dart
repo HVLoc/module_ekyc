@@ -68,11 +68,8 @@ class AppController extends GetxController {
   @override
   Future<void> onInit() async {
     Get.put(BaseApi(), permanent: true);
-    initializeMethod((value) {
-      isOnlyNFC = value;
-    });
-    initHive().then((value) async {
-    });
+    initializeMethod();
+    initHive().then((value) async {});
 
     super.onInit();
   }
@@ -86,16 +83,14 @@ class AppController extends GetxController {
     }
   }
 
-  void initializeMethod(Function(bool) nfcResult) {
+  void initializeMethod() {
     platform.setMethodCallHandler((MethodCall call) async {
       if (call.method == 'setInitialNFC') {
         // final String? data = call.arguments as String?;
         // Xử lý dữ liệu từ iOS
         isOnlyNFC = true;
-        nfcResult(true);
 
-          await checkPermissionApp();
-
+        await checkPermissionApp();
       } else if (call.method == 'setInitial') {
         if (call.arguments != null) {
           print("Received from iOS call.arguments: ${call.arguments}");
@@ -114,7 +109,6 @@ class AppController extends GetxController {
       return null;
     });
   }
-
 
   Future<void> initCamera() async {
     cameras = await availableCameras();

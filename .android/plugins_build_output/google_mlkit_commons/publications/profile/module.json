@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.google_mlkit_commons",
+    "module": "google_mlkit_commons_profile",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "profileVariantProfileApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_profile",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "google_mlkit_commons_profile-1.0.aar",
+          "url": "google_mlkit_commons_profile-1.0.aar",
+          "size": 8810,
+          "sha512": "34a7abdd5e262c7eca982a2427a8a5763a3bf4ce41280543c1c9c810e86c9776750a565982497ada4660d724986d430bc3403eddc3e9cf180f69ac56f83c932c",
+          "sha256": "15038bc4e60bfa7b473fcd81b80c5a929b02aeb164b6ba5b08332cd7a5f51685",
+          "sha1": "03f1ee92a7542447b99eb7544f287454678a30ab",
+          "md5": "a59fd984e6d380b9449467026489699c"
+        }
+      ]
+    },
+    {
+      "name": "profileVariantProfileRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.flutter",
+          "module": "flutter_embedding_profile",
+          "version": {
+            "requires": "1.0.0-f6344b75dcf861d8bf1f1322780b8811f982e31a"
+          }
+        },
+        {
+          "group": "com.google.mlkit",
+          "module": "vision-common",
+          "version": {
+            "requires": "17.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "google_mlkit_commons_profile-1.0.aar",
+          "url": "google_mlkit_commons_profile-1.0.aar",
+          "size": 8810,
+          "sha512": "34a7abdd5e262c7eca982a2427a8a5763a3bf4ce41280543c1c9c810e86c9776750a565982497ada4660d724986d430bc3403eddc3e9cf180f69ac56f83c932c",
+          "sha256": "15038bc4e60bfa7b473fcd81b80c5a929b02aeb164b6ba5b08332cd7a5f51685",
+          "sha1": "03f1ee92a7542447b99eb7544f287454678a30ab",
+          "md5": "a59fd984e6d380b9449467026489699c"
+        }
+      ]
+    }
+  ]
+}
