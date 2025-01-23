@@ -276,23 +276,22 @@ class LiveNessKycController extends BaseGetxController {
   Future<void> finishLiveNess() async {
     appController.sendNfcRequestGlobalModel.imgLiveNess =
         base64Encode(imageLiveNess ?? []);
+
+    showLoadingOverlay();
+    await liveNessRepository
+        .faceMatching(
+      img1: appController.sendNfcRequestGlobalModel.file,
+      img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
+    )
+        .then((value) async {
+      print(value);
+
+      ///fake dữ liệu
       appController.sendNfcRequestGlobalModel.isFaceMatching = true;
       appController.sendNfcRequestGlobalModel.faceMatching = "90%";
       Get.offNamed(AppRoutes.routeFaceMatchingResult);
-    // showLoadingOverlay();
-    // await liveNessRepository
-    //     .faceMatching(
-    //   img1: appController.sendNfcRequestGlobalModel.file,
-    //   img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
-    // )
-    //     .then((value) async {
-    //   print(value);
+    });
 
-    //   ///fake dữ liệu
-    //   appController.sendNfcRequestGlobalModel.isFaceMatching = true;
-    //   appController.sendNfcRequestGlobalModel.faceMatching = "90%";
-    //   Get.offNamed(AppRoutes.routeFaceMatchingResult);
-    // });
     // showLoadingOverlay();
     // await updatePhotoInformationRepository
     //     .checkFaceMatching(
