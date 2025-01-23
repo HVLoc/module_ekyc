@@ -101,6 +101,18 @@ class SendNfcRequestModel {
         "phone": phone,
       };
 
+  Map<String, dynamic> toJsonVerify() => {
+        "sodData": sodData,
+        "dg1DataB64": dg1DataB64,
+        "dg2DataB64": dg2DataB64,
+        "dg13DataB64": dg13DataB64,
+        "dg14DataB64": dg14DataB64,
+        "fileId": fileId,
+        "bodyFileId": bodyFileId,
+        "phone": phone,
+        "method": "INTEGRITY"
+      };
+
   Map<String, dynamic> toJson() => {
         "sessionId": sessionId,
         "type": type,
@@ -121,7 +133,7 @@ class SendNfcRequestModel {
         "mother": nameMomVMN,
         "aaSignature": aaSignature,
         "aaPublicKey": aaPublicKey,
-        "keyAlg": keyAlg != null ? keyAlg!.split('.').last : null,
+        "keyAlg": keyAlg?.split('.').last,
         "file": file,
         "identity": otherPaper,
         "raw": raw,
@@ -143,7 +155,7 @@ class SendNfcRequestModel {
         "file": file,
         "aaSignature": aaSignature,
         "aaPublicKey": aaPublicKey,
-        "keyAlg": keyAlg != null ? keyAlg!.split('.').last : null,
+        "keyAlg": keyAlg?.split('.').last,
         "imgLiveNess": imgLiveNess,
         "faceMatching": faceMatching,
         "isFaceMatching": isFaceMatching,

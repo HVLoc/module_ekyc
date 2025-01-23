@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:device_info_plus/device_info_plus.dart';
@@ -19,8 +18,6 @@ import 'package:module_ekyc/modules/login/login.src.dart';
 import 'package:module_ekyc/shares/shares.src.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
-
-import '../../../main.dart';
 
 late Box hiveApp;
 
@@ -69,9 +66,22 @@ class AppController extends GetxController {
   Future<void> onInit() async {
     Get.put(BaseApi(), permanent: true);
     initializeMethod();
-    initHive().then((value) async {});
+    initHive().then((value) async {
+      //TODO: Chỉ chạy khi cần test module
+      await demoModule();
+    });
 
     super.onInit();
+  }
+
+  Future<void> demoModule() async {
+    sdkModel = SdkRequestModel(
+      key: "89f797ab-ec41-446a-8dc1-1dfda5e7e93d",
+      secretKey: "63f81c69722acaa42f622ec16d702fdb",
+      isProd: false,
+    );
+
+    await checkPermissionApp();
   }
 
   void clearData({bool clearUserInfo = false}) {

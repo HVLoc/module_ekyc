@@ -1,4 +1,5 @@
 import 'package:module_ekyc/base_app/base_app.src.dart';
+import 'package:module_ekyc/shares/shares.src.dart';
 
 /// Lấy tên thiết bị điện thoại
 String getNameDevice() {
@@ -21,3 +22,19 @@ String getIdDevice() {
   }
   return idDevice;
 }
+
+abstract class IdGenerator {
+  IdGenerator._();
+
+  static const _uuid = Uuid();
+
+  static String generate() {
+    return _uuid.v4();
+  }
+
+  static String get randomIKey {
+    return _uuid.v4();
+  }
+}
+
+

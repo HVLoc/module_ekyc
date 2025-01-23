@@ -12,3 +12,4 @@ export 'package:logger/logger.dart';
 export 'package:flutter_localizations/flutter_localizations.dart';
 export 'package:path_provider/path_provider.dart';
 export 'package:percent_indicator/linear_percent_indicator.dart';
+export 'package:uuid/uuid.dart';

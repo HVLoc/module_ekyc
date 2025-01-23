@@ -28,6 +28,7 @@ class BaseRepository {
     Function(Object error)? functionError,
     Duration? timeOut,
     String? contentType,
+    Map<String, dynamic>? queryParameters,
   }) {
     return _baseApi.callApi(
       action,
@@ -44,6 +45,7 @@ class BaseRepository {
       isToken: isToken,
       timeOut: timeOut,
       contentType: contentType,
+      queryParameters: queryParameters,
     );
   }
 }

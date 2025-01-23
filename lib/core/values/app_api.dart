@@ -1,7 +1,8 @@
 /// class chứa các api để giao tiếp với BE
 // Todo: AppUrl
 class AppApi {
-  static const String url = 'https://cloud.2id.vn/api';
+  // static const String url = 'https://cloud.2id.vn/api';
+  static const String url = 'https://uat-apim.2id.vn/gateway/2id-ekyc/v.1';
   // static const String url = 'https://api-c06verify.2id.vn/api';
 
   static const String version = "?v=1.0";
@@ -77,7 +78,7 @@ class AppApi {
 
 
 ///sdk
-  static const String faceMatching = "/v3/ekyc/face_matching";
-  static const String verifyC06 = "https://uat-api-c06verify.2id.vn/api/v1/c06-verify/integration/verify-card ";
+  static const String faceMatching = "/face-matches/file?imageType=CARD";
+  static const String verifyC06 = "/c06-verify/integration/verify-card";
 
 }

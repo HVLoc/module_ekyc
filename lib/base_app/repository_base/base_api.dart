@@ -65,6 +65,11 @@ class BaseApi {
   /// [dioOptions]: option của Dio() sử dụng khi gọi api có option riêng
   ///
   /// [functionError]: chạy function riêng khi request xảy ra Exception (mặc định sử dụng [showDialogError])
+  /// [queryParameters]: sử dụng khi truyền cùng lúc cả body và query
+  /// [isToken]: mặc định là true, nếu false sẽ không gửi token
+  /// [isHaveVersion]: mặc định là true, nếu false sẽ không gửi version
+  ///  [contentType]: mặc định là application/json
+  ///
   Future<dynamic> callApi(
     String action,
     String requestMethod, {
@@ -80,6 +85,7 @@ class BaseApi {
     bool isHaveVersion = true,
     Duration? timeOut,
     String? contentType,
+    Map<String, dynamic>? queryParameters,
   }) async {
     dio.options = dioOptions ?? buildDefaultOptions(timeOut: timeOut);
     dynamic response;
@@ -118,6 +124,7 @@ class BaseApi {
           response = await dio.post(
             url,
             data: jsonMap,
+            queryParameters: queryParameters,
             options: options,
             cancelToken: cancelToken,
           );
@@ -198,7 +205,9 @@ class BaseApi {
   Map<String, String> getBaseHeader() {
     return {
       "Content-Type": "application/json",
-      'Authorization': hiveApp.get(AppKey.keyToken) ?? "",
+      // 'Authorization': hiveApp.get(AppKey.keyToken) ?? "",
+      "ApiKey":
+          "eyJ4NXQjUzI1NiI6Ik5XUXdPVFJrTWpBNU9XRmpObVUyTnpCbE5UTTNaRFV3T0RVellqWXdabUpsWlROa1pEQTRPRFU0WlRVd1pHSXdObVV5TW1abVpUTmhaRGt5TmpRMlpBPT0iLCJraWQiOiJnYXRld2F5X2NlcnRpZmljYXRlX2FsaWFzIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ==.eyJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJpZCI6MSwidXVpZCI6Ijk3M2I2Mjg1LWNiNmYtNDIxYi1iMzg0LTlhNDIyN2FhMzRiOSJ9LCJpc3MiOiJodHRwczpcL1wvdWF0LWFwaW0uMmlkLnZuOjQ0M1wvb2F1dGgyXC90b2tlbiIsImtleXR5cGUiOiJTQU5EQk9YIiwicGVybWl0dGVkUmVmZXJlciI6IiIsInRva2VuX3R5cGUiOiJhcGlLZXkiLCJwZXJtaXR0ZWRJUCI6IiIsImlhdCI6MTczNzI3OTcxNCwianRpIjoiYTM2MGNmMDctZTQ1My00MTc1LWEwOTAtNWE3ODU4NWZiY2NkIn0=.smuXRLDclnOrc1oBWnVMhgXrOodww6ht3oPTZq-nHnDtspZKKYKoAwJCBrXDy18JweqZWFciZJJ-iLL0pKX_svl0qiddGXO4uxKiaZUbHvzFCtQ7kLYYCKWKqXqB1A8cGM8w0VoKp_VUPtwDj8Ren3adjyM6uF2rxx5ubVeXfxxuaAgpwTBEUTTFgI35VUQeiYHVaJPnN23LwzO6O2eX6YucF7p6OGg_XLs7NedlJnAEsp_LC15mnZnK6IJCzvrnKQAdeW16tXYFT-FGJdVqlyaQwBIStfhJpeQglOZ43FfvjtWdt0G-nYucevoywqeTBpkdvHvjjzDJPX9Xs8FaLw==",
       'pf': Get.theme.platform.name
     };
   }

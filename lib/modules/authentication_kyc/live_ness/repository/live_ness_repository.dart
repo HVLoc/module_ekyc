@@ -4,7 +4,7 @@ import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/live_ness/live_ness_kyc.src.dart';
 
 class LiveNessRepository extends BaseRepository {
-  LiveNessRepository(BaseGetxController controller) : super(controller);
+  LiveNessRepository(super.controller);
 
   Future<BaseResponseBESDK<FaceMatchingModel>> loginAppRepository(
       {required img1, required img2}) async {
@@ -16,6 +16,23 @@ class LiveNessRepository extends BaseRepository {
             },
             isHaveVersion: false,
             isToken: false);
+    return BaseResponseBESDK.fromJson(
+      response,
+      func: (x) => FaceMatchingModel.fromJson(x),
+    );
+  }
+
+  Future<BaseResponseBESDK<FaceMatchingModel>> faceMatching(
+      {required img1, required img2}) async {
+    var response = await baseCallApi(
+      AppApi.faceMatching,
+      EnumRequestMethod.post,
+      jsonMap: {
+        "img1": img1,
+        "img2": img2,
+      },
+      isHaveVersion: false,
+    );
     return BaseResponseBESDK.fromJson(
       response,
       func: (x) => FaceMatchingModel.fromJson(x),
