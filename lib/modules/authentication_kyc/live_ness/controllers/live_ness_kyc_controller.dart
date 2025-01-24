@@ -278,23 +278,23 @@ class LiveNessKycController extends BaseGetxController {
         base64Encode(imageLiveNess ?? []);
 
     ///fake dữ liệu
-    appController.sendNfcRequestGlobalModel.isFaceMatching = true;
-    appController.sendNfcRequestGlobalModel.faceMatching = "90%";
-    Get.offNamed(AppRoutes.routeFaceMatchingResult);
-    // showLoadingOverlay();
-    // await liveNessRepository
-    //     .faceMatching(
-    //   img1: appController.sendNfcRequestGlobalModel.file,
-    //   img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
-    // )
-    //     .then((value) async {
-    //   print(value);
-
-    //   ///fake dữ liệu
-    //   appController.sendNfcRequestGlobalModel.isFaceMatching = true;
-    //   appController.sendNfcRequestGlobalModel.faceMatching = "90%";
-    //   Get.offNamed(AppRoutes.routeFaceMatchingResult);
-    // });
+    // appController.sendNfcRequestGlobalModel.isFaceMatching = true;
+    // appController.sendNfcRequestGlobalModel.faceMatching = "90%";
+    // Get.offNamed(AppRoutes.routeFaceMatchingResult);
+    showLoadingOverlay();
+    await liveNessRepository
+        .faceMatching(
+      img1: appController.sendNfcRequestGlobalModel.file,
+      img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
+    )
+        .then((value) async {
+      if ((value.data?.match ?? "0.0") == "1") {
+        appController.sendNfcRequestGlobalModel.isFaceMatching = true;
+        appController.sendNfcRequestGlobalModel.faceMatching =
+            value.data?.matching;
+        Get.offNamed(AppRoutes.routeFaceMatchingResult);
+      }
+    });
 
     // showLoadingOverlay();
     // await updatePhotoInformationRepository

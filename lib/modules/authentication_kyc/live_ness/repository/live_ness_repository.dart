@@ -22,7 +22,7 @@ class LiveNessRepository extends BaseRepository {
     );
   }
 
-  Future<BaseResponseBESDK<FaceMatchingModel>> faceMatching(
+  Future<BaseResponseBESDK<FaceMatchSDKResponse>> faceMatching(
       {required img1, required img2}) async {
     var response = await baseCallApi(
       AppApi.faceMatching,
@@ -35,7 +35,7 @@ class LiveNessRepository extends BaseRepository {
     );
     return BaseResponseBESDK.fromJson(
       response,
-      func: (x) => FaceMatchingModel.fromJson(x),
+      func: (x) => FaceMatchSDKResponse.fromJson(x),
     );
   }
 }

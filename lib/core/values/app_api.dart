@@ -25,6 +25,7 @@ class AppApi {
   static String getWebLink(String id) {
     return "/v1/customer/subscribes/$id/pay/request?provider=ONEFIN";
   }
+
   static String deletePackagePayment(String id) {
     return "/v1/customer/subscribes/$id";
   }
@@ -36,6 +37,7 @@ class AppApi {
   static String getListHistoryPackage(int page, int pageSize) {
     return "/v1/customer/subscribes?pageIndex=$page&pageSize=$pageSize";
   }
+
   static String detailPackage(String id) {
     return "/v1/customer/subscribes/$id/pay/detail";
   }
@@ -76,9 +78,7 @@ class AppApi {
   //     "/certificate-orders/send-certificate-verify-status";
   // static const String updatePersonInfo = "/ocr-data/client-register";
 
-
-///sdk
-  static const String faceMatching = "/face-matches/file?imageType=CARD";
+  ///sdk
+  static const String faceMatching = "/face-matches/base64?imageType=CARD";
   static const String verifyC06 = "/c06-verify/integration/verify-card";
-
 }
