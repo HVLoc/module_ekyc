@@ -19,6 +19,8 @@ import 'package:module_ekyc/shares/shares.src.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../../modules/sdk/sdk.src.dart';
+
 late Box hiveApp;
 
 late PackageInfo packageInfo;
@@ -62,13 +64,25 @@ class AppController extends GetxController {
     }
   }
 
+  void sendDataToModulesEkyc() async {
+    try {
+      Get.offNamed(AppRoutes.initApp);
+      Get.close(3);
+      Get.back();
+      // Get.back(result: sendNfcRequestGlobalModel);
+    } catch (e) {
+      print("Error sending data: $e");
+    }
+  }
+
   @override
   Future<void> onInit() async {
     Get.put(BaseApi(), permanent: true);
     initializeMethod();
     initHive().then((value) async {
       //TODO: Chỉ chạy khi cần test module
-      await demoModule();
+      // await demoModule();
+      // ModulesEkyc.readOnlyNFC();
     });
 
     super.onInit();
@@ -110,6 +124,7 @@ class AppController extends GetxController {
           sdkModel = SdkRequestModel(
             key: data['key'] ?? "",
             secretKey: data['secretKey'] ?? "",
+            documentNumber: data['CCCD'],
             isProd: data['isProd'] ?? false,
           );
 
@@ -130,29 +145,31 @@ class AppController extends GetxController {
     await cameraController.initialize();
   }
 
-  Future<void> checkPermissionApp() async {
+  Future<SendNfcRequestModel?> checkPermissionApp() async {
     PermissionStatus permissionStatus =
         await checkPermission([Permission.camera]);
     switch (permissionStatus) {
       case PermissionStatus.granted:
         {
-          goToEKYC();
+          return await goToEKYC();
         }
-        break;
+      case PermissionStatus.denied:
       case PermissionStatus.permanentlyDenied:
         ShowDialog.openAppSetting();
         break;
       default:
-        return;
+        return null;
     }
+    return null;
   }
 
-  void goToEKYC() {
+  Future<SendNfcRequestModel?> goToEKYC() async {
     if (qrUserInformation.documentNumber.isStringNotEmpty) {
-      Get.toNamed(AppRoutes.routeScanNfcKyc);
+      await Get.toNamed(AppRoutes.routeScanNfcKyc);
     } else {
-      Get.offAllNamed(AppRoutes.routeQrKyc);
+      await Get.toNamed(AppRoutes.routeQrKyc);
     }
+    return sendNfcRequestGlobalModel;
   }
 }
 

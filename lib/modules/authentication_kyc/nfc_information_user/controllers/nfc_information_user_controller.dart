@@ -84,8 +84,7 @@ class NfcInformationUserController extends BaseGetxController {
         // }
         if (sendNfcRequestModel.isFaceMatching ?? false) {
           successSDK = true;
-          //TODO: call api
-          authenticationSDK();
+          authenticationFake();
         }
       }
     }
@@ -149,10 +148,14 @@ class NfcInformationUserController extends BaseGetxController {
     appController.sendDataToNative();
   }
 
+  void returnToModule() {
+    appController.sendDataToModulesEkyc();
+  }
+
   Future<void> goPage() async {
     print("isOnlyNFC KYC=>>>>> ${appController.isOnlyNFC}");
     if (successSDK || appController.isOnlyNFC) {
-      returnToNative();
+      returnToModule();
     } else {
       Get.offNamed(AppRoutes.routeLiveNessKyc);
     }

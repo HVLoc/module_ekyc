@@ -93,14 +93,10 @@ class QRController extends BaseGetxController {
         // }else{
         //   appController.qrUserInformation.informationIdCard = splitStrings[0];
         // }
-        if (appController.typeAuthentication == AppConst.typeForgotPass) {
-          // cameraController.start();
-          Get.toNamed(AppRoutes.routeScanNfcKyc)?.then((value) {
-            cameraController.start();
-          });
-        } else {
-          Get.offNamed(AppRoutes.routeScanNfcKyc);
-        }
+
+        Get.toNamed(AppRoutes.routeScanNfcKyc)?.then((value) {
+          cameraController.start();
+        });
       }
     } catch (e) {
       cameraController.start();

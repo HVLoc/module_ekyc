@@ -47,7 +47,7 @@ class _Application extends State<Application> {
       child: GetMaterialApp(
         locale: const Locale('vi', 'VN'),
         debugShowCheckedModeBanner: false,
-        translationsKeys: AppTranslation.translations,
+        // translationsKeys: AppTranslation.translations,
         initialRoute: AppRoutes.initApp,
         getPages: RouteAppPage.route,
         builder: (context, child) => ScrollConfiguration(

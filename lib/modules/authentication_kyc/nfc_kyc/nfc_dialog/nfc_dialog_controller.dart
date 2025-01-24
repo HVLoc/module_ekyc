@@ -183,7 +183,7 @@ class NfcDialogController extends BaseGetxController {
       // await nfc.setIosAlertMessage(LocaleKeys.nfc_introduceScanNfc4.tr, 20);
       if (isPace) {
         final accessKey = CanKey(idDocument!.substring(6));
-        final efCardAccessData = AppConst.keyAccessDataNFCIos.parseHex();
+        final efCardAccessData = AppConst.key.parseHex();
 
         EfCardAccess efCardAccess = EfCardAccess.fromBytes(efCardAccessData);
         //PACE session

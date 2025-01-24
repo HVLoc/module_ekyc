@@ -29,8 +29,9 @@ class AppConst {
   static const int error502 = 502;
   static const int error503 = 503;
 
-  ///key CardAccessDataNFCIos
-  static const String keyAccessDataNFCIos = "3134300d060804007f0007020202020101300f060a04007f000702020302020201013012060a04007f0007020204020202010202010d";
+  ///key
+  static const String key =
+      "3134300d060804007f0007020202020101300f060a04007f000702020302020201013012060a04007f0007020204020202010202010d";
 
   ///status nfc
   static const String nfcAvailable = "nfc_available";
@@ -42,7 +43,7 @@ class AppConst {
 
   ///type user
   static const int typeRegularAccount = 0; //tài khoản thường
-  static const int typeAgentAccount = 1;//tài khoản đại lý
+  static const int typeAgentAccount = 1; //tài khoản đại lý
 
   ///status user
   static const int statusUserCreateNewApp = 0;
@@ -69,5 +70,4 @@ class AppConst {
   ///type packageKind
   static const String typeProduction = "C06_PRODUCTION";
   static const String typeSanbox = "C06_SANDBOX";
-
 }
