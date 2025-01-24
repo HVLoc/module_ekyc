@@ -80,5 +80,6 @@ class AppApi {
 
   ///sdk
   static const String faceMatching = "/face-matches/base64?imageType=CARD";
-  static const String verifyC06 = "/c06-verify/integration/verify-card";
+  static const String verifyC06 =
+      "https://uat-apim.2id.vn/gateway/2id-check/v.1/c06-verify/integration/verify-card";
 }

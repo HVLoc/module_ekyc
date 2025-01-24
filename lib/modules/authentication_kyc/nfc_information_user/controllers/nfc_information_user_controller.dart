@@ -124,9 +124,9 @@ class NfcInformationUserController extends BaseGetxController {
       sdkRequestAPI,
     )
         .then((value) {
-      authenticationSuccess = value.data?.result ?? false;
+      authenticationSuccess = value.data.result;
       authenticationVisible.value = true;
-      packageKind = value.data?.packageKind ?? AppConst.typeSanbox;
+      // packageKind = value.data.packageKind ?? AppConst.typeSanbox;
       // if (Get.isRegistered<ClientController>()) {
       //   ClientController clientController = Get.find<ClientController>();
       //   clientController.initDocument();

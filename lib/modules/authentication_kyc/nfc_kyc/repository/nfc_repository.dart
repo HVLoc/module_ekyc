@@ -3,6 +3,7 @@ import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 
 import '../../../sdk/sdk.src.dart';
+import '../model/verify_sdk_response.dart';
 
 class NfcRepository extends BaseRepository {
   NfcRepository(super.controller);
@@ -21,20 +22,18 @@ class NfcRepository extends BaseRepository {
     );
   }
 
-  Future<BaseResponseBE<NfcResponseModel>> sendNfcVerify(
+  Future<VerifyResponse> sendNfcVerify(
     SendNfcRequestModel sendNfcRequestModel,
     SdkRequestAPI sdkRequestAPI,
   ) async {
     var response = await baseCallApi(
       AppApi.verifyC06,
       EnumRequestMethod.post,
+      urlOther: AppApi.verifyC06,
       jsonMap: sendNfcRequestModel.toJsonVerify(),
       queryParameters: sdkRequestAPI.toJson(),
       isHaveVersion: false,
     );
-    return BaseResponseBE.fromJson(
-      response,
-      func: (x) => NfcResponseModel.fromJson(x),
-    );
+    return VerifyResponse.fromJson(response);
   }
 }
