@@ -9,7 +9,8 @@ class VerificationUtils {
     final verifyHashPlainText =
         _buildHashValue(apiKey, transactionId, timestamp, message);
     final verifyHash = _hashSHA512(secretKey, verifyHashPlainText);
-    return verifyHash;
+    var hashToHex = stringToHex(verifyHash);
+    return hashToHex;
   }
 
   /// Ghép các giá trị đầu vào thành một chuỗi duy nhất
@@ -31,5 +32,13 @@ class VerificationUtils {
     } catch (e) {
       return '';
     }
+  }
+
+  static String stringToHex(String input) {
+    // Chuyển chuỗi ký tự thành danh sách byte
+    List<int> bytes = utf8.encode(input);
+
+    // Chuyển danh sách byte thành chuỗi Hex
+    return bytes.map((byte) => byte.toRadixString(16).padLeft(2, '0')).join();
   }
 }
