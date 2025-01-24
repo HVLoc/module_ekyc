@@ -5,7 +5,6 @@ import 'package:module_ekyc/modules/authentication_kyc/live_ness/live_ness_kyc.s
 import 'package:module_ekyc/modules/authentication_kyc/nfc_information_user/nfc_information_user_src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/verify_profile_ca/verify_profile_ca_src.dart';
-import 'package:module_ekyc/modules/client/client.src.dart';
 import 'package:module_ekyc/modules/home/home.src.dart';
 import 'package:module_ekyc/modules/login/views/login_page.dart';
 import 'package:module_ekyc/modules/provision/provision.src.dart';
@@ -20,7 +19,6 @@ import 'app_route.dart';
 
 class RouteAppPage {
   static var route = [
-
     GetPage(
       name: AppRoutes.initApp,
       page: () => const SplashPage(),
@@ -91,11 +89,6 @@ class RouteAppPage {
     GetPage(
       name: AppRoutes.routeForgotPass,
       page: () => const ForgotPasswordPage(),
-      transition: Transition.rightToLeft,
-    ),
-    GetPage(
-      name: AppRoutes.routeListClient,
-      page: () => const ClientPage(),
       transition: Transition.rightToLeft,
     ),
     GetPage(

@@ -78,9 +78,6 @@ dependencies:
     git:
       url: https://github.com/toannmdev/sds_assets_generator.git
       ref: master
-  syncfusion_flutter_core: 23.2.4
-  syncfusion_flutter_datepicker: 23.2.4
-  syncfusion_flutter_pdfviewer: 23.2.4
   url_launcher: ^6.2.1
 
 dev_dependencies:

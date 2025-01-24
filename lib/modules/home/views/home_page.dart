@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/core/core.src.dart';
-import 'package:module_ekyc/modules/client/client.src.dart';
 import 'package:module_ekyc/modules/home/home.src.dart';
 import 'package:module_ekyc/modules/home/views/bottom_navigation.dart';
 import 'package:module_ekyc/modules/overview/overview.src.dart';
@@ -85,7 +84,6 @@ class HomePageState extends State<HomePage>
             children: [
               // OverviewPage(),
               OverviewPage(_tabController),
-              const ClientPage(),
               const SizedBox(),
 
               const SizedBox(),

@@ -2,7 +2,6 @@ import 'package:flutter/services.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
-import 'package:module_ekyc/modules/client/client.src.dart';
 import 'package:module_ekyc/modules/overview/overview.src.dart';
 import 'package:module_ekyc/modules/sdk/sdk.src.dart';
 import 'package:module_ekyc/shares/utils/time/date_utils.dart';
@@ -103,10 +102,7 @@ class NfcInformationUserController extends BaseGetxController {
       authenticationSuccess = value.data?.result ?? false;
       authenticationVisible.value = true;
       packageKind = value.data?.packageKind ?? AppConst.typeSanbox;
-      if (Get.isRegistered<ClientController>()) {
-        ClientController clientController = Get.find<ClientController>();
-        clientController.initDocument();
-      }
+
       if (Get.isRegistered<OverviewController>()) {
         OverviewController overviewController = Get.find<OverviewController>();
         overviewController.getUserInfo();

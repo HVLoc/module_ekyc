@@ -39,7 +39,6 @@ Depends on all your plugins, and provides a function to register them.
   s.dependency 'path_provider_foundation'
   s.dependency 'permission_handler'
   s.dependency 'sqflite'
-  s.dependency 'syncfusion_flutter_pdfviewer'
   s.dependency 'url_launcher_ios'
   s.dependency 'video_player_avfoundation'
   s.dependency 'wakelock_plus'

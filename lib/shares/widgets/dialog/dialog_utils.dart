@@ -1,6 +1,5 @@
 import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
@@ -559,62 +558,7 @@ class ShowDialog {
     required DateTime? initDate,
     Function(Object?)? onSubmit,
   }) async {
-    _showDialog(
-        Dialog(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0),
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                SizedBox(
-                  height: 400,
-                  child: Card(
-                      child: SfDateRangePicker(
-                    view: DateRangePickerView.month,
-                    selectionMode: DateRangePickerSelectionMode.single,
-                    backgroundColor: AppColors.basicWhite,
-                    headerHeight: 50,
-                    headerStyle: const DateRangePickerHeaderStyle(
-                      textAlign: TextAlign.center,
-                    ),
-                    monthViewSettings: const DateRangePickerMonthViewSettings(
-                        viewHeaderHeight: 40),
-                    // initialSelectedRange:
-                    // PickerDateRange(listRange[0], listRange[1]),
-                    initialSelectedDate: initDate,
-                    initialDisplayDate: initDate,
-                    // showActionButtons: true,
-                    showNavigationArrow: true,
-                    showActionButtons: true,
-                    // minDate: DateTime(2020),
-                    // maxDate: DateTime(DateTime.now().year + 5),
-                    cancelText: LocaleKeys.dialog_close.tr,
-                    confirmText: LocaleKeys.dialog_confirm.tr,
-                    onCancel: () => Get.back(),
-                    onSubmit: onSubmit,
-                    onSelectionChanged:
-                        (DateRangePickerSelectionChangedArgs args) {},
-                  )),
-                ),
-                // const Divider(
-                //   height: 1,
-                // ),
-                // SizedBox(
-                //   width: double.infinity,
-                //   child: _baseButton(
-                //     function,
-                //     nameAction.tr,
-                //     colorText: AppColors.colorBlueAccent,
-                //   ),
-                // ),
-              ],
-            ).paddingAll(5),
-          ),
-        ),
-        isActiveBack);
+    //TODO: Implement this method
   }
 
   static void showDialogMultiTimePicker({
@@ -623,65 +567,6 @@ class ShowDialog {
     required List<DateTime?> listRange,
     Function(Object?)? onSubmit,
   }) async {
-    _showDialog(
-        Dialog(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0),
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                SizedBox(
-                  height: 400,
-                  child: Card(
-                      child: SfDateRangePicker(
-                    todayHighlightColor: AppColors.primaryBlue1,
-                    startRangeSelectionColor: AppColors.primaryBlue1,
-                    endRangeSelectionColor: AppColors.primaryBlue1,
-                    rangeSelectionColor:
-                        AppColors.primaryBlue1.withOpacity(0.1),
-                    view: DateRangePickerView.month,
-                    selectionMode: DateRangePickerSelectionMode.range,
-                    backgroundColor: AppColors.basicWhite,
-                    headerHeight: 50,
-                    headerStyle: const DateRangePickerHeaderStyle(
-                      textAlign: TextAlign.center,
-                    ),
-                    monthViewSettings: const DateRangePickerMonthViewSettings(
-                        viewHeaderHeight: 40),
-                    initialSelectedRange:
-                        PickerDateRange(listRange[0], listRange[1]),
-                    initialDisplayDate: listRange[0],
-                    // showActionButtons: true,
-                    showNavigationArrow: true,
-                    showActionButtons: true,
-                    minDate: DateTime(2000),
-                    maxDate: DateTime(DateTime.now().year + 5),
-                    cancelText: LocaleKeys.dialog_close.tr,
-                    confirmText: LocaleKeys.dialog_confirm.tr,
-                    onCancel: () => Get.back(),
-                    onSubmit: onSubmit,
-                    onSelectionChanged:
-                        (DateRangePickerSelectionChangedArgs args) {},
-                  )),
-                ),
-                // const Divider(
-                //   height: 1,
-                // ),
-                // SizedBox(
-                //   width: double.infinity,
-                //   child: _baseButton(
-                //     function,
-                //     nameAction.tr,
-                //     colorText: AppColors.colorBlueAccent,
-                //   ),
-                // ),
-              ],
-            ).paddingAll(5),
-          ),
-        ),
-        isActiveBack);
+//TODO: Implement this method
   }
 }
