@@ -116,7 +116,6 @@ class FormOverView {
                       image: DecorationImage(
                         image: AssetImage(
                           Assets.LIB_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
-                          package: 'module_ekyc',
                         ),
                         fit: BoxFit.fitWidth,
                         opacity: 0.3,

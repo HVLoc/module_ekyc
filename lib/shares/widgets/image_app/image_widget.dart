@@ -22,7 +22,6 @@ class ImageWidget {
             )
           : null,
       width: width ?? AppDimens.padding25,
-      package: 'module_ekyc',
     );
   }
 
@@ -43,7 +42,6 @@ class ImageWidget {
             )
           : null,
       width: width ?? AppDimens.iconMedium,
-      package: 'module_ekyc',
     );
   }
 
@@ -59,7 +57,6 @@ class ImageWidget {
       fit: fit ?? BoxFit.contain,
       height: height,
       width: width ?? AppDimens.padding25,
-      package: 'module_ekyc',
     );
   }
 }
@@ -78,7 +75,6 @@ class ImageAppExt {
       height: height ?? 290.h,
       width: width ?? 335.w,
       opacity: AlwaysStoppedAnimation(opacity ?? 1.0),
-      package: 'module_ekyc',
     );
   }
 
@@ -87,7 +83,6 @@ class ImageAppExt {
   }) {
     return SvgPicture.asset(
       Assets.LIB_ASSETS_SVG_ICON_KYC_SMALL_SVG,
-      package: 'module_ekyc',
     ).paddingOnly(left: padding ?? AppDimens.padding10);
   }
 }

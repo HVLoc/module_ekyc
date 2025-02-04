@@ -32,7 +32,6 @@ class NfcDialog extends BaseGetWidget<NfcDialogController> {
             ),
             SvgPicture.asset(
               Assets.LIB_ASSETS_SVG_ICON_SCAN_NFC_SVG,
-              package: 'module_ekyc',
             ),
             TextUtils(
               text: controller.isReading.value
