@@ -51,7 +51,7 @@ Container _buildTitleGuide(String icon, String title) {
     child: Row(
       children: [
         sdsSBWidth12,
-        SvgPicture.asset(icon),
+        ImageWidget.imageSvg(icon),
         sdsSBWidth12,
         TextUtils(
           text: title,

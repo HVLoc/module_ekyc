@@ -55,7 +55,7 @@ Widget _itemBody(FaceMatchingResultController controller) {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
+                  ImageWidget.imageSvg(
                     (controller.appController.sendNfcRequestGlobalModel
                                 .isFaceMatching ??
                             false)

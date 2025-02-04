@@ -14,6 +14,7 @@ Widget _buildListGuild(NfcInformationUserController controller) {
                         controller.sendNfcRequestModel.statusSuccess
                     ? Assets.LIB_ASSETS_SVG_ICON_DONE_SVG
                     : Assets.LIB_ASSETS_SVG_ICON_CANCEL_AUTHENTICATION_SVG,
+                package: 'module_ekyc',
               ),
               sdsSBWidth5,
               Expanded(
@@ -196,5 +197,6 @@ Widget buildBaseIcon(String assetIcon) {
     assetIcon,
     width: 16,
     height: 16,
+    package: 'module_ekyc',
   );
 }

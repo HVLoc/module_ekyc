@@ -139,6 +139,7 @@ class ShowDialog {
                   AppColors.primaryBlue1,
                   BlendMode.srcIn,
                 ),
+                package: 'module_ekyc',
               ).paddingOnly(
                 top: AppDimens.padding16,
                 bottom: AppDimens.padding5,

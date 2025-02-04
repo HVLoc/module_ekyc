@@ -36,6 +36,7 @@ class NfcInformationUserPage extends BaseGetWidget {
             image: DecorationImage(
               image: AssetImage(
                 Assets.LIB_ASSETS_JPG_IMAGE_BANNER_PNG,
+                package: 'module_ekyc',
               ),
               fit: BoxFit.cover,
             ),
