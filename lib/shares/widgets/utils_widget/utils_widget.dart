@@ -140,7 +140,8 @@ class UtilWidget {
 
   static Widget buildEmptyList() {
     return Center(
-      child: SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_LIST_NULL_SVG),
+      child: SvgPicture.asset(
+          Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_LIST_NULL_SVG),
     );
   }
 

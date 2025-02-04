@@ -132,7 +132,7 @@ class ShowDialog {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               SvgPicture.asset(
-                Assets.LIB_ASSETS_SVG_ICON_CHECKMARK_SVG,
+                Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CHECKMARK_SVG,
                 width: AppDimens.iconCheckmark,
                 height: AppDimens.iconCheckmark,
                 colorFilter: const ColorFilter.mode(
@@ -292,7 +292,8 @@ class ShowDialog {
               constraints: const BoxConstraints(),
               style: const ButtonStyle(
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-              icon: SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_CALENDER_SVG))
+              icon: SvgPicture.asset(
+                  Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CALENDER_SVG))
         ],
       ).paddingSymmetric(
           vertical: AppDimens.padding10, horizontal: AppDimens.padding18),
@@ -406,7 +407,7 @@ class ShowDialog {
             // mainAxisSize: MainAxisSize.min,
             children: [
               SvgPicture.asset(
-                Assets.LIB_ASSETS_SVG_ICON_SUCCESS_SVG,
+                Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_SUCCESS_SVG,
                 colorFilter: const ColorFilter.mode(
                   AppColors.primaryBlue1,
                   BlendMode.srcIn,

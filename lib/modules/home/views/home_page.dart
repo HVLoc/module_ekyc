@@ -121,7 +121,8 @@ class HomePageState extends State<HomePage>
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: SvgPicture.asset(
-                    Assets.LIB_ASSETS_SVG_ICON_HOME_AUTHENTICATION_FOCUS_SVG,
+                    Assets
+                        .PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_HOME_AUTHENTICATION_FOCUS_SVG,
                     colorFilter: const ColorFilter.mode(
                         AppColors.basicGrey40, BlendMode.srcIn),
                   ),

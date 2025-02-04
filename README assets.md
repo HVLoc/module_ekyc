@@ -13,7 +13,7 @@ dart pub global activate assets_generator
 
 ```dart
 <!-- agen -f assets -t f -s -t f -r uwu --no-watch -->
-agen -f lib -t f -s -r uwu --no-watch
+sds_agen -f lib -t f -s -r uwu --no-watch
 
 ```
 
@@ -34,4 +34,4 @@ agen -f lib -t f -s -r uwu --no-watch
 - Hiện tại đang replace các ký tự đặc biệt như:
   - ' ' -> ''
   - '=' -> '_equals_'
-- Ví dụ: fileName 'File type=Excel.png', tên String sẽ là: `LIB_IMAGES_FILE_TYPE_EXCEL_PNG` khi dùng argument: `-r uwu`
+- Ví dụ: fileName 'File type=Excel.png', tên String sẽ là: `PACKAGES_SDS_ASSETS_IMAGES_FILE_TYPE_EXCEL_PNG` khi dùng argument: `-r uwu`

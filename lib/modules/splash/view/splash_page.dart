@@ -17,7 +17,7 @@ class SplashPage extends GetView<AppController> {
       alignment: Alignment.center,
       child: Center(
         child: SvgPicture.asset(
-          Assets.LIB_ASSETS_SVG_ICON_KYC_SVG,
+          Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_KYC_SVG,
           width: 136,
           height: 115,
         ),

@@ -70,7 +70,7 @@ class ImageAppExt {
     final BoxFit? fit,
   }) {
     return Image.asset(
-      Assets.LIB_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
+      Assets.PACKAGES_SDS_ASSETS_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
       fit: fit ?? BoxFit.contain,
       height: height ?? 290.h,
       width: width ?? 335.w,
@@ -81,7 +81,8 @@ class ImageAppExt {
   static Widget image2ID({
     final double? padding,
   }) {
-    return SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_KYC_SMALL_SVG)
+    return SvgPicture.asset(
+            Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_KYC_SMALL_SVG)
         .paddingOnly(left: padding ?? AppDimens.padding10);
   }
 }

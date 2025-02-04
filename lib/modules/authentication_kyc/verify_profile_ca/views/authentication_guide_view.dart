@@ -6,7 +6,8 @@ Column _buildBody() {
     children: [
       sdsSB5,
       Center(
-        child: Image.asset(Assets.LIB_ASSETS_JPG_IMG_CARD_CCCD_PNG),
+        child: Image.asset(
+            Assets.PACKAGES_SDS_ASSETS_ASSETS_JPG_IMG_CARD_CCCD_PNG),
       ),
       sdsSBHeight25,
       TextUtils(
@@ -14,16 +15,17 @@ Column _buildBody() {
         availableStyle: StyleEnum.subBold,
       ),
       sdsSBPadding,
-      _buildTitleGuide(Assets.LIB_ASSETS_SVG_ICON_CARD_CCCD_SVG,
+      _buildTitleGuide(Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CARD_CCCD_SVG,
           LocaleKeys.authentication_guide_prepare_card.tr),
       // sdsSBHeight12,
-      // _buildTitleGuide(Assets.LIB_ASSETS_SVG_ICON_LIST_SVG,
+      // _buildTitleGuide(Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_LIST_SVG,
       //     LocaleKeys.authentication_guide_check_information.tr),
       sdsSBHeight12,
-      _buildTitleGuide(Assets.LIB_ASSETS_SVG_ICON_NFC_CONNECT_SVG,
+      _buildTitleGuide(
+          Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_NFC_CONNECT_SVG,
           LocaleKeys.authentication_guide_nfc_scan.tr),
       sdsSBHeight12,
-      _buildTitleGuide(Assets.LIB_ASSETS_SVG_ICON_LIVE_NESS_SVG,
+      _buildTitleGuide(Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_LIVE_NESS_SVG,
           LocaleKeys.authentication_guide_live_ness.tr),
     ],
   );

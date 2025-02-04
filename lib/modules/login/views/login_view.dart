@@ -33,12 +33,12 @@ Widget _body(LoginController controller) {
             ],
           ).paddingSymmetric(vertical: AppDimens.padding15),
           /*SvgPicture.asset(
-            Assets.LIB_ASSETS_SVG_ICON_KYC_SVG,
+            Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_KYC_SVG,
             width: 136,
             height: 115,
           )*/
           /*SvgPicture.asset(
-            Assets.LIB_ASSETS_SVG_ICON_KYC_SVG,
+            Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_KYC_SVG,
             width: 136,
             height: 115,
           )*/
@@ -118,13 +118,15 @@ Widget _body(LoginController controller) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _itemListFunction(
-                  icon: Assets.LIB_ASSETS_SVG_ICON_AUTHENTICATION_SVG,
+                  icon: Assets
+                      .PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_AUTHENTICATION_SVG,
                   title: LocaleKeys.login_authentication.tr,
                   action: () async {
                     await controller.loginToList(6);
                   }),
               _itemListFunction(
-                  icon: Assets.LIB_ASSETS_SVG_ICON_LIST_USER_SVG,
+                  icon:
+                      Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_LIST_USER_SVG,
                   title: LocaleKeys.login_listUser.tr,
                   action: () async {
                     await controller.loginToList(1);
@@ -132,14 +134,15 @@ Widget _body(LoginController controller) {
               Visibility(
                 visible: controller.appController.isEnablePackage,
                 child: _itemListFunction(
-                    icon: Assets.LIB_ASSETS_SVG_ICON_SERVICE_PACKAGE_SVG,
+                    icon: Assets
+                        .PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_SERVICE_PACKAGE_SVG,
                     title: LocaleKeys.login_servicePackage.tr,
                     action: () async {
                       await controller.loginToList(3);
                     }),
               ),
               _itemListFunction(
-                icon: Assets.LIB_ASSETS_SVG_ICON_SUPPORT_SVG,
+                icon: Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_SUPPORT_SVG,
                 title: LocaleKeys.login_other.tr,
                 action: () async => await controller.loginToList(5),
               ),
