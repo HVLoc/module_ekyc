@@ -363,7 +363,7 @@ class UtilWidget {
                     BlendMode.srcIn,
                   ),
                 )
-              : Image.asset(
+              : ImageWidget.imageAsset(
                   svgIcon,
                   fit: BoxFit.fill,
                   width: AppDimens.btnSmall,

@@ -23,7 +23,7 @@ class SDSImageNetwork extends StatelessWidget {
           width: sdsImageNetworkModel.width,
           height: sdsImageNetworkModel.height,
           child: sdsImageNetworkModel.errorWidget ??
-              Image.asset(
+              ImageWidget.imageAsset(
                 sdsImageNetworkModel.imageDefault,
                 fit: BoxFit.cover,
                 width: sdsImageNetworkModel.width,
@@ -51,7 +51,7 @@ class SDSImageNetwork extends StatelessWidget {
         },
         errorWidget: (context, error, stackTrace) {
           return sdsImageNetworkModel.errorWidget ??
-              Image.asset(
+              ImageWidget.imageAsset(
                 sdsImageNetworkModel.imageDefault,
                 width: sdsImageNetworkModel.width,
               );

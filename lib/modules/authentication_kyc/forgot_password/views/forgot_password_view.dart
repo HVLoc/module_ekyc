@@ -9,7 +9,7 @@ Widget _itemBody(ForgotPasswordController controller) {
             key: controller.formKey,
             child: Column(
               children: [
-                Image.asset(
+                ImageWidget.imageAsset(
                   Assets.LIB_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
                   fit: BoxFit.fill,
                   width: Get.width - 50,

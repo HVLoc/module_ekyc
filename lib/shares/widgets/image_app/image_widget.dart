@@ -57,6 +57,7 @@ class ImageWidget {
       fit: fit ?? BoxFit.contain,
       height: height,
       width: width ?? AppDimens.padding25,
+      package: 'module_ekyc',
     );
   }
 }
@@ -75,6 +76,7 @@ class ImageAppExt {
       height: height ?? 290.h,
       width: width ?? 335.w,
       opacity: AlwaysStoppedAnimation(opacity ?? 1.0),
+      package: 'module_ekyc',
     );
   }
 

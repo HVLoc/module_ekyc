@@ -6,7 +6,7 @@ Column _buildBody() {
     children: [
       sdsSB5,
       Center(
-        child: Image.asset(Assets.LIB_ASSETS_JPG_IMG_CARD_CCCD_PNG),
+        child: ImageWidget.imageAsset(Assets.LIB_ASSETS_JPG_IMG_CARD_CCCD_PNG),
       ),
       sdsSBHeight25,
       TextUtils(
