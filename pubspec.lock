@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.8"
+  assets_generator:
+    dependency: "direct main"
+    description:
+      name: assets_generator
+      sha256: b3213c4735d54e15bd93277bb24b690234ae86038e664eea93f89f21d396d846
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.5"
   async:
     dependency: transitive
     description:
@@ -1254,15 +1262,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
-  sds_assets_generator:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: master
-      resolved-ref: "36f5149996eb55ddaef016501c3f43abf1a8b2f4"
-      url: "https://github.com/toannmdev/sds_assets_generator.git"
-    source: git
-    version: "1.1.5"
   sky_engine:
     dependency: transitive
     description: flutter
