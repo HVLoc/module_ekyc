@@ -30,8 +30,9 @@ class NfcDialog extends BaseGetWidget<NfcDialogController> {
               ).paddingOnly(
                   top: AppDimens.padding20, bottom: AppDimens.padding15),
             ),
-            ImageWidget.imageSvg(
+            SvgPicture.asset(
               Assets.LIB_ASSETS_SVG_ICON_SCAN_NFC_SVG,
+              package: 'module_ekyc',
             ),
             TextUtils(
               text: controller.isReading.value
