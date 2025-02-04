@@ -62,6 +62,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,
+                      package: 'module_ekyc',
                     )),
                 Positioned(
                     top: Get.height / 4.2 - Get.height / 6 - 1,
@@ -71,6 +72,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,
+                      package: 'module_ekyc',
                     )),
                 Positioned(
                     top: Get.height / 4.2 +
@@ -83,6 +85,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,
+                      package: 'module_ekyc',
                     )),
                 Positioned(
                     top: Get.height / 4.2 +
@@ -95,6 +98,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,
+                      package: 'module_ekyc',
                     )),
               ],
             ),
