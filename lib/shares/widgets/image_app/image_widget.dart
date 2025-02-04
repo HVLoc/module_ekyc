@@ -22,6 +22,7 @@ class ImageWidget {
             )
           : null,
       width: width ?? AppDimens.padding25,
+      package: 'module_ekyc',
     );
   }
 
@@ -42,6 +43,7 @@ class ImageWidget {
             )
           : null,
       width: width ?? AppDimens.iconMedium,
+      package: 'module_ekyc',
     );
   }
 
@@ -83,7 +85,9 @@ class ImageAppExt {
   static Widget image2ID({
     final double? padding,
   }) {
-    return SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_KYC_SMALL_SVG)
-        .paddingOnly(left: padding ?? AppDimens.padding10);
+    return SvgPicture.asset(
+      Assets.LIB_ASSETS_SVG_ICON_KYC_SMALL_SVG,
+      package: 'module_ekyc',
+    ).paddingOnly(left: padding ?? AppDimens.padding10);
   }
 }
