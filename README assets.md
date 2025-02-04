@@ -12,7 +12,7 @@ dart pub global activate assets_generator
 2. Run command:
 
 ```dart
-agen -f lib -t f -s -t f -r uwu --no-watch
+agen -f ./assets -t d -s -t -r uwu --no-watch
 <!-- sds_agen -f lib -t f -s -r uwu --no-watch -->
 
 ```

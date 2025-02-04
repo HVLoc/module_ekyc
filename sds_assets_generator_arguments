@@ -1,1 +1,1 @@
--f lib -t f -s -r uwu --no-watch
+-f lib/assets -t d -s -r uwu --no-watch
