@@ -59,8 +59,8 @@ Widget _itemBody(FaceMatchingResultController controller) {
                     (controller.appController.sendNfcRequestGlobalModel
                                 .isFaceMatching ??
                             false)
-                        ? Assets.ASSETS_SVG_IC_SUCCESS_SNACKBAR_SVG
-                        : Assets.ASSETS_SVG_IC_ERROR_SNACKBAR_SVG,
+                        ? Assets.LIB_ASSETS_SVG_IC_SUCCESS_SNACKBAR_SVG
+                        : Assets.LIB_ASSETS_SVG_IC_ERROR_SNACKBAR_SVG,
                   ).paddingOnly(
                     right: AppDimens.padding4,
                   ),
@@ -69,8 +69,8 @@ Widget _itemBody(FaceMatchingResultController controller) {
                       text: LocaleKeys.live_ness_result_title.tr,
                       availableStyle: StyleEnum.body14,
                       color: (controller.appController.sendNfcRequestGlobalModel
-                          .isFaceMatching ??
-                          false)
+                                  .isFaceMatching ??
+                              false)
                           ? AppColors.colorGreenText
                           : AppColors.statusRed,
                       maxLine: 2,
@@ -110,7 +110,7 @@ Widget _itemBody(FaceMatchingResultController controller) {
               // sizeBoxHeight12(),
               // _buildItemText(
               //     '${LocaleKeys.nfcInformationUserPage_lastName.tr}: ${controller.lastName}',
-              //     Assets.ASSETS_SVG_ICON_USER_NAME_CARD_SVG),
+              //     Assets.LIB_ASSETS_SVG_ICON_USER_NAME_CARD_SVG),
               _buildItemText(
                 LocaleKeys.nfcInformationUserPage_dateOfBirth.tr,
                 controller.appController.sendNfcRequestGlobalModel.dobVMN,
@@ -183,8 +183,7 @@ Widget _itemBody(FaceMatchingResultController controller) {
           () async {
             Get.toNamed(
               AppRoutes.routeNfcInformationUser,
-              arguments: controller
-                  .appController.sendNfcRequestGlobalModel,
+              arguments: controller.appController.sendNfcRequestGlobalModel,
             );
           },
           isLoading: controller.isShowLoading.value,

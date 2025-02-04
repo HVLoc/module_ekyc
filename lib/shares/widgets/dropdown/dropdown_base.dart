@@ -75,7 +75,8 @@ class DropdownBase {
                     value: key,
                     child: Row(
                       children: [
-                        SvgPicture.asset(Assets.ASSETS_SVG_ICON_CALENDER_SVG)
+                        SvgPicture.asset(
+                                Assets.LIB_ASSETS_SVG_ICON_CALENDER_SVG)
                             .paddingOnly(right: AppDimens.padding8),
                         Expanded(
                           child: TextUtils(
@@ -167,7 +168,7 @@ class DropdownBase {
           value: value,
           child: Row(
             children: [
-              SvgPicture.asset(Assets.ASSETS_SVG_ICON_CALENDER_SVG)
+              SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_CALENDER_SVG)
                   .paddingOnly(right: AppDimens.padding8),
               TextUtils(
                 text: value,
@@ -186,7 +187,7 @@ class DropdownBase {
             value: mapData[value],
             child: Row(
               children: [
-                SvgPicture.asset(Assets.ASSETS_SVG_ICON_CALENDER_SVG)
+                SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_CALENDER_SVG)
                     .paddingOnly(right: AppDimens.padding8),
                 Expanded(
                   child: TextUtils(

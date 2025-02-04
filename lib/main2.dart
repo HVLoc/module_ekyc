@@ -75,7 +75,7 @@ class MyHomePage extends StatelessWidget {
                   await ModulesEkyc.checkEKYC(sdkRequestModel).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
-                      print('EKYC: $sendNfcRequestModel');
+                      print('EKYC: ${sendNfcRequestModel.toJson()}');
                     }
                   });
                 },

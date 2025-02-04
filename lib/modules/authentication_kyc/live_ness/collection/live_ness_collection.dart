@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
@@ -23,12 +22,12 @@ class LiveNessCollection {
   ];
 
   // static List<String> listFaceDetach = [
-  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_LEFT_SVG,
-  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_RIGHT_SVG,
-  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_BETWEEN_SVG,
-  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_UP_SVG,
-  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_SMILE_SVG,
-  //   Assets.ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_BLINK_SVG,
+  //   Assets.LIB_ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_LEFT_SVG,
+  //   Assets.LIB_ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_RIGHT_SVG,
+  //   Assets.LIB_ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_BETWEEN_SVG,
+  //   Assets.LIB_ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_UP_SVG,
+  //   Assets.LIB_ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_SMILE_SVG,
+  //   Assets.LIB_ASSETS_IMAGES_ICON_ICON_SVG_ICON_FACE_BLINK_SVG,
   // ];
 
   static Map<String, String> listMapOderActionApi = {

@@ -29,8 +29,8 @@ class BottomSheetCheckNfc extends StatelessWidget {
         sdsSBHeight20,
         SvgPicture.asset(
             isSupportNfc
-                ? Assets.ASSETS_SVG_ICON_SUPPORT_NFC_SVG
-                : Assets.ASSETS_SVG_ICON_NO_SUPPORT_NFC_SVG,
+                ? Assets.LIB_ASSETS_SVG_ICON_SUPPORT_NFC_SVG
+                : Assets.LIB_ASSETS_SVG_ICON_NO_SUPPORT_NFC_SVG,
             colorFilter: const ColorFilter.mode(
                 AppColors.primaryBlue1, BlendMode.srcIn)),
         sdsSBHeight20,

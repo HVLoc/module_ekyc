@@ -293,6 +293,16 @@ class LiveNessKycController extends BaseGetxController {
         appController.sendNfcRequestGlobalModel.faceMatching =
             value.data?.matching;
         Get.offNamed(AppRoutes.routeFaceMatchingResult);
+      } else {
+        ShowDialog.showDialogNotification(
+          "${LocaleKeys.live_ness_matchingFailTitle.tr}\nKết quả: ${value.data?.matching}",
+          confirm: () {
+            Get.back();
+            Get.back();
+          },
+          title: LocaleKeys.live_ness_matchingFailContent.tr,
+          titleButton: LocaleKeys.dialog_redo.tr,
+        );
       }
     });
 

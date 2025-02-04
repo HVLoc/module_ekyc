@@ -1,27 +1,24 @@
-# sds_assets
 
-Nơi chứa toàn bộ assets của toàn bộ dự án
-
-&nbsp;
-&nbsp;
-
+Nơi chứa toàn bộ assets của dự án 
 
 Để gen `assets.dart` và khai báo toàn bộ assets trong `pubspec.yaml`:
 
-1. Active sds_assets_generator:
+1. Active assets_generator:
 
 ```dart
-dart pub global activate sds_assets_generator
+dart pub global activate assets_generator
 ```
 
 2. Run command:
 
 ```dart
-sds_agen -f assets -t f -s -r uwu --no-watch
+<!-- agen -f assets -t f -s -t f -r uwu --no-watch -->
+agen -f lib -t f -s -r uwu --no-watch
+
 ```
 
 - `-t`: `f`: The type in pubsepec.yaml: `file`
-- `-s`: Whether save the arguments into the local, file name: `sds_assets_generator_arguments`
+- `-s`: Whether save the arguments into the local, file name: `gp_assets_generator_arguments`
 - `-r`: The rule for the names of assets' consts
 
   - `lwu`: (lowercase_with_underscores) : e.g: `assets_images_xxx_jpg`
@@ -37,4 +34,4 @@ sds_agen -f assets -t f -s -r uwu --no-watch
 - Hiện tại đang replace các ký tự đặc biệt như:
   - ' ' -> ''
   - '=' -> '_equals_'
-- Ví dụ: fileName 'File type=Excel.png', tên String sẽ là: `PACKAGES_SDS_ASSETS_IMAGES_FILE_TYPE_EXCEL_PNG` khi dùng argument: `-r uwu`
+- Ví dụ: fileName 'File type=Excel.png', tên String sẽ là: `LIB_IMAGES_FILE_TYPE_EXCEL_PNG` khi dùng argument: `-r uwu`

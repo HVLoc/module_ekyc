@@ -33,7 +33,7 @@ Widget _body(OverviewController controller, TabController tabController) {
             //         child: Row(
             //           mainAxisAlignment: MainAxisAlignment.center,
             //           children: [
-            //             SvgPicture.asset(Assets.ASSETS_SVG_ICON_WARNING_SVG)
+            //             SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_WARNING_SVG)
             //                 .paddingSymmetric(
             //               horizontal: AppDimens.padding10,
             //               vertical: AppDimens.padding20,
@@ -111,7 +111,7 @@ Widget _body(OverviewController controller, TabController tabController) {
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          Assets.ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
+                          Assets.LIB_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
                         ),
                         fit: BoxFit.fitWidth,
                         opacity: 0.3,
@@ -145,7 +145,7 @@ Widget _body(OverviewController controller, TabController tabController) {
                         ),
                       ),
                       Obx(
-                            () => Align(
+                        () => Align(
                           alignment: Alignment.topLeft,
                           child: Container(
                             decoration: BoxDecoration(
@@ -170,12 +170,13 @@ Widget _body(OverviewController controller, TabController tabController) {
                           height: 120,
                           alignment: Alignment.centerLeft,
                           child: Obx(
-                                () => Row(
+                            () => Row(
                               children: [
                                 Expanded(
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       sdsSBHeight20,
                                       TextUtils(
@@ -186,16 +187,17 @@ Widget _body(OverviewController controller, TabController tabController) {
                                       ),
                                       sdsSBHeight2,
                                       itemTitle(
-                                          content:
-                                          LocaleKeys.overView_registerDate.tr,
+                                          content: LocaleKeys
+                                              .overView_registerDate.tr,
                                           title: controller.registerDate.value),
                                       sdsSBHeight2,
                                       Visibility(
-                                        visible: !controller.appController.isEnablePay,
+                                        visible: !controller
+                                            .appController.isEnablePay,
                                         child: itemTitle(
                                             content: LocaleKeys.overView_sum.tr,
                                             title:
-                                            "${controller.costTotal.value} ${LocaleKeys.overView_turn.tr}"),
+                                                "${controller.costTotal.value} ${LocaleKeys.overView_turn.tr}"),
                                       ),
                                     ],
                                   ),
@@ -204,7 +206,7 @@ Widget _body(OverviewController controller, TabController tabController) {
                                   children: [
                                     Center(
                                       child: SvgPicture.asset(
-                                        Assets.ASSETS_SVG_ICON_CIRCLE_SVG,
+                                        Assets.LIB_ASSETS_SVG_ICON_CIRCLE_SVG,
                                       ),
                                     ),
                                     Positioned.fill(
@@ -212,18 +214,19 @@ Widget _body(OverviewController controller, TabController tabController) {
                                         alignment: Alignment.center,
                                         child: Column(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             TextUtils(
                                               text: LocaleKeys
                                                   .overView_remaining.tr,
                                               availableStyle:
-                                              StyleEnum.detailRegular,
+                                                  StyleEnum.detailRegular,
                                               color: AppColors.basicBlack,
                                             ),
                                             TextUtils(
                                               text: controller.totalUsed.value,
-                                              availableStyle: StyleEnum.bodyBold,
+                                              availableStyle:
+                                                  StyleEnum.bodyBold,
                                               color: AppColors.basicBlack,
                                             ),
                                           ],
@@ -283,13 +286,13 @@ Widget _buildInfoUser(AppController controller) {
       height: 230,
       child: Stack(
         children: [
-          SvgPicture.asset(Assets.ASSETS_SVG_ICON_BANNER_HOME_SVG),
+          SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_BANNER_HOME_SVG),
           Align(
               alignment: Alignment.bottomCenter,
               child: Stack(
                 children: [
                   ImageWidget.imageSvg(
-                    Assets.ASSETS_SVG_ICON_ITEM_HOME_SVG,
+                    Assets.LIB_ASSETS_SVG_ICON_ITEM_HOME_SVG,
                     width: Get.width - AppDimens.padding40,
                   ),
                   TextUtils(

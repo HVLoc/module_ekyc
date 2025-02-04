@@ -35,7 +35,7 @@ class NfcInformationUserPage extends BaseGetWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                Assets.ASSETS_JPG_IMAGE_BANNER_PNG,
+                Assets.LIB_ASSETS_JPG_IMAGE_BANNER_PNG,
               ),
               fit: BoxFit.cover,
             ),
@@ -59,7 +59,8 @@ class NfcInformationUserPage extends BaseGetWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ButtonUtils.buildButton(
-                controller.authenticationVisible.value || controller.appController.isOnlyNFC
+                controller.authenticationVisible.value ||
+                        controller.appController.isOnlyNFC
                     ? LocaleKeys.nfc_nfcSuccess.tr
                     : LocaleKeys.registerCa_continue.tr,
                 () async {

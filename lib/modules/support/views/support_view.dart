@@ -11,7 +11,7 @@ Widget _itemBody(SupportController controller) {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset(
-                    Assets.ASSETS_SVG_ICON_LOGO_SUPPORT_SVG,
+                    Assets.LIB_ASSETS_SVG_ICON_LOGO_SUPPORT_SVG,
                   ).paddingOnly(right: AppDimens.padding10),
                   Flexible(
                     child: TextUtils(
@@ -26,12 +26,12 @@ Widget _itemBody(SupportController controller) {
               ),
               sdsSBHeight25,
               _itemSupport(
-                  icon: Assets.ASSETS_SVG_ICON_ADDRESS_SVG,
+                  icon: Assets.LIB_ASSETS_SVG_ICON_ADDRESS_SVG,
                   title: LocaleKeys.support_address.tr,
                   content: controller.supportModel.address ?? "",
                   function: () {}),
               _itemSupport(
-                  icon: Assets.ASSETS_SVG_ICON_HOTLINE_SVG,
+                  icon: Assets.LIB_ASSETS_SVG_ICON_HOTLINE_SVG,
                   title: LocaleKeys.support_hotline1.tr,
                   content: controller.listPhone.first,
                   function: () async {
@@ -39,14 +39,14 @@ Widget _itemBody(SupportController controller) {
                         controller.listPhone.first);
                   }),
               _itemSupport(
-                  icon: Assets.ASSETS_SVG_ICON_HOTLINE_SVG,
+                  icon: Assets.LIB_ASSETS_SVG_ICON_HOTLINE_SVG,
                   title: LocaleKeys.support_hotline2.tr,
                   content: controller.listPhone.last,
                   function: () async {
                     await UtilWidget.launchInBrowser(controller.listPhone.last);
                   }),
               _itemSupport(
-                  icon: Assets.ASSETS_SVG_ICON_EMAIL_SUPPORT_SVG,
+                  icon: Assets.LIB_ASSETS_SVG_ICON_EMAIL_SUPPORT_SVG,
                   title: LocaleKeys.support_email.tr,
                   content: controller.supportModel.email ?? "",
                   function: () async {
@@ -54,7 +54,7 @@ Widget _itemBody(SupportController controller) {
                         controller.supportModel.email ?? "");
                   }),
               _itemSupport(
-                  icon: Assets.ASSETS_SVG_ICON_WEB_SVG,
+                  icon: Assets.LIB_ASSETS_SVG_ICON_WEB_SVG,
                   title: LocaleKeys.support_web.tr,
                   content: controller.supportModel.webSite ?? "",
                   function: () async {
