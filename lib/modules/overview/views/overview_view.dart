@@ -33,7 +33,7 @@ Widget _body(OverviewController controller, TabController tabController) {
             //         child: Row(
             //           mainAxisAlignment: MainAxisAlignment.center,
             //           children: [
-            //             SvgPicture.asset(Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_WARNING_SVG)
+            //             SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_WARNING_SVG)
             //                 .paddingSymmetric(
             //               horizontal: AppDimens.padding10,
             //               vertical: AppDimens.padding20,
@@ -111,8 +111,7 @@ Widget _body(OverviewController controller, TabController tabController) {
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          Assets
-                              .PACKAGES_SDS_ASSETS_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
+                          Assets.LIB_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
                         ),
                         fit: BoxFit.fitWidth,
                         opacity: 0.3,
@@ -207,8 +206,7 @@ Widget _body(OverviewController controller, TabController tabController) {
                                   children: [
                                     Center(
                                       child: SvgPicture.asset(
-                                        Assets
-                                            .PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CIRCLE_SVG,
+                                        Assets.LIB_ASSETS_SVG_ICON_CIRCLE_SVG,
                                       ),
                                     ),
                                     Positioned.fill(
@@ -288,14 +286,13 @@ Widget _buildInfoUser(AppController controller) {
       height: 230,
       child: Stack(
         children: [
-          SvgPicture.asset(
-              Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_BANNER_HOME_SVG),
+          SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_BANNER_HOME_SVG),
           Align(
               alignment: Alignment.bottomCenter,
               child: Stack(
                 children: [
                   ImageWidget.imageSvg(
-                    Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_ITEM_HOME_SVG,
+                    Assets.LIB_ASSETS_SVG_ICON_ITEM_HOME_SVG,
                     width: Get.width - AppDimens.padding40,
                   ),
                   TextUtils(

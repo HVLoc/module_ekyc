@@ -59,10 +59,8 @@ Widget _itemBody(FaceMatchingResultController controller) {
                     (controller.appController.sendNfcRequestGlobalModel
                                 .isFaceMatching ??
                             false)
-                        ? Assets
-                            .PACKAGES_SDS_ASSETS_ASSETS_SVG_IC_SUCCESS_SNACKBAR_SVG
-                        : Assets
-                            .PACKAGES_SDS_ASSETS_ASSETS_SVG_IC_ERROR_SNACKBAR_SVG,
+                        ? Assets.LIB_ASSETS_SVG_IC_SUCCESS_SNACKBAR_SVG
+                        : Assets.LIB_ASSETS_SVG_IC_ERROR_SNACKBAR_SVG,
                   ).paddingOnly(
                     right: AppDimens.padding4,
                   ),
@@ -112,7 +110,7 @@ Widget _itemBody(FaceMatchingResultController controller) {
               // sizeBoxHeight12(),
               // _buildItemText(
               //     '${LocaleKeys.nfcInformationUserPage_lastName.tr}: ${controller.lastName}',
-              //     Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_USER_NAME_CARD_SVG),
+              //     Assets.LIB_ASSETS_SVG_ICON_USER_NAME_CARD_SVG),
               _buildItemText(
                 LocaleKeys.nfcInformationUserPage_dateOfBirth.tr,
                 controller.appController.sendNfcRequestGlobalModel.dobVMN,

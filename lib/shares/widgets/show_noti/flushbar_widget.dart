@@ -21,25 +21,22 @@ class ShowFlushBar {
     switch (type) {
       case FlushBarType.notification:
         backgroundColor = AppColors.shadow;
-        assetName = Assets
-            .PACKAGES_SDS_ASSETS_ASSETS_SVG_NOTIFICATION_13_SVGREPO_COM_SVG;
+        assetName = Assets.LIB_ASSETS_SVG_NOTIFICATION_13_SVGREPO_COM_SVG;
         messageColor = AppColors.basicBlack;
         break;
       case FlushBarType.success:
         backgroundColor = AppColors.basicSuccess;
-        assetName = Assets
-            .PACKAGES_SDS_ASSETS_ASSETS_SVG_SUCCESS_STANDARD_SVGREPO_COM_SVG;
+        assetName = Assets.LIB_ASSETS_SVG_SUCCESS_STANDARD_SVGREPO_COM_SVG;
         messageColor = AppColors.statusGreen;
         break;
       case FlushBarType.error:
         backgroundColor = AppColors.basicError;
-        assetName = Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ERROR_SVGREPO_COM_SVG;
+        assetName = Assets.LIB_ASSETS_SVG_ERROR_SVGREPO_COM_SVG;
 
         break;
       case FlushBarType.warning:
         backgroundColor = AppColors.secondaryCam2;
-        assetName =
-            Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_WARNING_SVGREPO_COM_SVG;
+        assetName = Assets.LIB_ASSETS_SVG_WARNING_SVGREPO_COM_SVG;
 
         break;
     }

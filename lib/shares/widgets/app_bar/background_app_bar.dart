@@ -152,8 +152,7 @@ class BackgroundAppBar {
               padding: const EdgeInsets.all(0.0),
               constraints: const BoxConstraints(),
               onPressed: () {},
-              icon: SvgPicture.asset(
-                  Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_SEARCH_SVG)),
+              icon: SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_SEARCH_SVG)),
           // prefixIconColor: prefixIconColor,
           // focusNode: currentNode.value,
           // nextNode: nextMode,

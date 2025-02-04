@@ -35,7 +35,7 @@ class NfcInformationUserPage extends BaseGetWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                Assets.PACKAGES_SDS_ASSETS_ASSETS_JPG_IMAGE_BANNER_PNG,
+                Assets.LIB_ASSETS_JPG_IMAGE_BANNER_PNG,
               ),
               fit: BoxFit.cover,
             ),

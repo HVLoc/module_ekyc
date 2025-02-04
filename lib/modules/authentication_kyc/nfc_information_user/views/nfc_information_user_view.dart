@@ -12,9 +12,8 @@ Widget _buildListGuild(NfcInformationUserController controller) {
               SvgPicture.asset(
                 controller.authenticationSuccess ||
                         controller.sendNfcRequestModel.statusSuccess
-                    ? Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_DONE_SVG
-                    : Assets
-                        .PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CANCEL_AUTHENTICATION_SVG,
+                    ? Assets.LIB_ASSETS_SVG_ICON_DONE_SVG
+                    : Assets.LIB_ASSETS_SVG_ICON_CANCEL_AUTHENTICATION_SVG,
               ),
               sdsSBWidth5,
               Expanded(
@@ -106,7 +105,7 @@ Widget _buildListGuild(NfcInformationUserController controller) {
         // sizeBoxHeight12(),
         // _buildItemText(
         //     '${LocaleKeys.nfcInformationUserPage_lastName.tr}: ${controller.lastName}',
-        //     Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_USER_NAME_CARD_SVG),
+        //     Assets.LIB_ASSETS_SVG_ICON_USER_NAME_CARD_SVG),
         _buildItemText(LocaleKeys.nfcInformationUserPage_dateOfBirth.tr,
             controller.dateOfBirth),
         _buildItemText(LocaleKeys.nfcInformationUserPage_gender.tr,

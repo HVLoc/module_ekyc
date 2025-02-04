@@ -49,7 +49,7 @@ Widget _buildListViewProfile(VerifyProfileController controller) {
 
 // Center _buildListNull() {
 //   return Center(
-//     child: SvgPicture.asset(Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_LIST_NULL_SVG),
+//     child: SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_LIST_NULL_SVG),
 //   );
 // }
 
@@ -78,24 +78,21 @@ Widget _buildItemInfo(AuthProfileResponseModel authProfileResponseModel,
             color: AppColors.basicBlack,
           ),
           sdsSB5,
-          _buildItemCard(
-              Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CARD_INFO_SVG,
+          _buildItemCard(Assets.LIB_ASSETS_SVG_ICON_CARD_INFO_SVG,
               authProfileResponseModel.identity ?? ""),
           sdsSB5,
-          _buildItemCard(
-              Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_USER_NAME_CARD_SVG,
+          _buildItemCard(Assets.LIB_ASSETS_SVG_ICON_USER_NAME_CARD_SVG,
               '${LocaleKeys.registerCa_userName.tr}: ${authProfileResponseModel.name}'),
           sdsSB5,
-          _buildItemCard(
-              Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CANLENDAR_CARD_SVG,
+          _buildItemCard(Assets.LIB_ASSETS_SVG_ICON_CANLENDAR_CARD_SVG,
               '${LocaleKeys.registerCa_dateCreate.tr}: ${authProfileResponseModel.registerTime}'),
           // sdsSB5,
-          // _buildItemCard(Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_CANLENDAR_CARD_SVG,
+          // _buildItemCard(Assets.LIB_ASSETS_SVG_ICON_CANLENDAR_CARD_SVG,
           //     '${LocaleKeys.registerCa_registrationDeadline.tr}: ${authProfileResponseModel.serviceExpiry} ${LocaleKeys.registerCa_month.tr}'),
           sdsSB5,
           //
           _buildItemCard(
-              Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_PACKAGE_SVG,
+              Assets.LIB_ASSETS_SVG_ICON_PACKAGE_SVG,
               '${LocaleKeys.registerCa_service_package.tr}: ${controller.capitalizeFirstLetter(
                 controller.nameServicePackage(
                     ServiceTypeEnum.mapServiceType[
@@ -104,11 +101,10 @@ Widget _buildItemInfo(AuthProfileResponseModel authProfileResponseModel,
                     authProfileResponseModel.serviceExpiry ?? ""),
               )}'),
           //
-          _buildItemCard(
-              Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_NUMBER_PHONE_SVG,
+          _buildItemCard(Assets.LIB_ASSETS_SVG_ICON_NUMBER_PHONE_SVG,
               '${LocaleKeys.registerCa_numberPhone.tr}: ${authProfileResponseModel.phoneNumber}'),
           sdsSB5,
-          _buildItemCard(Assets.PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_EMAIL_SVG,
+          _buildItemCard(Assets.LIB_ASSETS_SVG_ICON_EMAIL_SVG,
               '${LocaleKeys.registerCa_email.tr}: ${authProfileResponseModel.email}'),
           sdsSB5,
         ],

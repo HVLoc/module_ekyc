@@ -53,10 +53,8 @@ class _SDSInputTextState extends State<SDSInputText> with FormatterEnum {
               ),
               child: SvgPicture.asset(
                   _showPassword.value
-                      ? Assets
-                          .PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_HIDDEN_EYE_SVG
-                      : Assets
-                          .PACKAGES_SDS_ASSETS_ASSETS_SVG_ICON_APPEAR_EYE_SVG,
+                      ? Assets.LIB_ASSETS_SVG_ICON_HIDDEN_EYE_SVG
+                      : Assets.LIB_ASSETS_SVG_ICON_APPEAR_EYE_SVG,
                   colorFilter: ColorFilter.mode(
                       widget.inputTextFormModel.suffixColor ??
                           AppColors.primaryBlue1,
