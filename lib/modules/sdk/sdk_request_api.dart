@@ -1,11 +1,11 @@
 class SdkRequestAPI {
-  final String apiKey;
+  final String merchantKey;
   final String transactionId;
   final int timestamp;
   final String hash;
 
   SdkRequestAPI({
-    required this.apiKey,
+    required this.merchantKey,
     required this.transactionId,
     required this.timestamp,
     required this.hash,
@@ -13,7 +13,7 @@ class SdkRequestAPI {
 
   factory SdkRequestAPI.fromJson(Map<String, dynamic> json) {
     return SdkRequestAPI(
-      apiKey: json['apiKey'],
+      merchantKey: json['merchantKey'],
       transactionId: json['transactionId'],
       timestamp: json['timestamp'],
       hash: json['hash'],
@@ -22,7 +22,7 @@ class SdkRequestAPI {
 
   Map<String, dynamic> toJson() {
     return {
-      'apiKey': apiKey,
+      'merchantKey': merchantKey,
       'transactionId': transactionId,
       'timestamp': timestamp,
       'hash': hash,

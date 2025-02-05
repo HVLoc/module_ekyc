@@ -20,7 +20,7 @@ class CreatePararmSDK {
     );
 
     SdkRequestAPI sdkRequestAPI = SdkRequestAPI(
-      apiKey: sdkRequestModel.key,
+      merchantKey: sdkRequestModel.key,
       transactionId: transactionId,
       timestamp: timestamp,
       hash: hash,
