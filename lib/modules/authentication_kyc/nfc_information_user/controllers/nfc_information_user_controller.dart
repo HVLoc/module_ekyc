@@ -67,12 +67,15 @@ class NfcInformationUserController extends BaseGetxController {
             pattern1,
           );
         }
-        appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
 
         // nationality = sendNfcRequestModel.nationVNM;
         image = sendNfcRequestModel.file;
         imageBody = sendNfcRequestModel.bodyFileId;
         packageKind = sendNfcRequestModel.kind ?? AppConst.typeProduction;
+
+        //Set lại model cho request
+        sendNfcRequestModel.method = appController.sdkModel.method;
+
         // if (appController.typeAuthentication == AppConst.typeAuthentication) {
         //   await nfcRepository
         //       .sendNfcRepository(sendNfcRequestModel)
@@ -81,6 +84,8 @@ class NfcInformationUserController extends BaseGetxController {
         //     authenticationVisible.value = true;
         //   });
         // }
+        appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+
         if (sendNfcRequestModel.isFaceMatching ?? false) {
           successSDK = true;
           // authenticationFake();
@@ -95,20 +100,20 @@ class NfcInformationUserController extends BaseGetxController {
     authenticationVisible.value = true;
   }
 
-  Future<void> authentication(String id, String bodyFileId) async {
-    sendNfcRequestModel.fileId = id;
-    sendNfcRequestModel.bodyFileId = bodyFileId;
-    await nfcRepository.sendNfcRepository(sendNfcRequestModel).then((value) {
-      authenticationSuccess = value.data?.result ?? false;
-      authenticationVisible.value = true;
-      packageKind = value.data?.packageKind ?? AppConst.typeSanbox;
+  // Future<void> authentication(String id, String bodyFileId) async {
+  //   sendNfcRequestModel.fileId = id;
+  //   sendNfcRequestModel.bodyFileId = bodyFileId;
+  //   await nfcRepository.sendNfcRepository(sendNfcRequestModel).then((value) {
+  //     authenticationSuccess = value.data?.result ?? false;
+  //     authenticationVisible.value = true;
+  //     packageKind = value.data?.packageKind ?? AppConst.typeSanbox;
 
-      if (Get.isRegistered<OverviewController>()) {
-        OverviewController overviewController = Get.find<OverviewController>();
-        overviewController.getUserInfo();
-      }
-    });
-  }
+  //     if (Get.isRegistered<OverviewController>()) {
+  //       OverviewController overviewController = Get.find<OverviewController>();
+  //       overviewController.getUserInfo();
+  //     }
+  //   });
+  // }
 
   Future<void> authenticationSDK() async {
     // sendNfcRequestModel.fileId = id;
@@ -126,6 +131,8 @@ class NfcInformationUserController extends BaseGetxController {
         .then((value) {
       authenticationSuccess = value.data.result;
       authenticationVisible.value = true;
+      appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+
       // packageKind = value.data.packageKind ?? AppConst.typeSanbox;
       // if (Get.isRegistered<ClientController>()) {
       //   ClientController clientController = Get.find<ClientController>();

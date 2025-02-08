@@ -88,15 +88,15 @@ class AppController extends GetxController {
     super.onInit();
   }
 
-  Future<void> demoModule() async {
-    sdkModel = SdkRequestModel(
-      key: "89f797ab-ec41-446a-8dc1-1dfda5e7e93d",
-      secretKey: "63f81c69722acaa42f622ec16d702fdb",
-      isProd: false,
-    );
+  // Future<void> demoModule() async {
+  //   sdkModel = SdkRequestModel(
+  //     key: "89f797ab-ec41-446a-8dc1-1dfda5e7e93d",
+  //     secretKey: "63f81c69722acaa42f622ec16d702fdb",
+  //     isProd: false,
+  //   );
 
-    await checkPermissionApp();
-  }
+  //   await checkPermissionApp();
+  // }
 
   void clearData({bool clearUserInfo = false}) {
     qrUserInformation = QrUserInformation();
@@ -122,7 +122,7 @@ class AppController extends GetxController {
           qrUserInformation.documentNumber = data['CCCD'];
 
           sdkModel = SdkRequestModel(
-            key: data['key'] ?? "",
+            merchantKey: data['merchantKey'] ?? "",
             secretKey: data['secretKey'] ?? "",
             documentNumber: data['CCCD'],
             isProd: data['isProd'] ?? false,

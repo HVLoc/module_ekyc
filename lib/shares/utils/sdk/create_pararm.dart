@@ -12,7 +12,7 @@ class CreatePararmSDK {
     String transactionId = IdGenerator.randomIKey;
 
     String hash = VerificationUtils.buildRequestHash(
-      sdkRequestModel.key,
+      sdkRequestModel.merchantKey,
       sdkRequestModel.secretKey,
       transactionId,
       timestamp,
@@ -20,7 +20,7 @@ class CreatePararmSDK {
     );
 
     SdkRequestAPI sdkRequestAPI = SdkRequestAPI(
-      merchantKey: sdkRequestModel.key,
+      merchantKey: sdkRequestModel.merchantKey,
       transactionId: transactionId,
       timestamp: timestamp,
       hash: hash,

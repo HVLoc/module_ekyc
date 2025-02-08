@@ -18,7 +18,7 @@ class ModulesEkyc {
   static Future<SendNfcRequestModel?> checkEKYC(
       SdkRequestModel sdkRequestModel) async {
     AppController appController = Get.put(AppController());
-    // appController.sdkModel = sdkRequestModel;
+    appController.sdkModel = sdkRequestModel;
     var result = await appController.checkPermissionApp();
     Get.delete<AppController>();
     return result;
