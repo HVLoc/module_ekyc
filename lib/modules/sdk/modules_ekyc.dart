@@ -10,7 +10,7 @@ class ModulesEkyc {
     AppController appController = Get.put(AppController());
 
     appController.isOnlyNFC = true;
-    Assets.isFromModules = true;
+    // Assets.isFromModules = true;
     var result = await appController.checkPermissionApp();
     Get.delete<AppController>();
     return result;
@@ -19,7 +19,7 @@ class ModulesEkyc {
   static Future<SendNfcRequestModel?> checkEKYC(
       SdkRequestModel sdkRequestModel) async {
     AppController appController = Get.put(AppController());
-    Assets.isFromModules = true;
+    // Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;
     var result = await appController.checkPermissionApp();
     Get.delete<AppController>();

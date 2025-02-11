@@ -24,12 +24,11 @@ class AppColors {
   static const Color basicGrey2 = Color(0xFFA9A9A9);
   static const Color basicGrey1 = Color(0xFF7E7E7E);
   static const Color basicBlack = Color(0xFF333333);
-  static const Color basicBorder =Color(0xFF91D7E3);
-  static const Color basicGreyDialog =Color(0xFFF5F7FA);
+  static const Color basicBorder = Color(0xFF91D7E3);
+  static const Color basicGreyDialog = Color(0xFFF5F7FA);
   static const Color basicGreyText = Color(0xFF9F9F9F);
   static const Color basicDivider = Color(0xFF577D99);
   static const Color basicTextPay = Color(0xFF577D99);
-
 
   static const Color basicGrey40 = Color(0xFF939393);
 
@@ -73,5 +72,5 @@ class AppColors {
 
   static const Color colorSuccess = Color(0xFF00D4AE);
   static const Color colorNotSuccess = Color(0xFF939393);
-
+  static const Color colorVTS = Color(0xFF263C98);
 }

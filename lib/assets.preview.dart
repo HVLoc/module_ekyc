@@ -4,6 +4,14 @@
 // **************************************************************************
 // ignore_for_file: constant_identifier_names, non_constant_identifier_names
 
+/// {@template assets_generator.ASSETS_JPG_VTS___APP___NEN_1_JPG.preview}
+/// ![](/Users/apple/LocHV/Flutter/module_ekyc/assets/jpg/VTS - App - NEN 1.jpg)
+/// {@endtemplate}
+
+/// {@template assets_generator.ASSETS_JPG_ENOTARYID___APP___NEN_2_JPG.preview}
+/// ![](/Users/apple/LocHV/Flutter/module_ekyc/assets/jpg/eNotaryID - App - NEN 2.jpg)
+/// {@endtemplate}
+
 /// {@template assets_generator.ASSETS_JPG_ICON_BANNER_LOGIN_PNG.preview}
 /// ![](/Users/apple/LocHV/Flutter/module_ekyc/assets/jpg/icon_banner_login.png)
 /// {@endtemplate}
@@ -22,6 +30,10 @@
 
 /// {@template assets_generator.ASSETS_JPG_IMAGE_DEFAULT_JPG.preview}
 /// ![](/Users/apple/LocHV/Flutter/module_ekyc/assets/jpg/image_default.jpg)
+/// {@endtemplate}
+
+/// {@template assets_generator.ASSETS_JPG_IMAGES_PNG.preview}
+/// ![](/Users/apple/LocHV/Flutter/module_ekyc/assets/jpg/images.png)
 /// {@endtemplate}
 
 /// {@template assets_generator.ASSETS_JPG_IMG_CARD_CCCD_PNG.preview}

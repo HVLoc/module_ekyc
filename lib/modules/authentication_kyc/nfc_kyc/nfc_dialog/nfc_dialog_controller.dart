@@ -296,6 +296,9 @@ class NfcDialogController extends BaseGetxController {
       // }
       sendNfcRequestModel.otherPaper =
           appController.qrUserInformation.informationIdCard;
+      sendNfcRequestModel.isIntegrity =
+          appController.qrUserInformation.documentNumber ==
+              sendNfcRequestModel.number;
       sendNfcRequestModel.mrz = removeSpecialCharacters(
           utf8.decode(mrtdDataTemp.dg1!.toBytes(), allowMalformed: true));
 

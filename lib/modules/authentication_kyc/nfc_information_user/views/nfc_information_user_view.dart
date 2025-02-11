@@ -90,8 +90,20 @@ Widget _buildListGuild(NfcInformationUserController controller) {
                 : const SizedBox()
           ],
         ).paddingSymmetric(vertical: AppDimens.padding10),
-        _buildItemText(LocaleKeys.nfcInformationUserPage_firstName.tr,
-            controller.sendNfcRequestModel.nameVNM),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: const TextUtils(
+            text: "Thông tin cá nhân",
+            availableStyle: StyleEnum.subBold,
+            maxLine: 3,
+          ),
+        ),
+        sdsSB8,
+        _buildItemText(
+          LocaleKeys.nfcInformationUserPage_firstName.tr,
+          controller.sendNfcRequestModel.nameVNM,
+          isFirst: true,
+        ),
         _buildItemText(LocaleKeys.nfcInformationUserPage_idCard.tr,
             controller.sendNfcRequestModel.number),
         // _buildItemText(LocaleKeys.nfcInformationUserPage_phone.tr,
@@ -140,6 +152,11 @@ Widget _buildListGuild(NfcInformationUserController controller) {
                     : "Tên chồng:",
                 controller.sendNfcRequestModel.nameCouple)
             : const SizedBox(),
+
+        sdsSB8,
+        if (controller.authenticationVisible.value)
+          buildStatusVerify(controller.appController.sendNfcRequestGlobalModel),
+        sdsSB8,
       ],
     ).paddingSymmetric(horizontal: AppDimens.padding10),
   );
@@ -151,9 +168,14 @@ SizedBox sizeBoxHeight12() {
   );
 }
 
-Widget _buildItemText(String title, String? content) {
+Widget _buildItemText(String title, String? content, {bool isFirst = false}) {
   return Column(
     children: [
+      if (!isFirst)
+        const Divider(
+          color: AppColors.colorDisable,
+          height: 1,
+        ),
       Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -170,7 +192,7 @@ Widget _buildItemText(String title, String? content) {
               child: TextUtils(
                 text: content ?? "",
                 availableStyle: StyleEnum.body14,
-                color: AppColors.primaryBlue1,
+                color: AppColors.basicBlack,
                 maxLine: 3,
                 textAlign: TextAlign.end,
               ),

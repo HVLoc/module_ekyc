@@ -22,35 +22,47 @@ class QRGuidePage extends BaseGetWidget<QRController> {
   // }
 
   Widget _buildBody() {
+    double qrSize = Get.height / 3;
+    double qrWidth = qrSize * 1.2 - 6; // Điều chỉnh width theo tỷ lệ mong muốn
+
+    double topPosition = Get.height / 4.2 - qrSize / 2;
+    double leftPosition = 40;
+
     return Scaffold(
-      backgroundColor: AppColors.basicWhite,
+      // backgroundColor: AppColors.basicWhite,
       body: Stack(
         children: [
+          Positioned.fill(
+            child: ImageWidget.imageAsset(
+                Assets.ASSETS_JPG_VTS___APP___NEN_1_JPG,
+                fit: BoxFit.cover),
+          ),
           SizedBox(
             height: Get.height,
             width: Get.width,
             child: Stack(
               fit: StackFit.passthrough,
               children: [
-                MobileScanner(
-                  // fit: BoxFit.contain,
-                  controller: controller.cameraController,
-                  onDetect: (capture) {
-                    final List<Barcode> barcodes = capture.barcodes;
-                    // final Uint8List? image = capture.image;
-                    // for (final barcode in barcodes) {
-                    if (barcodes.first.rawValue != null) {
-                      controller.getData(barcodes.first.rawValue ?? "");
-                    }
-                    // }
-                  },
-                  onScannerStarted: (_) {
-                    controller.cameraController
-                        .setZoomScale(controller.zoomX.value * 0.1);
-                  },
-                ),
-                CustomPaint(
-                  painter: CustomShapePainterDaily(),
+                Positioned(
+                  top: topPosition,
+                  left: leftPosition,
+                  child: SizedBox(
+                    width: qrWidth,
+                    height: qrSize,
+                    child: MobileScanner(
+                      controller: controller.cameraController,
+                      onDetect: (capture) {
+                        final List<Barcode> barcodes = capture.barcodes;
+                        if (barcodes.first.rawValue != null) {
+                          controller.getData(barcodes.first.rawValue ?? "");
+                        }
+                      },
+                      onScannerStarted: (_) {
+                        controller.cameraController
+                            .setZoomScale(controller.zoomX.value * 0.1);
+                      },
+                    ),
+                  ),
                 ),
                 _buildListGuild(),
                 _buildListImage(controller),
@@ -61,7 +73,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       Assets.ASSETS_SVG_ICON_CORNER_LEFT_DOWN_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
+                      color: AppColors.colorVTS,
                     )),
                 Positioned(
                     top: Get.height / 4.2 - Get.height / 6 - 1,
@@ -70,7 +82,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       Assets.ASSETS_SVG_ICON_CORNER_RIGHT_DOWN_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
+                      color: AppColors.colorVTS,
                     )),
                 Positioned(
                     top: Get.height / 4.2 +
@@ -82,7 +94,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       Assets.ASSETS_SVG_ICON_CORNER_LEFT_UP_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
+                      color: AppColors.colorVTS,
                     )),
                 Positioned(
                     top: Get.height / 4.2 +
@@ -94,7 +106,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                       Assets.ASSETS_SVG_ICON_CORNER_RIGHT_UP_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
-                      color: AppColors.primaryNavy,
+                      color: AppColors.colorVTS,
                     )),
               ],
             ),
@@ -110,22 +122,21 @@ class QRGuidePage extends BaseGetWidget<QRController> {
       right: 30,
       top: Get.height / 3.8 + Get.height / 6 + 140,
       child: Container(
-        decoration: const BoxDecoration(
-          color: AppColors.secondaryCamPastel2,
-          borderRadius: BorderRadius.all(Radius.circular(AppDimens.radius10)),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8.0),
+          border: Border.all(color: AppColors.colorDisable, width: 1.0),
         ),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextUtils(
               text: "Hướng dẫn:",
-              color: AppColors.colorDisable,
               availableStyle: StyleEnum.subBold,
               maxLine: 3,
             ),
             TextUtils(
               text: "Bước 1: Đặt mã QR trên thẻ CCCD vào vị trí khung",
-              color: AppColors.colorDisable,
               availableStyle: StyleEnum.bodyRegular,
               maxLine: 3,
             ),
@@ -133,7 +144,6 @@ class QRGuidePage extends BaseGetWidget<QRController> {
             TextUtils(
               text:
                   "Bước 2: Chờ hệ thống định danh và xác thực cho tới khi có thông báo thành công.",
-              color: AppColors.colorDisable,
               availableStyle: StyleEnum.bodyRegular,
               maxLine: 3,
             ),
@@ -159,27 +169,6 @@ class QRGuidePage extends BaseGetWidget<QRController> {
             maxLine: 2,
             textAlign: TextAlign.center,
           ),
-          // IconButton(
-          //     color: Colors.white,
-          //     icon: ValueListenableBuilder(
-          //       valueListenable: controller.cameraController.torchState,
-          //       builder: (context, state, child) {
-          //         switch (state as TorchState) {
-          //           case TorchState.off:
-          //             return const Icon(Icons.flash_off,
-          //                 color: AppColors.basicWhite);
-          //           case TorchState.on:
-          //             return const Icon(Icons.flash_on, color: Colors.yellow);
-          //         }
-          //       },
-          //     ),
-          //     iconSize: 32.0,
-          //     onPressed: () async {
-          //       controller.cameraController.toggleTorch();
-          //       await Future.delayed(const Duration(milliseconds: 1500), () {
-          //         controller.cameraController.toggleTorch();
-          //       });
-          //     }),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -262,21 +251,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                     noHeader: true,
                   )).then((value) => controller.idDocumentController.clear());
                 },
-                child: Container(
-                    // decoration: BoxDecoration(
-                    //   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                    //   boxShadow: [
-                    //     BoxShadow(
-                    //       color: AppColors.shadow.withOpacity(0.5),
-                    //       spreadRadius: -3.4,
-                    //       blurRadius: 0.5,
-                    //       offset: const Offset(0, -3.5),
-                    //     ),
-                    //   ],
-                    // ),
-                    // child:
-                    //     SvgPicture.asset(Assets.ASSETS_SVG_ICON_BUTTON_QR_SVG)
-                    ),
+                child: Container(),
               ),
               // _itemSelect("Nhập số CCCD", () {
               //   Get.bottomSheet(SDSBottomSheet(
@@ -325,46 +300,6 @@ class QRGuidePage extends BaseGetWidget<QRController> {
     );
   }
 
-  // GestureDetector _itemSelect(String title, VoidCallback action) {
-  //   return GestureDetector(
-  //     behavior: HitTestBehavior.opaque,
-  //     onTap: action,
-  //     child: Padding(
-  //       padding: const EdgeInsets.only(top: 8),
-  //       child: Container(
-  //         alignment: Alignment.centerLeft,
-  //         padding: const EdgeInsets.symmetric(horizontal: 8),
-  //         height: 30,
-  //         decoration: BoxDecoration(
-  //           borderRadius: const BorderRadius.all(Radius.circular(8)),
-  //           border: Border.all(color: AppColors.colorBlack, width: 1),
-  //           color: AppColors.basicWhite,
-  //           boxShadow: [
-  //             BoxShadow(
-  //               color: Colors.grey.withOpacity(0.3), // Màu bóng và độ mờ
-  //               spreadRadius: 1, // Bán kính bóng
-  //               blurRadius: 2, // Độ mờ
-  //               offset: const Offset(0, 1), // Độ dịch chuyển của bóng
-  //             ),
-  //           ],
-  //         ),
-  //         child: Row(
-  //           mainAxisAlignment: MainAxisAlignment.start,
-  //           children: [
-  //             GestureDetector(
-  //               child: TextUtils(
-  //                 text: title,
-  //                 availableStyle: StyleEnum.bodyRegular,
-  //                 color: AppColors.colorBlack,
-  //               ),
-  //             ),
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
-
   @override
   Widget buildWidgets(BuildContext context) {
     return PopScope(
@@ -381,7 +316,9 @@ class QRGuidePage extends BaseGetWidget<QRController> {
           isColorGradient: false,
           centerTitle: false,
           leading: true,
-          backgroundColor: AppColors.colorTransparent,
+          textColor: AppColors.colorVTS,
+          backButtonColor: AppColors.colorVTS,
+          backgroundColor: AppColors.basicWhite,
         ),
         body: Obx(() => controller.isShowLoading.value
             ? Container(

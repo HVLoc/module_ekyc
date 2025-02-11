@@ -90,8 +90,11 @@ Widget _itemBody(FaceMatchingResultController controller) {
                 maxLine: 2,
               ),
               sdsSBHeight15,
-              _buildItemText(LocaleKeys.nfcInformationUserPage_firstName.tr,
-                  controller.appController.sendNfcRequestGlobalModel.nameVNM),
+              _buildItemText(
+                LocaleKeys.nfcInformationUserPage_firstName.tr,
+                controller.appController.sendNfcRequestGlobalModel.nameVNM,
+                isFirst: true,
+              ),
               _buildItemText(LocaleKeys.nfcInformationUserPage_idCard.tr,
                   controller.appController.sendNfcRequestGlobalModel.number),
               // _buildItemText(LocaleKeys.nfcInformationUserPage_phone.tr,
@@ -170,6 +173,8 @@ Widget _itemBody(FaceMatchingResultController controller) {
                       controller
                           .appController.sendNfcRequestGlobalModel.nameCouple)
                   : const SizedBox(),
+              buildStatusVerify(
+                  controller.appController.sendNfcRequestGlobalModel),
             ],
           ).paddingSymmetric(
             vertical: AppDimens.padding4,
@@ -179,7 +184,7 @@ Widget _itemBody(FaceMatchingResultController controller) {
       sdsSBHeight15,
       Obx(
         () => ButtonUtils.buildButton(
-          LocaleKeys.live_ness_result_button.tr,
+          "Xác thực BCA",
           () async {
             Get.toNamed(
               AppRoutes.routeNfcInformationUser,
@@ -187,7 +192,7 @@ Widget _itemBody(FaceMatchingResultController controller) {
             );
           },
           isLoading: controller.isShowLoading.value,
-          width: AppDimens.sizeImg,
+          width: Get.width / 2,
           // backgroundColor: AppColors.colorGreenText,
         ),
       ),
@@ -196,9 +201,14 @@ Widget _itemBody(FaceMatchingResultController controller) {
   ).paddingSymmetric(horizontal: AppDimens.paddingTop);
 }
 
-Widget _buildItemText(String title, String? content) {
+Widget _buildItemText(String title, String? content, {bool isFirst = false}) {
   return Column(
     children: [
+      if (!isFirst)
+        const Divider(
+          color: AppColors.colorDisable,
+          height: 1,
+        ),
       Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -225,5 +235,117 @@ Widget _buildItemText(String title, String? content) {
       ),
       sdsSBHeight15,
     ],
+  );
+}
+
+Widget buildStatusVerify(SendNfcRequestModel sendNfcRequestModel) {
+  final Map<String, bool?> verificationStatus = {
+    "Toàn vẹn dữ liệu": sendNfcRequestModel.isIntegrity,
+    "Xác thực khuôn mặt": sendNfcRequestModel.faceMatching!=null,
+    "Xác thực Bộ Công An": sendNfcRequestModel.isVerifyBCA,
+  };
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      const TextUtils(
+        text: 'Tình trạng xác thực:',
+        availableStyle: StyleEnum.subBold,
+        maxLine: 3,
+      ),
+      const SizedBox(height: 10),
+      Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(1),
+          border: Border.all(color: Colors.grey.shade300),
+        ),
+        child: Column(
+          children: verificationStatus.entries.map((entry) {
+            return Column(
+              children: [
+                _buildStatusRow(
+                  title: entry.key,
+                  status: getStatusText(entry.value),
+                  statusColor: getStatusColor(entry.value),
+                  icon: getStatusIcon(entry.value),
+                  iconColor: getStatusIconColor(entry.value),
+                ),
+                if (entry.key != verificationStatus.keys.last)
+                  Divider(color: Colors.grey.shade300),
+              ],
+            );
+          }).toList(),
+        ),
+      ),
+    ],
+  );
+}
+
+/// Hàm lấy text theo trạng thái
+String getStatusText(bool? value) {
+  if (value == null) return "Chưa xác thực";
+  return value ? "Đã xác thực" : "Không xác thực";
+}
+
+/// Hàm lấy màu chữ theo trạng thái
+Color getStatusColor(bool? value) {
+  if (value == null) return Colors.orange;
+  return value ? Colors.blue : Colors.red;
+}
+
+/// Hàm lấy icon theo trạng thái
+IconData getStatusIcon(bool? value) {
+  if (value == null) return Icons.info;
+  return value ? Icons.check_circle : Icons.cancel;
+}
+
+/// Hàm lấy màu icon theo trạng thái
+Color getStatusIconColor(bool? value) {
+  if (value == null) return Colors.orange;
+  return value ? Colors.green : Colors.red;
+}
+
+Widget _buildStatusRow({
+  required String title,
+  required String status,
+  required Color statusColor,
+  required IconData icon,
+  required Color iconColor,
+}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: TextUtils(
+            text: title,
+            availableStyle: StyleEnum.bodyRegular,
+            maxLine: 2,
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Expanded(
+                child: TextUtils(
+                  text: title,
+                  availableStyle: StyleEnum.bodyRegular,
+                  color: statusColor,
+                  maxLine: 2,
+                  textAlign: TextAlign.end,
+                ),
+              ),
+              const SizedBox(width: 5),
+              Icon(icon, color: iconColor, size: 20),
+            ],
+          ),
+        ),
+      ],
+    ),
   );
 }

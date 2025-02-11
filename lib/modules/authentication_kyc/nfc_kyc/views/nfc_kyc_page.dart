@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
@@ -18,11 +19,13 @@ class ScanNfcKycPage extends BaseGetWidget<ScanNfcKycController> {
   Widget buildWidgets(BuildContext context) {
     return Scaffold(
       appBar: BackgroundAppBar.buildAppBar(
-        "Thông tin cá nhân",
+        "Cung cấp thông tin QR",
         isColorGradient: false,
         centerTitle: false,
         leading: true,
-        backgroundColor: AppColors.colorTransparent,
+        textColor: AppColors.colorVTS,
+        backButtonColor: AppColors.colorVTS,
+        backgroundColor: AppColors.basicWhite,
       ),
       body: _body(controller),
     );

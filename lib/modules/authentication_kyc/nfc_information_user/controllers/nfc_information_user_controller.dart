@@ -131,7 +131,8 @@ class NfcInformationUserController extends BaseGetxController {
         .then((value) {
       authenticationSuccess = value.data.result;
       authenticationVisible.value = true;
-      appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+      appController.sendNfcRequestGlobalModel = sendNfcRequestModel
+        ..isVerifyBCA = authenticationSuccess;
 
       // packageKind = value.data.packageKind ?? AppConst.typeSanbox;
       // if (Get.isRegistered<ClientController>()) {

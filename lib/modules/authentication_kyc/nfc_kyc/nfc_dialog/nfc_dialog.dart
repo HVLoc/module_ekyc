@@ -26,7 +26,7 @@ class NfcDialog extends BaseGetWidget<NfcDialogController> {
                     ? LocaleKeys.nfc_nfcWaitingTitle.tr
                     : LocaleKeys.nfc_dialogTitle.tr,
                 availableStyle: StyleEnum.heading2Bold,
-                color: AppColors.basicGrey1,
+                color: AppColors.basicBlack,
               ).paddingOnly(
                   top: AppDimens.padding20, bottom: AppDimens.padding15),
             ),
@@ -54,14 +54,14 @@ class NfcDialog extends BaseGetWidget<NfcDialogController> {
             ),
             buildProgressBar(controller),
             ButtonUtils.buildButton(
-              LocaleKeys.dialog_cancel.tr,
+              "Thoát",
               () async {
                 await controller.closeNfc();
               },
               isLoading: controller.isShowLoading.value,
               backgroundColor: AppColors.basicWhite,
               border: Border.all(width: 1, color: AppColors.primaryBlue1),
-              borderRadius: BorderRadius.circular(AppDimens.radius4),
+              borderRadius: BorderRadius.circular(24),
               colorText: AppColors.primaryBlue1,
             ).paddingAll(AppDimens.padding15)
           ],

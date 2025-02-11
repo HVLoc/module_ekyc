@@ -73,6 +73,8 @@ class SendNfcRequestModel {
   bool visibleButtonDetail = true;
   String? kind;
   String? method;
+  bool? isVerifyBCA;
+  bool isIntegrity = false;
 
   factory SendNfcRequestModel.fromJson(Map<String, dynamic> json) {
     return SendNfcRequestModel(
@@ -192,5 +194,7 @@ class SendNfcRequestModel {
         "visibleButtonDetail": visibleButtonDetail,
         "kind": kind,
         "method": method,
+        "isVerifyBCA": isVerifyBCA,
+        "isIntegrity": isIntegrity,
       };
 }

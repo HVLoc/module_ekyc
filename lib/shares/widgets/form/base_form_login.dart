@@ -193,6 +193,7 @@ class BaseFormLogin {
       () => SDSInputWithLabel(
         inputLabelModel: SDSInputLabelModel(
           label: title,
+          colorTextLabel: AppColors.basicBlack,
           paddingLabel: paddingModel ??
               const EdgeInsets.symmetric(
                 // horizontal: AppDimens.paddingDefault,
@@ -201,14 +202,15 @@ class BaseFormLogin {
           isValidate: isValidate,
         ),
         inputTextFormModel: SDSInputTextModel(
-          borderRadius: AppDimens.radius8,
+          borderRadius: AppDimens.radius1,
           isShowCounterText: false,
           maxLengthInputForm: maxLength,
           validator: onValidator ??
               (value) => value.isNullOrEmpty ? errorValidator : null,
           controller: textEditingController,
-          fillColor: AppColors.inputFill,
+          fillColor: AppColors.basicWhite,
           isReadOnly: isLoading,
+          textColor: AppColors.basicBlack,
           hintTextSize: AppDimens.sizeTextSmall,
           hintTextColor: AppColors.basicGrey2,
           hintText: hintText,
@@ -219,10 +221,8 @@ class BaseFormLogin {
           ),
           filled: true,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(AppDimens.radius8),
-            borderSide: const BorderSide(
-              color: AppColors.secondaryNavyPastel,
-            ),
+            borderRadius: BorderRadius.circular(AppDimens.radius4),
+            borderSide: BorderSide(color: Colors.blueGrey.shade200),
           ),
           obscureText: isPassword,
           iconLeading: iconLeading,

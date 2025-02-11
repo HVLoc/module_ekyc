@@ -7,23 +7,48 @@ Widget _body(LiveNessKycController controller) {
 Widget _buildCapturePage(LiveNessKycController controller) {
   return Stack(
     children: [
-      controller.cameraIsInitialize.value
-          ? Positioned.fill(
-              child: Transform.scale(
-                scale: 1.2,
-                child: Center(
-                  child: CameraPreview(controller.cameraController),
+      Positioned.fill(
+        child: ImageWidget.imageAsset(Assets.ASSETS_JPG_VTS___APP___NEN_1_JPG,
+            fit: BoxFit.cover),
+      ),
+      // Khung camera hình tròn
+      Positioned(
+        top: Get.height / 2 - Get.width / 1.8,
+        left: Get.width / 2 - Get.width / 2.6,
+        child: Center(
+          child: SizedBox(
+            width: Get.width / 1.3,
+            height: Get.height / 2.3,
+            // decoration: BoxDecoration(
+            //   shape: BoxShape.circle,
+            //   border: Border.all(color: Colors.grey, width: 5),
+            // ),
+            child: ClipOval(
+              child: FittedBox(
+                fit: BoxFit.cover, // Đảm bảo camera lấp đầy vòng tròn
+                child: SizedBox(
+                  width: Get.width,
+                  child: controller.cameraIsInitialize.value
+                      ? Transform.scale(
+                          scale: 1.2,
+                          child: Center(
+                            child: CameraPreview(controller.cameraController),
+                          ),
+                        )
+                      : const SizedBox(),
                 ),
               ),
-            )
-          : const SizedBox(),
+            ),
+          ),
+        ),
+      ),
       SizedBox(
         height: Get.height,
         width: Get.width,
         child: Stack(fit: StackFit.passthrough, children: [
-          CustomPaint(
-            painter: CustomShapePainterLiveNess(),
-          ),
+          // CustomPaint(
+          //   painter: CustomShapePainterLiveNess(),
+          // ),
           // _buttonTakePicture(controller),
           _buttonStart(controller),
           _actionWidget(controller),
@@ -32,19 +57,28 @@ Widget _buildCapturePage(LiveNessKycController controller) {
           Positioned(
             left: AppDimens.padding15,
             right: AppDimens.padding15,
-            bottom: Get.height / 2.2 - Get.width / 2 - 30,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextUtils(
-                  text: LocaleKeys.live_ness_Step.tr,
-                  availableStyle: StyleEnum.body14,
-                  // color: AppColors.colorSemantic3,
-                  textAlign: TextAlign.center,
-                ),
-                _itemRow(LocaleKeys.live_ness_Step1.tr),
-                _itemRow(LocaleKeys.live_ness_Step2.tr),
-              ],
+            bottom: Get.height / 10,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(1.0),
+                border: Border.all(color: AppColors.colorDisable, width: 1.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const TextUtils(
+                    text: "Hướng dẫn thao tác:",
+                    availableStyle: StyleEnum.body14Bold,
+                    // color: AppColors.colorSemantic3,
+                    textAlign: TextAlign.center,
+                  ),
+                  _itemRow('Đi đến nơi có đủ ánh sáng.'),
+                  _itemRow('Không đeo khẩu trang, kính mát, mũ,...'),
+                  _itemRow('Thực hiện quay trái, phải,... theo yêu cầu.'),
+                  _itemRow('Đưa khuôn mặt vào trong khung quy định.'),
+                ],
+              ).paddingAll(AppDimens.padding15),
             ),
           )
           // if (controller.imageTemp.value != null)
@@ -60,14 +94,14 @@ Row _itemRow(String title) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       const TextUtils(
-        text: "•   ",
+        text: "-   ",
         availableStyle: StyleEnum.body14,
         color: AppColors.basicBlack,
       ),
       Expanded(
         child: TextUtils(
           text: title,
-          availableStyle: StyleEnum.body14,
+          availableStyle: StyleEnum.bodyRegular,
           color: AppColors.basicBlack,
           maxLine: 4,
         ),
@@ -144,8 +178,8 @@ Visibility _actionWidget(LiveNessKycController controller) {
                       ? ""
                       : controller
                           .questionTemp[controller.currentStep.value - 1],
-                  availableStyle: StyleEnum.subNormal,
-                  color: AppColors.primaryBlue1,
+                  availableStyle: StyleEnum.subBold,
+                  color: AppColors.statusRed,
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -159,7 +193,7 @@ Visibility _actionWidget(LiveNessKycController controller) {
                   maxLine: 2,
                   textAlign: TextAlign.center,
                 ),
-                sdsSBHeight20,
+                sdsSBHeight5,
                 TextUtils(
                   text: LocaleKeys.live_ness_titleSchedule.tr,
                   availableStyle: StyleEnum.body14,
@@ -168,7 +202,7 @@ Visibility _actionWidget(LiveNessKycController controller) {
                   textAlign: TextAlign.center,
                 ),
               ],
-            ),
+            ).paddingSymmetric(horizontal: AppDimens.btnMedium),
     ),
   );
 }
@@ -179,14 +213,14 @@ Visibility _buttonStart(LiveNessKycController controller) {
     child: Align(
       alignment: Alignment.bottomCenter,
       child: ButtonUtils.buildButton(
-        LocaleKeys.live_ness_action.tr,
+        "Đồng ý thực hiện",
         () async {
           await controller.startStreamPicture();
         },
-        width: AppDimens.sizeImg,
+        width: Get.width / 2,
         isLoading: controller.isShowLoading.value,
         // backgroundColor: AppColors.colorGreenText,
-        borderRadius: BorderRadius.circular(AppDimens.padding12),
+        borderRadius: BorderRadius.circular(24),
         colorText: AppColors.basicWhite,
       ).paddingOnly(bottom: AppDimens.padding10),
     ),
@@ -202,24 +236,10 @@ Positioned _positionedAppbar(LiveNessKycController controller) {
       alignment: Alignment.topCenter,
       child: BackgroundAppBar.buildAppBar(
         "Quét khuôn mặt",
-        isColorGradient: false,
         leading: true,
-        // funcLeading: () async {
-        //   if(controller.appController.openAppToDeepLink){
-        //     Get.offAllNamed(
-        //       AppRoutes.routeHome,
-        //     );
-        //   }else{
-        //     Get.back();
-        //   }
-        //   // await controller.closePros();
-        // },
-        // backButtonColor: AppColors.basicWhite,
-        // textColor: AppColors.basicWhite,
-        // availableStyle: StyleEnum.bodyRegular,
-        backgroundColor: AppColors.colorTransparent,
-        statusBarIconBrightness: true,
-        // iconSize:
+        textColor: AppColors.colorVTS,
+        backButtonColor: AppColors.colorVTS,
+        backgroundColor: AppColors.basicWhite,
       ), /*AppBar(
           leading: ButtonUtils.baseOnAction(
             onTap: () async {

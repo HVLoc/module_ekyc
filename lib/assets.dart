@@ -10,6 +10,14 @@ class Assets {
 
   static bool isFromModules = false;
 
+  /// {@macro assets_generator.ASSETS_JPG_VTS___APP___NEN_1_JPG.preview}
+  static String get ASSETS_JPG_VTS___APP___NEN_1_JPG =>
+      '${isFromModules ? "packages/$package/" : ""}assets/jpg/VTS - App - NEN 1.jpg';
+
+  /// {@macro assets_generator.ASSETS_JPG_ENOTARYID___APP___NEN_2_JPG.preview}
+  static String get ASSETS_JPG_ENOTARYID___APP___NEN_2_JPG =>
+      '${isFromModules ? "packages/$package/" : ""}assets/jpg/eNotaryID - App - NEN 2.jpg';
+
   /// {@macro assets_generator.ASSETS_JPG_ICON_BANNER_LOGIN_PNG.preview}
   static String get ASSETS_JPG_ICON_BANNER_LOGIN_PNG =>
       '${isFromModules ? "packages/$package/" : ""}assets/jpg/icon_banner_login.png';
@@ -29,6 +37,10 @@ class Assets {
   /// {@macro assets_generator.ASSETS_JPG_IMAGE_DEFAULT_JPG.preview}
   static String get ASSETS_JPG_IMAGE_DEFAULT_JPG =>
       '${isFromModules ? "packages/$package/" : ""}assets/jpg/image_default.jpg';
+
+  /// {@macro assets_generator.ASSETS_JPG_IMAGES_PNG.preview}
+  static String get ASSETS_JPG_IMAGES_PNG =>
+      '${isFromModules ? "packages/$package/" : ""}assets/jpg/images.png';
 
   /// {@macro assets_generator.ASSETS_JPG_IMG_CARD_CCCD_PNG.preview}
   static String get ASSETS_JPG_IMG_CARD_CCCD_PNG =>
@@ -543,6 +555,12 @@ class Assets {
 }
 
 final List<String> assetsArray = <String>[
+  /// {@macro assets_generator.ASSETS_JPG_VTS___APP___NEN_1_JPG.preview}
+  Assets.ASSETS_JPG_VTS___APP___NEN_1_JPG,
+
+  /// {@macro assets_generator.ASSETS_JPG_ENOTARYID___APP___NEN_2_JPG.preview}
+  Assets.ASSETS_JPG_ENOTARYID___APP___NEN_2_JPG,
+
   /// {@macro assets_generator.ASSETS_JPG_ICON_BANNER_LOGIN_PNG.preview}
   Assets.ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
 
@@ -557,6 +575,9 @@ final List<String> assetsArray = <String>[
 
   /// {@macro assets_generator.ASSETS_JPG_IMAGE_DEFAULT_JPG.preview}
   Assets.ASSETS_JPG_IMAGE_DEFAULT_JPG,
+
+  /// {@macro assets_generator.ASSETS_JPG_IMAGES_PNG.preview}
+  Assets.ASSETS_JPG_IMAGES_PNG,
 
   /// {@macro assets_generator.ASSETS_JPG_IMG_CARD_CCCD_PNG.preview}
   Assets.ASSETS_JPG_IMG_CARD_CCCD_PNG,

@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
+import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/core/core.src.dart';
 import 'package:module_ekyc/generated/locales.g.dart';
@@ -11,7 +12,7 @@ import 'package:module_ekyc/shares/shares.src.dart';
 part 'live_ness_kyc_view.dart';
 
 class LiveNessKycPage extends BaseGetWidget<LiveNessKycController> {
-  const LiveNessKycPage({Key? key}) : super(key: key);
+  const LiveNessKycPage({super.key});
 
   @override
   LiveNessKycController get controller => Get.put(LiveNessKycController());
