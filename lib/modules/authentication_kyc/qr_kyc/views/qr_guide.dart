@@ -58,7 +58,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                     top: Get.height / 4.2 - Get.height / 6 - 1,
                     left: 40 - 2,
                     child: Image.asset(
-                      Assets.LIB_ASSETS_SVG_ICON_CORNER_LEFT_DOWN_PNG,
+                      Assets.ASSETS_SVG_ICON_CORNER_LEFT_DOWN_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,
@@ -67,7 +67,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                     top: Get.height / 4.2 - Get.height / 6 - 1,
                     right: 40 - 3,
                     child: Image.asset(
-                      Assets.LIB_ASSETS_SVG_ICON_CORNER_RIGHT_DOWN_PNG,
+                      Assets.ASSETS_SVG_ICON_CORNER_RIGHT_DOWN_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,
@@ -79,7 +79,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                         2,
                     left: 40 - 2,
                     child: Image.asset(
-                      Assets.LIB_ASSETS_SVG_ICON_CORNER_LEFT_UP_PNG,
+                      Assets.ASSETS_SVG_ICON_CORNER_LEFT_UP_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,
@@ -91,7 +91,7 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                         1,
                     right: 40 - 1,
                     child: Image.asset(
-                      Assets.LIB_ASSETS_SVG_ICON_CORNER_RIGHT_UP_PNG,
+                      Assets.ASSETS_SVG_ICON_CORNER_RIGHT_UP_PNG,
                       width: AppDimens.size45,
                       height: AppDimens.size45,
                       color: AppColors.primaryNavy,

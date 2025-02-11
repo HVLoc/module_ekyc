@@ -72,17 +72,16 @@ class BottomNavigation extends StatelessWidget {
                   _bottomNavigationBarItem(
                       icon: SvgPicture.asset(
                         currentTab != TabItem.homePage
-                            ? Assets.LIB_ASSETS_SVG_ICON_HOME_SVG
-                            : Assets.LIB_ASSETS_SVG_ICON_HOME_FOCUS_SVG,
+                            ? Assets.ASSETS_SVG_ICON_HOME_SVG
+                            : Assets.ASSETS_SVG_ICON_HOME_FOCUS_SVG,
                       ),
                       isSelect: currentTab == TabItem.homePage,
                       label: LocaleKeys.home_homeTitle.tr),
                   _bottomNavigationBarItem(
                       icon: SvgPicture.asset(
                         currentTab != TabItem.listUser
-                            ? Assets.LIB_ASSETS_SVG_ICON_HOME_LIST_USER_SVG
-                            : Assets
-                                .LIB_ASSETS_SVG_ICON_HOME_LIST_USER_FOCUS_SVG,
+                            ? Assets.ASSETS_SVG_ICON_HOME_LIST_USER_SVG
+                            : Assets.ASSETS_SVG_ICON_HOME_LIST_USER_FOCUS_SVG,
                       ),
                       isSelect: currentTab == TabItem.listUser,
                       label: LocaleKeys.home_user.tr),
@@ -94,15 +93,14 @@ class BottomNavigation extends StatelessWidget {
                       icon: SvgPicture.asset(
                         homeController.appController.isEnablePay
                             ? currentTab != TabItem.listPackage
-                                ? Assets
-                                    .LIB_ASSETS_SVG_ICON_NOTIFICATION_HOME_SVG
+                                ? Assets.ASSETS_SVG_ICON_NOTIFICATION_HOME_SVG
                                 : Assets
-                                    .LIB_ASSETS_SVG_ICON_NOTIFICATION_HOME_FOCUS_SVG
+                                    .ASSETS_SVG_ICON_NOTIFICATION_HOME_FOCUS_SVG
                             : currentTab != TabItem.listPackage
                                 ? Assets
-                                    .LIB_ASSETS_SVG_ICON_HOME_SERVICE_PACKAGE_SVG
+                                    .ASSETS_SVG_ICON_HOME_SERVICE_PACKAGE_SVG
                                 : Assets
-                                    .LIB_ASSETS_SVG_ICON_HOME_SERVICE_PACKAGE_FOCUS_SVG,
+                                    .ASSETS_SVG_ICON_HOME_SERVICE_PACKAGE_FOCUS_SVG,
                       ),
                       isSelect: currentTab == TabItem.listPackage,
                       label: homeController.appController.isEnablePay
@@ -110,7 +108,7 @@ class BottomNavigation extends StatelessWidget {
                           : LocaleKeys.home_servicePackage.tr),
                   _bottomNavigationBarItem(
                       icon: SvgPicture.asset(
-                          Assets.LIB_ASSETS_SVG_ICON_HOME_OTHER_SVG),
+                          Assets.ASSETS_SVG_ICON_HOME_OTHER_SVG),
                       isSelect: currentTab == TabItem.other,
                       label: LocaleKeys.home_other.tr)
                 ],

@@ -49,7 +49,7 @@ class BaseFormLogin {
                   padding: const EdgeInsets.all(0.0),
                   constraints: const BoxConstraints(),
                   onPressed: () {},
-                  icon: SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_USER_SVG)),
+                  icon: SvgPicture.asset(Assets.ASSETS_SVG_ICON_USER_SVG)),
             ),
           ),
           isSaveUser
@@ -67,7 +67,7 @@ class BaseFormLogin {
                         GestureDetector(
                             onTap: functionLoginOther,
                             child: SvgPicture.asset(
-                                Assets.LIB_ASSETS_SVG_ICON_OTHER_USER_SVG)),
+                                Assets.ASSETS_SVG_ICON_OTHER_USER_SVG)),
                       ],
                     ),
                     TextUtils(
@@ -97,7 +97,7 @@ class BaseFormLogin {
                   onValidator: (text) => validatePass(text),
                   onEditingComplete: functionLogin,
                   iconLeading: ImageWidget.imageSvgIcon(
-                    Assets.LIB_ASSETS_SVG_ICON_PASS_SVG,
+                    Assets.ASSETS_SVG_ICON_PASS_SVG,
                     height: AppDimens.padding8,
                     width: AppDimens.padding8,
                   ).paddingAll(AppDimens.padding16),
@@ -116,8 +116,8 @@ class BaseFormLogin {
                       onTap: functionLoginBiometric ?? () {},
                       child: SvgPicture.asset(
                         isFaceID
-                            ? Assets.LIB_ASSETS_SVG_ICON_FACEID_SVG
-                            : Assets.LIB_ASSETS_SVG_ICON_FINGERPRINT_SVG,
+                            ? Assets.ASSETS_SVG_ICON_FACEID_SVG
+                            : Assets.ASSETS_SVG_ICON_FINGERPRINT_SVG,
                         fit: BoxFit.fill,
                         width: AppDimens.iconHeightButton,
                         height: AppDimens.iconHeightButton,
@@ -149,8 +149,8 @@ class BaseFormLogin {
               //       onPressed: functionLoginBiometric ?? () {},
               //       icon: Image.asset(
               //         isFaceID
-              //             ? Assets.LIB_ASSETS_JPG_ICON_FACEID_PNG
-              //             : Assets.LIB_ASSETS_JPG_ICON_FINGERPRINT_PNG,
+              //             ? Assets.ASSETS_JPG_ICON_FACEID_PNG
+              //             : Assets.ASSETS_JPG_ICON_FINGERPRINT_PNG,
               //         fit: BoxFit.fill,
               //         width: AppDimens.btnMediumMax,
               //         height: AppDimens.btnMediumMax,

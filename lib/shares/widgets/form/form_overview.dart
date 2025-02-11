@@ -37,7 +37,7 @@ class FormOverView {
             //         child: Row(
             //           mainAxisAlignment: MainAxisAlignment.center,
             //           children: [
-            //             SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_WARNING_SVG)
+            //             SvgPicture.asset(Assets.ASSETS_SVG_ICON_WARNING_SVG)
             //                 .paddingSymmetric(
             //               horizontal: AppDimens.padding10,
             //               vertical: AppDimens.padding20,
@@ -112,10 +112,10 @@ class FormOverView {
                   alignment: Alignment.center,
                   child: Container(
                     width: Get.width - AppDimens.padding50,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          Assets.LIB_ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
+                          Assets.ASSETS_JPG_ICON_BANNER_LOGIN_PNG,
                         ),
                         fit: BoxFit.fitWidth,
                         opacity: 0.3,
@@ -207,7 +207,7 @@ class FormOverView {
                                 children: [
                                   Center(
                                     child: SvgPicture.asset(
-                                      Assets.LIB_ASSETS_SVG_ICON_CIRCLE_SVG,
+                                      Assets.ASSETS_SVG_ICON_CIRCLE_SVG,
                                     ),
                                   ),
                                   Positioned.fill(
@@ -294,13 +294,13 @@ class FormOverView {
         height: 230,
         child: Stack(
           children: [
-            SvgPicture.asset(Assets.LIB_ASSETS_SVG_ICON_BANNER_HOME_SVG),
+            SvgPicture.asset(Assets.ASSETS_SVG_ICON_BANNER_HOME_SVG),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: Stack(
                   children: [
                     ImageWidget.imageSvg(
-                      Assets.LIB_ASSETS_SVG_ICON_ITEM_HOME_SVG,
+                      Assets.ASSETS_SVG_ICON_ITEM_HOME_SVG,
                       width: Get.width - AppDimens.padding40,
                     ),
                     TextUtils(

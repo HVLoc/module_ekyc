@@ -31,7 +31,7 @@ class NfcDialog extends BaseGetWidget<NfcDialogController> {
                   top: AppDimens.padding20, bottom: AppDimens.padding15),
             ),
             SvgPicture.asset(
-              Assets.LIB_ASSETS_SVG_ICON_SCAN_NFC_SVG,
+              Assets.ASSETS_SVG_ICON_SCAN_NFC_SVG,
             ),
             TextUtils(
               text: controller.isReading.value

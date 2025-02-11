@@ -16,7 +16,7 @@ class SDSImageNetworkModel {
     this.imgUrl, {
     this.height = AppDimens.sizeImageBig,
     this.width = AppDimens.sizeImage,
-    this.imageDefault = Assets.LIB_ASSETS_JPG_IMAGE_DEFAULT_JPG,
+    this.imageDefault = 'packages/module_ekyc/assets/jpg/image_default.jpg',
     this.errorWidget,
     this.borderRadius,
     this.fit = BoxFit.fill,

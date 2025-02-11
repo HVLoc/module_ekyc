@@ -21,14 +21,13 @@ class OtherPage extends StatelessWidget {
       padding: 0,
       body: Column(
         children: [
-          UtilWidget.bottomSheetRow(
-              Assets.LIB_ASSETS_SVG_ICON_USER_NAME_CARD_SVG,
+          UtilWidget.bottomSheetRow(Assets.ASSETS_SVG_ICON_USER_NAME_CARD_SVG,
               LocaleKeys.home_accountInfo.tr, onTap: () {
             Get.back();
             Get.toNamed(AppRoutes.routeUserInfo);
           }),
           UtilWidget.bottomSheetRow(
-            Assets.LIB_ASSETS_SVG_ICON_TELEPHONE_SVG,
+            Assets.ASSETS_SVG_ICON_TELEPHONE_SVG,
             LocaleKeys.login_support.tr,
             onTap: () {
               Get.back();
@@ -40,7 +39,7 @@ class OtherPage extends StatelessWidget {
           _buildLoginByFingerprint(),
           _buildDividerThick(),
           UtilWidget.bottomSheetRow(
-            Assets.LIB_ASSETS_SVG_ICON_OTHER_USER_SVG,
+            Assets.ASSETS_SVG_ICON_OTHER_USER_SVG,
             LocaleKeys.home_logout.tr,
             onTap: () => controller.funcLogout(),
             isDivider: false,
@@ -61,8 +60,8 @@ class OtherPage extends StatelessWidget {
   Widget _buildLoginByFingerprint() {
     return UtilWidget.bottomSheetRow(
         controller.appController.isFaceID
-            ? Assets.LIB_ASSETS_SVG_ICON_FACEID_SVG
-            : Assets.LIB_ASSETS_SVG_ICON_FINGERPRINT_SVG,
+            ? Assets.ASSETS_SVG_ICON_FACEID_SVG
+            : Assets.ASSETS_SVG_ICON_FINGERPRINT_SVG,
         controller.appController.isFaceID
             ? LocaleKeys.other_byFaceId
             : LocaleKeys.other_byFingerprint,

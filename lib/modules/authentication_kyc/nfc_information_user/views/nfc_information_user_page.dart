@@ -32,10 +32,10 @@ class NfcInformationUserPage extends BaseGetWidget {
       ),
       body: buildLoadingOverlay(
         () => Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                Assets.LIB_ASSETS_JPG_IMAGE_BANNER_PNG,
+                Assets.ASSETS_JPG_IMAGE_BANNER_PNG,
               ),
               fit: BoxFit.cover,
             ),
