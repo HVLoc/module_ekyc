@@ -54,7 +54,7 @@ Widget _buildCapturePage(LiveNessKycController controller) {
                 _actionWidget(controller),
                 _positionedAppbar(controller),
                 _warningFace(controller),
-                _buildGuild(),
+                _buildGuide(),
                 _buttonStart(controller),
                 // if (controller.imageTemp.value != null)
                 //   _buildWidgetHaveImage(controller),
@@ -67,13 +67,15 @@ Widget _buildCapturePage(LiveNessKycController controller) {
   );
 }
 
-Widget _buildGuild() {
+Widget _buildGuide() {
   return Positioned(
     left: AppDimens.padding15,
     right: AppDimens.padding15,
     top: Get.height - Get.width / 1.8,
     child: Container(
-      height: Get.width / 1.8 - kToolbarHeight,
+      constraints: BoxConstraints(
+        maxHeight: Get.width / 1.8 - kToolbarHeight,
+      ),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(1.0),
