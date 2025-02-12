@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 import 'package:image/image.dart' as img;
 import 'package:module_ekyc/base_app/base_app.src.dart';
@@ -13,7 +14,8 @@ import 'package:module_ekyc/shares/shares.src.dart';
 
 import '../../../../core/core.src.dart';
 
-class LiveNessKycController extends BaseGetxController {
+class LiveNessKycController extends BaseGetxController
+    with WidgetsBindingObserver {
   late CameraController cameraController;
   late LiveNessRepository liveNessRepository;
   AppController appController = Get.find<AppController>();
@@ -84,6 +86,15 @@ class LiveNessKycController extends BaseGetxController {
       randomListQuestion();
     } finally {
       hideLoadingOverlay();
+    }
+  }
+
+  @override
+  Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
+    if (state == AppLifecycleState.resumed) {
+      if (cameraIsInitialize.value) {
+        await cameraController.resumePreview();
+      }
     }
   }
 
