@@ -174,7 +174,7 @@ Visibility _actionWidget(LiveNessKycController controller) {
     child: Positioned(
       left: AppDimens.sizeTextSmallest,
       right: AppDimens.sizeTextSmallest,
-      top: kToolbarHeight,
+      top: kToolbarHeight * 2,
       child: controller.currentStep.value > 0
           ? Column(
               children: [
