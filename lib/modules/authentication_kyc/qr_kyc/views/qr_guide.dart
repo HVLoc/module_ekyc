@@ -23,95 +23,103 @@ class QRGuidePage extends BaseGetWidget<QRController> {
 
   Widget _buildBody() {
     double qrSize = Get.height / 3;
-    double qrWidth = qrSize * 1.2 - 6; // Điều chỉnh width theo tỷ lệ mong muốn
+    double qrWidth =
+        Get.width - 39 * 2; // Điều chỉnh width theo tỷ lệ mong muốn
 
     double topPosition = Get.height / 4.2 - qrSize / 2;
     double leftPosition = 40;
 
     return Scaffold(
       // backgroundColor: AppColors.basicWhite,
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: ImageWidget.imageAsset(
-                Assets.ASSETS_JPG_VTS___APP___NEN_1_JPG,
-                fit: BoxFit.cover),
-          ),
-          SizedBox(
-            height: Get.height,
-            width: Get.width,
-            child: Stack(
-              fit: StackFit.passthrough,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
               children: [
-                Positioned(
-                  top: topPosition,
-                  left: leftPosition,
-                  child: SizedBox(
-                    width: qrWidth,
-                    height: qrSize,
-                    child: MobileScanner(
-                      controller: controller.cameraController,
-                      onDetect: (capture) {
-                        final List<Barcode> barcodes = capture.barcodes;
-                        if (barcodes.first.rawValue != null) {
-                          controller.getData(barcodes.first.rawValue ?? "");
-                        }
-                      },
-                      onScannerStarted: (_) {
-                        controller.cameraController
-                            .setZoomScale(controller.zoomX.value * 0.1);
-                      },
-                    ),
+                Positioned.fill(
+                  child: ImageWidget.imageAsset(
+                      Assets.ASSETS_JPG_VTS___APP___NEN_1_JPG,
+                      fit: BoxFit.cover),
+                ),
+                SizedBox(
+                  height: Get.height,
+                  width: Get.width,
+                  child: Stack(
+                    fit: StackFit.passthrough,
+                    children: [
+                      Positioned(
+                        top: topPosition,
+                        left: leftPosition,
+                        child: SizedBox(
+                          width: qrWidth,
+                          height: qrSize,
+                          child: MobileScanner(
+                            controller: controller.cameraController,
+                            onDetect: (capture) {
+                              final List<Barcode> barcodes = capture.barcodes;
+                              if (barcodes.first.rawValue != null) {
+                                controller
+                                    .getData(barcodes.first.rawValue ?? "");
+                              }
+                            },
+                            onScannerStarted: (_) {
+                              controller.cameraController
+                                  .setZoomScale(controller.zoomX.value * 0.1);
+                            },
+                          ),
+                        ),
+                      ),
+                      _buildListGuild(),
+                      _buildListImage(controller),
+                      Positioned(
+                          top: Get.height / 4.2 - Get.height / 6 - 1,
+                          left: 40 - 2,
+                          child: Image.asset(
+                            Assets.ASSETS_SVG_ICON_CORNER_LEFT_DOWN_PNG,
+                            width: AppDimens.size45,
+                            height: AppDimens.size45,
+                            color: AppColors.colorVTS,
+                          )),
+                      Positioned(
+                          top: Get.height / 4.2 - Get.height / 6 - 1,
+                          right: 40 - 3,
+                          child: Image.asset(
+                            Assets.ASSETS_SVG_ICON_CORNER_RIGHT_DOWN_PNG,
+                            width: AppDimens.size45,
+                            height: AppDimens.size45,
+                            color: AppColors.colorVTS,
+                          )),
+                      Positioned(
+                          top: Get.height / 4.2 +
+                              Get.height / 6 -
+                              AppDimens.size45 +
+                              2,
+                          left: 40 - 2,
+                          child: Image.asset(
+                            Assets.ASSETS_SVG_ICON_CORNER_LEFT_UP_PNG,
+                            width: AppDimens.size45,
+                            height: AppDimens.size45,
+                            color: AppColors.colorVTS,
+                          )),
+                      Positioned(
+                          top: Get.height / 4.2 +
+                              Get.height / 6 -
+                              AppDimens.size45 +
+                              1,
+                          right: 40 - 1,
+                          child: Image.asset(
+                            Assets.ASSETS_SVG_ICON_CORNER_RIGHT_UP_PNG,
+                            width: AppDimens.size45,
+                            height: AppDimens.size45,
+                            color: AppColors.colorVTS,
+                          )),
+                    ],
                   ),
                 ),
-                _buildListGuild(),
-                _buildListImage(controller),
-                Positioned(
-                    top: Get.height / 4.2 - Get.height / 6 - 1,
-                    left: 40 - 2,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_LEFT_DOWN_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.colorVTS,
-                    )),
-                Positioned(
-                    top: Get.height / 4.2 - Get.height / 6 - 1,
-                    right: 40 - 3,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_RIGHT_DOWN_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.colorVTS,
-                    )),
-                Positioned(
-                    top: Get.height / 4.2 +
-                        Get.height / 6 -
-                        AppDimens.size45 +
-                        2,
-                    left: 40 - 2,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_LEFT_UP_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.colorVTS,
-                    )),
-                Positioned(
-                    top: Get.height / 4.2 +
-                        Get.height / 6 -
-                        AppDimens.size45 +
-                        1,
-                    right: 40 - 1,
-                    child: Image.asset(
-                      Assets.ASSETS_SVG_ICON_CORNER_RIGHT_UP_PNG,
-                      width: AppDimens.size45,
-                      height: AppDimens.size45,
-                      color: AppColors.colorVTS,
-                    )),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

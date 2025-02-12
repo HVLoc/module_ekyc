@@ -90,26 +90,25 @@ class NfcInformationUserPage extends BaseGetWidget {
                     ? 10
                     : AppDimens.padding15,
               ),
-              if (controller.authenticationVisible.value) ...[
-                TextButton(
-                    onPressed: () async {
-                      //TODO: Kiểm tra lại lỗi k quét lại đc QR
-                      controller.appController.clearData();
-                      controller.appController.goToEKYC();
-                      Get.offAllNamed(AppRoutes.initApp);
-                      // Get.close(3);
-                    },
-                    child: const TextUtils(
-                      text: "Thực hiện lại eKYC",
-                      availableStyle: StyleEnum.bodyRegular,
-                      color: AppColors.colorVTS,
-                    )).paddingSymmetric(
-                  horizontal: AppDimens.paddingDefaultHeight,
-                  vertical: controller.authenticationVisible.value
-                      ? 0
-                      : AppDimens.padding15,
-                ),
-              ],
+              // if (controller.authenticationVisible.value) ...[
+              //   TextButton(
+              //       onPressed: () async {
+              //         //TODO: Kiểm tra lại lỗi k quét lại đc QR
+              //         // Get.delete<AppController>();
+              //         Get.offAndToNamed(AppRoutes.initApp);
+              //         // Get.close(3);
+              //       },
+              //       child: const TextUtils(
+              //         text: "Thực hiện lại eKYC",
+              //         availableStyle: StyleEnum.bodyRegular,
+              //         color: AppColors.colorVTS,
+              //       )).paddingSymmetric(
+              //     horizontal: AppDimens.paddingDefaultHeight,
+              //     vertical: controller.authenticationVisible.value
+              //         ? 0
+              //         : AppDimens.padding15,
+              //   ),
+              // ],
               // Visibility(
               //   visible: controller.authenticationVisible.value,
               //   child: RichText(
