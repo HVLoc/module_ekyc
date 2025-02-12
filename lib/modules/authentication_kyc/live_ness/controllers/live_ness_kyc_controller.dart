@@ -14,8 +14,7 @@ import 'package:module_ekyc/shares/shares.src.dart';
 
 import '../../../../core/core.src.dart';
 
-class LiveNessKycController extends BaseGetxController
-    with WidgetsBindingObserver {
+class LiveNessKycController extends BaseGetxController {
   late CameraController cameraController;
   late LiveNessRepository liveNessRepository;
   AppController appController = Get.find<AppController>();
@@ -86,14 +85,6 @@ class LiveNessKycController extends BaseGetxController
       randomListQuestion();
     } finally {
       hideLoadingOverlay();
-    }
-  }
-
-  @override
-  Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
-    if (state == AppLifecycleState.resumed) {
-      await cameraController.initialize();
-      await cameraController.resumePreview();
     }
   }
 
