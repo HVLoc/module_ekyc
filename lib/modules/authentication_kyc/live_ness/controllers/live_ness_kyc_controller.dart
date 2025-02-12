@@ -92,9 +92,7 @@ class LiveNessKycController extends BaseGetxController
   @override
   Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
     if (state == AppLifecycleState.resumed) {
-      if (cameraIsInitialize.value) {
-        await cameraController.resumePreview();
-      }
+      await cameraController.resumePreview();
     }
   }
 
