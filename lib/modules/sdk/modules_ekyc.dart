@@ -25,4 +25,14 @@ class ModulesEkyc {
     Get.delete<AppController>();
     return result;
   }
+
+  static Future<SendNfcRequestModel?> scanEKYC() async {
+    AppController appController = Get.put(AppController());
+    appController.isScanEKYC = true;
+
+    Assets.isFromModules = true;
+    var result = await appController.checkPermissionApp();
+    Get.delete<AppController>();
+    return result;
+  }
 }

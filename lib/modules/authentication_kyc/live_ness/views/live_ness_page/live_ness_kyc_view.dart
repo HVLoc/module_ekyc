@@ -5,87 +5,98 @@ Widget _body(LiveNessKycController controller) {
 }
 
 Widget _buildCapturePage(LiveNessKycController controller) {
-  return Stack(
-    children: [
-      Positioned.fill(
-        child: ImageWidget.imageAsset(Assets.ASSETS_JPG_VTS___APP___NEN_1_JPG,
-            fit: BoxFit.cover),
-      ),
-      // Khung camera hình tròn
-      Positioned(
-        top: Get.height / 2 - Get.width / 1.8,
-        left: Get.width / 2 - Get.width / 2.6,
-        child: Center(
-          child: SizedBox(
-            width: Get.width / 1.3,
-            height: Get.height / 2.3,
-            // decoration: BoxDecoration(
-            //   shape: BoxShape.circle,
-            //   border: Border.all(color: Colors.grey, width: 5),
-            // ),
-            child: ClipOval(
-              child: FittedBox(
-                fit: BoxFit.cover, // Đảm bảo camera lấp đầy vòng tròn
-                child: SizedBox(
-                  width: Get.width,
-                  child: controller.cameraIsInitialize.value
-                      ? Transform.scale(
-                          scale: 1.2,
-                          child: Center(
-                            child: CameraPreview(controller.cameraController),
+  return SingleChildScrollView(
+    child: Column(
+      children: [
+        Stack(
+          children: [
+            Positioned.fill(
+              child: ImageWidget.imageAsset(
+                  Assets.ASSETS_JPG_VTS___APP___NEN_1_JPG,
+                  fit: BoxFit.cover),
+            ),
+            SizedBox(
+              height: Get.height,
+              width: Get.width,
+              child: Stack(fit: StackFit.passthrough, children: [
+                Positioned(
+                  top: Get.height / 2 - Get.width / 1.8,
+                  left: Get.width / 2 - Get.width / 2.6,
+                  child: Center(
+                    child: SizedBox(
+                      width: Get.width / 1.3,
+                      height: Get.height / 2.3,
+                      // decoration: BoxDecoration(
+                      //   shape: BoxShape.circle,
+                      //   border: Border.all(color: Colors.grey, width: 5),
+                      // ),
+                      child: ClipOval(
+                        child: FittedBox(
+                          fit: BoxFit.cover, // Đảm bảo camera lấp đầy vòng tròn
+                          child: SizedBox(
+                            width: Get.width,
+                            child: controller.cameraIsInitialize.value
+                                ? Transform.scale(
+                                    scale: 1.2,
+                                    child: Center(
+                                      child: CameraPreview(
+                                          controller.cameraController),
+                                    ),
+                                  )
+                                : const SizedBox(),
                           ),
-                        )
-                      : const SizedBox(),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-      SizedBox(
-        height: Get.height,
-        width: Get.width,
-        child: Stack(fit: StackFit.passthrough, children: [
-          // CustomPaint(
-          //   painter: CustomShapePainterLiveNess(),
-          // ),
-          // _buttonTakePicture(controller),
-          _buttonStart(controller),
-          _actionWidget(controller),
-          _positionedAppbar(controller),
-          _warningFace(controller),
-          Positioned(
-            left: AppDimens.padding15,
-            right: AppDimens.padding15,
-            bottom: Get.height / 10,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(1.0),
-                border: Border.all(color: AppColors.colorDisable, width: 1.0),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const TextUtils(
-                    text: "Hướng dẫn thao tác:",
-                    availableStyle: StyleEnum.body14Bold,
-                    // color: AppColors.colorSemantic3,
-                    textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
                   ),
-                  _itemRow('Đi đến nơi có đủ ánh sáng.'),
-                  _itemRow('Không đeo khẩu trang, kính mát, mũ,...'),
-                  _itemRow('Thực hiện quay trái, phải,... theo yêu cầu.'),
-                  _itemRow('Đưa khuôn mặt vào trong khung quy định.'),
-                ],
-              ).paddingAll(AppDimens.padding15),
+                ),
+
+                _actionWidget(controller),
+                _positionedAppbar(controller),
+                _warningFace(controller),
+                _buildGuild(),
+                _buttonStart(controller),
+                // if (controller.imageTemp.value != null)
+                //   _buildWidgetHaveImage(controller),
+              ]),
             ),
-          )
-          // if (controller.imageTemp.value != null)
-          //   _buildWidgetHaveImage(controller),
-        ]),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+Widget _buildGuild() {
+  return Positioned(
+    left: AppDimens.padding15,
+    right: AppDimens.padding15,
+    top: Get.height - Get.width / 1.8,
+    child: Container(
+      height: Get.width / 1.8 - kToolbarHeight,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(1.0),
+        border: Border.all(color: AppColors.colorDisable, width: 1.0),
       ),
-    ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const TextUtils(
+              text: "Hướng dẫn thao tác:",
+              availableStyle: StyleEnum.body14Bold,
+              // color: AppColors.colorSemantic3,
+              textAlign: TextAlign.center,
+            ),
+            _itemRow('Đi đến nơi có đủ ánh sáng.'),
+            _itemRow('Không đeo khẩu trang, kính mát, mũ,...'),
+            _itemRow('Thực hiện quay trái, phải,... theo yêu cầu.'),
+            _itemRow('Đưa khuôn mặt vào trong khung quy định.'),
+          ],
+        ).paddingAll(AppDimens.padding15),
+      ),
+    ),
   );
 }
 

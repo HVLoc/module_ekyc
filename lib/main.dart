@@ -76,11 +76,25 @@ class MyHomePage extends StatelessWidget {
                   await ModulesEkyc.checkEKYC(sdkRequestModel).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
-                      print('EKYC: ${sendNfcRequestModel.toJson()}');
+                      print('EKYC: ${sendNfcRequestModel.toJsonFull()}');
                     }
                   });
                 },
                 child: const Text('Xác thực EKYC'),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () async {
+                  // Gọi hàm chỉ đọc NFC và liveless
+
+                  await ModulesEkyc.scanEKYC().then((onValue) {
+                    if (onValue is SendNfcRequestModel) {
+                      SendNfcRequestModel sendNfcRequestModel = onValue;
+                      print('Scan EKYC: ${sendNfcRequestModel.toJsonFull()}');
+                    }
+                  });
+                },
+                child: const Text('Quét EKYC'),
               ),
             ],
           ),

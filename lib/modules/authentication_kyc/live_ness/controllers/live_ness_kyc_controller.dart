@@ -277,34 +277,37 @@ class LiveNessKycController extends BaseGetxController {
     appController.sendNfcRequestGlobalModel.imgLiveNess =
         base64Encode(imageLiveNess ?? []);
 
-    ///fake dữ liệu
-    // appController.sendNfcRequestGlobalModel.isFaceMatching = true;
-    // appController.sendNfcRequestGlobalModel.faceMatching = "90%";
-    // Get.offNamed(AppRoutes.routeFaceMatchingResult);
-    showLoadingOverlay();
-    await liveNessRepository
-        .faceMatching(
-      img1: appController.sendNfcRequestGlobalModel.file,
-      img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
-    )
-        .then((value) async {
-      if ((value.data?.match ?? "0.0") == "1") {
-        appController.sendNfcRequestGlobalModel.isFaceMatching = true;
-        appController.sendNfcRequestGlobalModel.faceMatching =
-            value.data?.matching;
-        Get.offNamed(AppRoutes.routeFaceMatchingResult);
-      } else {
-        ShowDialog.showDialogNotification(
-          "${LocaleKeys.live_ness_matchingFailTitle.tr}\nKết quả: ${value.data?.matching}",
-          confirm: () {
-            Get.back();
-            Get.back();
-          },
-          title: LocaleKeys.live_ness_matchingFailContent.tr,
-          titleButton: LocaleKeys.dialog_redo.tr,
-        );
-      }
-    });
+    /// Nếu chỉ scanNFC thì trả về giá trị luôn, không cần gọi API
+    if (appController.isScanEKYC) {
+      // Get.close(3);
+      Get.back();
+      Get.back();
+    } else {
+      showLoadingOverlay();
+      await liveNessRepository
+          .faceMatching(
+        img1: appController.sendNfcRequestGlobalModel.file,
+        img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
+      )
+          .then((value) async {
+        if ((value.data?.match ?? "0.0") == "1") {
+          appController.sendNfcRequestGlobalModel.isFaceMatching = true;
+          appController.sendNfcRequestGlobalModel.faceMatching =
+              value.data?.matching;
+          Get.offNamed(AppRoutes.routeFaceMatchingResult);
+        } else {
+          ShowDialog.showDialogNotification(
+            "${LocaleKeys.live_ness_matchingFailTitle.tr}\nKết quả: ${value.data?.matching}",
+            confirm: () {
+              Get.back();
+              Get.back();
+            },
+            title: LocaleKeys.live_ness_matchingFailContent.tr,
+            titleButton: LocaleKeys.dialog_redo.tr,
+          );
+        }
+      });
+    }
 
     // showLoadingOverlay();
     // await updatePhotoInformationRepository

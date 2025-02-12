@@ -51,6 +51,7 @@ class AppController extends GetxController {
   bool isEnablePackage = false;
 
   bool isOnlyNFC = false;
+  bool isScanEKYC = false;
 
   ///  Hàm gửi dữ liệu về native
   /// [isOnlyNFC] = true dữ liệu NFC về native không cần liveness và xác thực
