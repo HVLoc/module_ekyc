@@ -202,7 +202,7 @@ Visibility _actionWidget(LiveNessKycController controller) {
                 TextUtils(
                   text: LocaleKeys.live_ness_titleAction.tr,
                   availableStyle: StyleEnum.body14Bold,
-                  color: AppColors.basicGrey1,
+                  color: Colors.black,
                   maxLine: 2,
                   textAlign: TextAlign.center,
                 ),
@@ -210,7 +210,7 @@ Visibility _actionWidget(LiveNessKycController controller) {
                 TextUtils(
                   text: LocaleKeys.live_ness_titleSchedule.tr,
                   availableStyle: StyleEnum.body14,
-                  color: AppColors.colorTextGrey,
+                  color: Colors.black,
                   maxLine: 2,
                   textAlign: TextAlign.center,
                 ),
