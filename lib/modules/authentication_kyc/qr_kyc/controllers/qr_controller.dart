@@ -84,7 +84,7 @@ class QRController extends BaseGetxController {
           );
           appController.qrUserInformation.fullName = splitStrings[1];
           appController.qrUserInformation.gender = splitStrings[3];
-          appController.qrUserInformation.gender = splitStrings[4];
+          appController.qrUserInformation.address = splitStrings[4];
           appController.qrUserInformation.informationIdCard = splitStrings[0];
         }
         // if (splitStrings[0] == "") {

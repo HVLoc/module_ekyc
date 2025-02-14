@@ -296,9 +296,6 @@ class NfcDialogController extends BaseGetxController {
       // }
       sendNfcRequestModel.otherPaper =
           appController.qrUserInformation.informationIdCard;
-      sendNfcRequestModel.isIntegrity =
-          appController.qrUserInformation.documentNumber ==
-              sendNfcRequestModel.number;
       sendNfcRequestModel.mrz = removeSpecialCharacters(
           utf8.decode(mrtdDataTemp.dg1!.toBytes(), allowMalformed: true));
 
@@ -392,6 +389,8 @@ class NfcDialogController extends BaseGetxController {
         listDg13.add(value);
       }
       if (listDg13.length >= 15) {
+        bool isValid(String? value) => value != null && value.isNotEmpty;
+
         sendNfcRequestModel.numberVMN = listDg13[0];
         sendNfcRequestModel.nameVNM = listDg13[1];
         sendNfcRequestModel.dobVMN = listDg13[2];
@@ -400,7 +399,12 @@ class NfcDialogController extends BaseGetxController {
         sendNfcRequestModel.nationVNM = listDg13[5];
         sendNfcRequestModel.religionVMN = listDg13[6];
         sendNfcRequestModel.homeTownVMN = listDg13[7];
-        sendNfcRequestModel.residentVMN = listDg13[8];
+
+        String? residentValue = listDg13[8];
+        sendNfcRequestModel.residentVMN = isValid(residentValue)
+            ? residentValue
+            : appController.qrUserInformation.address;
+
         sendNfcRequestModel.identificationSignsVNM = listDg13[9];
         sendNfcRequestModel.registrationDateVMN = listDg13[10];
         sendNfcRequestModel.doeVMN = listDg13[11];
