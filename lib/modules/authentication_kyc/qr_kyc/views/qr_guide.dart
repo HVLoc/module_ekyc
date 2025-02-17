@@ -44,10 +44,10 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                     }
                     // }
                   },
-                  onScannerStarted: (_) {
-                    controller.cameraController
-                        .setZoomScale(controller.zoomX.value * 0.1);
-                  },
+                  // onScannerStarted: (_) {
+                  //   controller.cameraController
+                  //       .setZoomScale(controller.zoomX.value * 0.1);
+                  // },
                 ),
                 CustomPaint(
                   painter: CustomShapePainterDaily(),

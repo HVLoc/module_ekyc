@@ -29,6 +29,9 @@ class QRController extends BaseGetxController {
       facing: CameraFacing.back,
       // torchEnabled: true,
     );
+    await cameraController.start().then((value) {
+      cameraController.setZoomScale(zoomX.value * 0.1);
+    });
     hideLoading();
 
     super.onInit();
