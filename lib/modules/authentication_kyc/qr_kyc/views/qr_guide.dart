@@ -62,10 +62,10 @@ class QRGuidePage extends BaseGetWidget<QRController> {
                                     .getData(barcodes.first.rawValue ?? "");
                               }
                             },
-                            onScannerStarted: (_) {
-                              controller.cameraController
-                                  .setZoomScale(controller.zoomX.value * 0.1);
-                            },
+                            // onScannerStarted: (_) {
+                            //   controller.cameraController
+                            //       .setZoomScale(controller.zoomX.value * 0.1);
+                            // },
                           ),
                         ),
                       ),
