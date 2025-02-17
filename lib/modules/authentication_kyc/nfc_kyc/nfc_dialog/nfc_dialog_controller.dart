@@ -355,6 +355,8 @@ class NfcDialogController extends BaseGetxController {
   void _getDgGlobal(MrtdData mrtdDataTemp) {
     sendNfcRequestModel.number =
         mrtdDataTemp.dg1?.mrz.optionalData.substring(0, 12);
+    sendNfcRequestModel.isIntegrity = sendNfcRequestModel.number ==
+        appController.qrUserInformation.documentNumber;
     sendNfcRequestModel.name =
         "${mrtdDataTemp.dg1?.mrz.lastName} ${mrtdDataTemp.dg1?.mrz.firstName}";
     sendNfcRequestModel.firstName = mrtdDataTemp.dg1?.mrz.firstName;
