@@ -22,7 +22,6 @@ Depends on all your plugins, and provides a function to register them.
   s.dependency 'app_settings'
   s.dependency 'audio_session'
   s.dependency 'camera_avfoundation'
-  s.dependency 'device_info_plus'
   s.dependency 'flutter_nfc_kit'
   s.dependency 'flutter_pdfview'
   s.dependency 'flutter_secure_storage'

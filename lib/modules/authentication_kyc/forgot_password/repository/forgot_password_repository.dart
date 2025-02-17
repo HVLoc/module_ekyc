@@ -12,9 +12,9 @@ class ForgotPasswordRepository extends BaseRepository {
     var data = {
       "username": username,
       "newPassword": newPassword,
-      "secretKey": GetPlatform.isAndroid
-          ? androidDeviceInfo?.id
-          : iosDeviceInfo?.identifierForVendor
+      // "secretKey": GetPlatform.isAndroid
+      //     ? androidDeviceInfo?.id
+      //     : iosDeviceInfo?.identifierForVendor
     };
     var encodedData = data.entries.map((entry) {
       return '${Uri.encodeComponent(entry.key)}=${Uri.encodeComponent(entry.value ?? "")}';

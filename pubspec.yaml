@@ -37,7 +37,7 @@ dependencies:
   cached_network_image: ^3.3.1
   camera: ^0.10.5+9
   cupertino_icons: ^1.0.6
-  device_info_plus: 9.1.2
+  # device_info_plus: 9.1.2
   dmrtd:
     git:
       url: https://github.com/HVLoc/dmrtd
@@ -68,18 +68,15 @@ dependencies:
   logger: ^2.2.0
   mobile_scanner: ^3.5.2
   nfc_manager: ^3.4.0
-  package_info_plus: ^4.2.0
+  # package_info_plus: ^4.2.0
   percent_indicator: ^4.2.3
   permission_handler: ^8.1.6
   pull_to_refresh: ^2.0.0
   qr_flutter: ^4.1.0
   screenshot: ^3.0.0
-  sds_assets_generator:
-    git:
-      url: https://github.com/toannmdev/sds_assets_generator.git
-      ref: master
 
   url_launcher: ^6.2.1
+  wakelock_plus: ^1.2.10
 
 dev_dependencies:
   flutter_lints: ^3.0.0
