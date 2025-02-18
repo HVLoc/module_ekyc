@@ -74,9 +74,9 @@ class RegisterInfoController extends BaseGetxController {
             patternDefault),
         identification: appController.sendNfcRequestGlobalModel.otherPaper,
         phone: phoneNumberConfirm.text,
-        secretKey: GetPlatform.isAndroid
-            ? androidDeviceInfo?.id
-            : iosDeviceInfo?.identifierForVendor,
+        // secretKey: GetPlatform.isAndroid
+        //     ? androidDeviceInfo?.id
+        //     : iosDeviceInfo?.identifierForVendor,
       );
       showLoading();
       await registerRepository

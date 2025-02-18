@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:camera/camera.dart';
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
@@ -24,10 +23,6 @@ import '../../../modules/sdk/sdk.src.dart';
 late Box hiveApp;
 
 late PackageInfo packageInfo;
-
-IosDeviceInfo? iosDeviceInfo;
-
-AndroidDeviceInfo? androidDeviceInfo;
 
 late Box<LoginCaRequestModel> hiveUserLogin;
 
@@ -51,6 +46,7 @@ class AppController extends GetxController {
   bool isEnablePackage = false;
 
   bool isOnlyNFC = false;
+  bool isScanEKYC = false;
 
   ///  Hàm gửi dữ liệu về native
   /// [isOnlyNFC] = true dữ liệu NFC về native không cần liveness và xác thực

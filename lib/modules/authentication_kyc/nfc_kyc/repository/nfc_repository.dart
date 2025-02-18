@@ -25,11 +25,12 @@ class NfcRepository extends BaseRepository {
   Future<VerifyResponse> sendNfcVerify(
     SendNfcRequestModel sendNfcRequestModel,
     SdkRequestAPI sdkRequestAPI,
+    bool isProd,
   ) async {
     var response = await baseCallApi(
-      AppApi.verifyC06,
+      isProd ? AppApi.verifyC06Prod : AppApi.verifyC06,
       EnumRequestMethod.post,
-      urlOther: AppApi.verifyC06,
+      urlOther: isProd ? AppApi.verifyC06Prod : AppApi.verifyC06,
       jsonMap: sendNfcRequestModel.toJsonVerify(),
       queryParameters: sdkRequestAPI.toJson(),
       isHaveVersion: false,

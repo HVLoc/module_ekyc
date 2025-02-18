@@ -22,8 +22,11 @@ class LiveNessRepository extends BaseRepository {
     );
   }
 
-  Future<BaseResponseBESDK<FaceMatchSDKResponse>> faceMatching(
-      {required img1, required img2}) async {
+  Future<BaseResponseBESDK<FaceMatchSDKResponse>> faceMatching({
+    required img1,
+    required img2,
+    required isProd,
+  }) async {
     var response = await baseCallApi(
       AppApi.faceMatching,
       EnumRequestMethod.post,
@@ -32,6 +35,8 @@ class LiveNessRepository extends BaseRepository {
         "img2": img2,
       },
       isHaveVersion: false,
+      urlOther:
+          isProd ? AppApi.faceMatchingOtherProd : AppApi.faceMatchingOther,
     );
     return BaseResponseBESDK.fromJson(
       response,

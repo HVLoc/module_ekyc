@@ -286,6 +286,7 @@ class LiveNessKycController extends BaseGetxController {
         .faceMatching(
       img1: appController.sendNfcRequestGlobalModel.file,
       img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
+      isProd: appController.sdkModel.isProd,
     )
         .then((value) async {
       if ((value.data?.match ?? "0.0") == "1") {

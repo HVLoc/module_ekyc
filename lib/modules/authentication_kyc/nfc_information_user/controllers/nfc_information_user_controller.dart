@@ -127,6 +127,7 @@ class NfcInformationUserController extends BaseGetxController {
         .sendNfcVerify(
       sendNfcRequestModel,
       sdkRequestAPI,
+      appController.sdkModel.isProd,
     )
         .then((value) {
       authenticationSuccess = value.data.result;

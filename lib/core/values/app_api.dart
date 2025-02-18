@@ -3,6 +3,7 @@
 class AppApi {
   // static const String url = 'https://cloud.2id.vn/api';
   static const String url = 'https://uat-apim.2id.vn/gateway/2id-ekyc/v.1';
+  static const String urlProd = 'https://apim.2id.vn/gateway/2id-ekyc/v.1';
   // static const String url = 'https://api-c06verify.2id.vn/api';
 
   static const String version = "?v=1.0";
@@ -80,6 +81,12 @@ class AppApi {
 
   ///sdk
   static const String faceMatching = "/face-matches/base64?imageType=CARD";
+  static const String faceMatchingOther =
+      "https://uat-apim.2id.vn/gateway/2id-ekyc/v.1/face-matches/base64?imageType=CARD";
+  static const String faceMatchingOtherProd =
+      "https://apim.2id.vn/gateway/2id-ekyc/v.1/face-matches/base64?imageType=CARD";
   static const String verifyC06 =
       "https://uat-apim.2id.vn/gateway/2id-check/v.1/c06-verify/integration/verify-card";
+  static const String verifyC06Prod =
+      "https://apim.2id.vn/gateway/2id-check/v.1/c06-verify/integration/verify-card";
 }
