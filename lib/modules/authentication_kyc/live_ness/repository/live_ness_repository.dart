@@ -25,7 +25,8 @@ class LiveNessRepository extends BaseRepository {
   Future<BaseResponseBESDK<FaceMatchSDKResponse>> faceMatching({
     required img1,
     required img2,
-    required isProd,
+    required bool isProd,
+    required String merchantKey,
   }) async {
     var response = await baseCallApi(
       AppApi.faceMatching,
@@ -33,6 +34,7 @@ class LiveNessRepository extends BaseRepository {
       jsonMap: {
         "img1": img1,
         "img2": img2,
+        "merchantKey": merchantKey,
       },
       isHaveVersion: false,
       urlOther:

@@ -287,6 +287,7 @@ class LiveNessKycController extends BaseGetxController {
       img1: appController.sendNfcRequestGlobalModel.file,
       img2: appController.sendNfcRequestGlobalModel.imgLiveNess,
       isProd: appController.sdkModel.isProd,
+      merchantKey: appController.sdkModel.merchantKey,
     )
         .then((value) async {
       if ((value.data?.match ?? "0.0") == "1") {
