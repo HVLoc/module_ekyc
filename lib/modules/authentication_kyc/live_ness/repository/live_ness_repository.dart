@@ -34,9 +34,11 @@ class LiveNessRepository extends BaseRepository {
       jsonMap: {
         "img1": img1,
         "img2": img2,
-        "merchantKey": merchantKey,
       },
       isHaveVersion: false,
+      queryParameters: {
+        "merchantKey": merchantKey,
+      },
       urlOther:
           isProd ? AppApi.faceMatchingOtherProd : AppApi.faceMatchingOther,
     );
