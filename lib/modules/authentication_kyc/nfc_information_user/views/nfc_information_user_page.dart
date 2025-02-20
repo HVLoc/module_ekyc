@@ -20,6 +20,7 @@ class NfcInformationUserPage extends BaseGetWidget {
   @override
   Widget buildWidgets(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.basicWhite,
       appBar: BackgroundAppBar.buildAppBar(
         controller.authenticationVisible.value ||
                 (!controller.sendNfcRequestModel.visibleButtonDetail)
@@ -77,9 +78,7 @@ class NfcInformationUserPage extends BaseGetWidget {
                 // height: AppDimens.iconHeightButton,
               ).paddingSymmetric(
                   horizontal: AppDimens.paddingDefaultHeight,
-                  vertical: controller.authenticationVisible.value
-                      ? 0
-                      : AppDimens.padding15),
+                  vertical: AppDimens.padding15),
               // Visibility(
               //   visible: controller.authenticationVisible.value,
               //   child: RichText(

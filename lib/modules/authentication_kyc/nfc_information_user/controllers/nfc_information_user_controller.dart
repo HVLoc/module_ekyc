@@ -119,46 +119,39 @@ class NfcInformationUserController extends BaseGetxController {
   Future<void> authenticationSDK() async {
     // sendNfcRequestModel.fileId = id;
     // sendNfcRequestModel.bodyFileId = bodyFileId;
-
-    SdkRequestAPI sdkRequestAPI = CreatePararmSDK.sdkRequestAPI(
-      appController.sdkModel,
-      sendNfcRequestModel,
-    );
-    await nfcRepository
-        .sendNfcVerify(
-      sendNfcRequestModel,
-      sdkRequestAPI,
-      appController.sdkModel.isProd,
-    )
-        .then((value) {
-      if (value.status) {
-        authenticationSuccess = value.data.result;
-        authenticationVisible.value = true;
-        appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
-      } else {
-        ShowDialog.showDialogNotification(
-          value.errors != null && value.errors!.isNotEmpty
-              ? value.errors?.first.message?.vn ?? ""
-              : LocaleKeys.live_ness_matchingFailContent.tr,
-          confirm: () {
-            Get.back();
-            Get.back();
-          },
-          title: LocaleKeys.live_ness_matchingFailContent.tr,
-          titleButton: LocaleKeys.dialog_redo.tr,
-        );
-      }
-
-      // packageKind = value.data.packageKind ?? AppConst.typeSanbox;
-      // if (Get.isRegistered<ClientController>()) {
-      //   ClientController clientController = Get.find<ClientController>();
-      //   clientController.initDocument();
-      // }
-      // if (Get.isRegistered<OverviewController>()) {
-      //   OverviewController overviewController = Get.find<OverviewController>();
-      //   overviewController.getUserInfo();
-      // }
-    });
+    try {
+      showLoadingOverlay();
+      SdkRequestAPI sdkRequestAPI = CreatePararmSDK.sdkRequestAPI(
+        appController.sdkModel,
+        sendNfcRequestModel,
+      );
+      await nfcRepository
+          .sendNfcVerify(
+        sendNfcRequestModel,
+        sdkRequestAPI,
+        appController.sdkModel.isProd,
+      )
+          .then((value) {
+        if (value.status) {
+          authenticationSuccess = value.data?.result == true;
+          authenticationVisible.value = value.data?.result == true;
+          appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+        } else {
+          ShowDialog.showDialogNotification(
+            value.errors != null && value.errors!.isNotEmpty
+                ? value.errors?.first.message?.vn ?? ""
+                : LocaleKeys.live_ness_matchingFailContent.tr,
+            confirm: () {
+              Get.back();
+            },
+            title: LocaleKeys.live_ness_matchingFailContent.tr,
+            titleButton: LocaleKeys.dialog_close.tr,
+          );
+        }
+      });
+    } finally {
+      hideLoadingOverlay();
+    }
   }
 
   void returnToNative() {

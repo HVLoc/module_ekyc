@@ -4,7 +4,7 @@ class VerifyResponse {
   final bool status;
   final String timestamp;
   final String transId;
-  final Data data;
+  final Data? data;
   final List<ErrorModelResponse>? errors;
 
   VerifyResponse({
@@ -20,7 +20,7 @@ class VerifyResponse {
       status: json['status'],
       timestamp: json['timestamp'],
       transId: json['transId'],
-      data: Data.fromJson(json['data']),
+      data: json["data"] != null ? Data.fromJson(json['data']) : null,
       errors: json["errors"] == null
           ? []
           : List<ErrorModelResponse>.from(

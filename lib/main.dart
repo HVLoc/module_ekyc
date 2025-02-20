@@ -68,7 +68,7 @@ class MyHomePage extends StatelessWidget {
                 onPressed: () async {
                   // Gọi hàm kiểm tra EKYC khi nhấn nút
                   SdkRequestModel sdkRequestModel = SdkRequestModel(
-                    merchantKey: "06f20495-3b82-4c58-ba20-c3eda194f21f",
+                    merchantKey: "89f797ab-ec41-446a-8dc1-1dfda5e7e93d",
                     secretKey: "63f81c69722acaa42f622ec16d702fdb",
                     method: "INTEGRITY",
                     isProd: false,

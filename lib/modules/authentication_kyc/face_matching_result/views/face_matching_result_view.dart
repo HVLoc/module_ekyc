@@ -179,7 +179,7 @@ Widget _itemBody(FaceMatchingResultController controller) {
       sdsSBHeight15,
       Obx(
         () => ButtonUtils.buildButton(
-          LocaleKeys.live_ness_result_button.tr,
+          "Xác thực",
           () async {
             Get.toNamed(
               AppRoutes.routeNfcInformationUser,
