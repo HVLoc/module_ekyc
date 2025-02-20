@@ -1,14 +1,18 @@
+import '../../../../base_app/model/model.src.dart';
+
 class VerifyResponse {
   final bool status;
   final String timestamp;
   final String transId;
   final Data data;
+  final List<ErrorModelResponse>? errors;
 
   VerifyResponse({
     required this.status,
     required this.timestamp,
     required this.transId,
     required this.data,
+    this.errors,
   });
 
   factory VerifyResponse.fromJson(Map<String, dynamic> json) {
@@ -17,6 +21,10 @@ class VerifyResponse {
       timestamp: json['timestamp'],
       transId: json['transId'],
       data: Data.fromJson(json['data']),
+      errors: json["errors"] == null
+          ? []
+          : List<ErrorModelResponse>.from(
+              json["errors"]!.map((x) => ErrorModelResponse.fromJson(x))),
     );
   }
 }

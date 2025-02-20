@@ -290,14 +290,11 @@ class LiveNessKycController extends BaseGetxController {
       merchantKey: appController.sdkModel.merchantKey,
     )
         .then((value) async {
-      if ((value.data?.match ?? "0.0") == "1") {
-        appController.sendNfcRequestGlobalModel.isFaceMatching = true;
-        appController.sendNfcRequestGlobalModel.faceMatching =
-            value.data?.matching;
-        Get.offNamed(AppRoutes.routeFaceMatchingResult);
-      } else {
+      if (value.status == false) {
         ShowDialog.showDialogNotification(
-          "${LocaleKeys.live_ness_matchingFailTitle.tr}\nKết quả: ${value.data?.matching}",
+          value.errors != null && value.errors!.isNotEmpty
+              ? value.errors?.first.message?.vn ?? ""
+              : LocaleKeys.live_ness_matchingFailContent.tr,
           confirm: () {
             Get.back();
             Get.back();
@@ -305,6 +302,23 @@ class LiveNessKycController extends BaseGetxController {
           title: LocaleKeys.live_ness_matchingFailContent.tr,
           titleButton: LocaleKeys.dialog_redo.tr,
         );
+      } else {
+        if ((value.data?.match ?? "0.0") == "1") {
+          appController.sendNfcRequestGlobalModel.isFaceMatching = true;
+          appController.sendNfcRequestGlobalModel.faceMatching =
+              value.data?.matching;
+          Get.offNamed(AppRoutes.routeFaceMatchingResult);
+        } else {
+          ShowDialog.showDialogNotification(
+            "${LocaleKeys.live_ness_matchingFailTitle.tr}\nKết quả: ${value.data?.matching}",
+            confirm: () {
+              Get.back();
+              Get.back();
+            },
+            title: LocaleKeys.live_ness_matchingFailContent.tr,
+            titleButton: LocaleKeys.dialog_redo.tr,
+          );
+        }
       }
     });
 

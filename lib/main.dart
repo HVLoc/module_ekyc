@@ -1,86 +1,91 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:module_ekyc/generated/locales.g.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 
-import 'base_app/controllers_base/app_controller/app_controller.dart';
-import 'core/core.src.dart';
+import 'core/router/app_router.src.dart';
+import 'modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
+import 'modules/sdk/sdk.src.dart';
 import 'shares/shares.src.dart';
 
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // ErrorWidget.builder = (FlutterErrorDetails details) => Text(
-  //       details.exception.toString(),
-  //       style: TextStyle(color: AppColors.statusRed),
-  //     ).paddingAll(AppDimens.padding8);
-  runApp(const Application());
-}
-class Application extends StatefulWidget {
-  const Application({super.key});
 
-  @override
-  State<Application> createState() => _Application();
+  runApp(const MyApp());
 }
 
-class _Application extends State<Application> {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  void initState() {
-    // initialize();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
-    // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    //     // systemNavigationBarColor: AppColors.color,
-    //     statusBarColor: Colors.deepOrangeAccent,
-    //     statusBarBrightness: Brightness.dark,
-    //     statusBarIconBrightness: Brightness.dark));
+  State<MyApp> createState() => _MyAppState();
+}
 
-    super.initState();
-  }
-
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: KeyBoard.hide,
-      child: GetMaterialApp(
-        locale: const Locale('vi', 'VN'),
-        debugShowCheckedModeBanner: false,
-        // translationsKeys: AppTranslation.translations,
-        initialRoute: AppRoutes.initApp,
-        getPages: RouteAppPage.route,
-        builder: (context, child) => ScrollConfiguration(
-          behavior: MyBehavior(),
-          child: MediaQuery(
-              data:
-                  MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
-              child: child ?? Container()),
-        ),
-        localizationsDelegates: const [
-          GlobalCupertinoLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          DefaultCupertinoLocalizations.delegate
-        ],
-        supportedLocales: const [
-          Locale('vi', ''),
-          Locale('en', ''),
-        ],
-        title: LocaleKeys.app_name.tr,
-        theme: getThemeByAppTheme(false).copyWith(),
+    return GetMaterialApp(
+      title: 'Flutter Demo',
+      // initialRoute: AppRoutes.initApp,
+      getPages: RouteAppPage.route,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      // translationsKeys: AppTranslation.translations,
+      locale: const Locale('vi', 'VN'),
+
+      home: const MyHomePage(),
     );
   }
 }
 
-class MyBehavior extends ScrollBehavior {
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
-  Widget buildOverscrollIndicator(
-    BuildContext context,
-    Widget child,
-    ScrollableDetails details,
-  ) {
-    return child;
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Ứng dụng NFC và EKYC'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () async {
+                  // Gọi hàm đọc NFC khi nhấn nút
+                  await ModulesEkyc.readOnlyNFC().then((onValue) {
+                    if (onValue is SendNfcRequestModel) {
+                      SendNfcRequestModel sendNfcRequestModel = onValue;
+                      print('NFC: ${sendNfcRequestModel.toJson()}');
+                    }
+                  });
+                },
+                child: const Text('Đọc NFC'),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () async {
+                  // Gọi hàm kiểm tra EKYC khi nhấn nút
+                  SdkRequestModel sdkRequestModel = SdkRequestModel(
+                    merchantKey: "06f20495-3b82-4c58-ba20-c3eda194f21f",
+                    secretKey: "63f81c69722acaa42f622ec16d702fdb",
+                    method: "INTEGRITY",
+                    isProd: false,
+                  );
+                  await ModulesEkyc.checkEKYC(sdkRequestModel).then((onValue) {
+                    if (onValue is SendNfcRequestModel) {
+                      SendNfcRequestModel sendNfcRequestModel = onValue;
+                      print('EKYC: ${sendNfcRequestModel.toJson()}');
+                    }
+                  });
+                },
+                child: const Text('Xác thực EKYC'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

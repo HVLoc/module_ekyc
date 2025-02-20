@@ -152,7 +152,7 @@ class ShowDialog {
                 text: content,
                 availableStyle: StyleEnum.bodyBold,
                 color: AppColors.basicBlack,
-                maxLine: 2,
+                maxLine: 10,
                 textAlign: TextAlign.center,
               ).paddingSymmetric(horizontal: AppDimens.padding5),
               const SizedBox(

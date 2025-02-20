@@ -42,7 +42,7 @@ class LiveNessRepository extends BaseRepository {
       urlOther:
           isProd ? AppApi.faceMatchingOtherProd : AppApi.faceMatchingOther,
     );
-    return BaseResponseBESDK.fromJson(
+    return BaseResponseBESDK<FaceMatchSDKResponse>.fromJson(
       response,
       func: (x) => FaceMatchSDKResponse.fromJson(x),
     );

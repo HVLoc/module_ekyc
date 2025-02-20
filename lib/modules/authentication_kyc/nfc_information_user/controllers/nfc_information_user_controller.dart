@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/core/core.src.dart';
+import 'package:module_ekyc/generated/locales.g.dart';
 import 'package:module_ekyc/modules/authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
 import 'package:module_ekyc/modules/overview/overview.src.dart';
 import 'package:module_ekyc/modules/sdk/sdk.src.dart';
@@ -130,9 +131,23 @@ class NfcInformationUserController extends BaseGetxController {
       appController.sdkModel.isProd,
     )
         .then((value) {
-      authenticationSuccess = value.data.result;
-      authenticationVisible.value = true;
-      appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+      if (value.status) {
+        authenticationSuccess = value.data.result;
+        authenticationVisible.value = true;
+        appController.sendNfcRequestGlobalModel = sendNfcRequestModel;
+      } else {
+        ShowDialog.showDialogNotification(
+          value.errors != null && value.errors!.isNotEmpty
+              ? value.errors?.first.message?.vn ?? ""
+              : LocaleKeys.live_ness_matchingFailContent.tr,
+          confirm: () {
+            Get.back();
+            Get.back();
+          },
+          title: LocaleKeys.live_ness_matchingFailContent.tr,
+          titleButton: LocaleKeys.dialog_redo.tr,
+        );
+      }
 
       // packageKind = value.data.packageKind ?? AppConst.typeSanbox;
       // if (Get.isRegistered<ClientController>()) {
