@@ -1,6 +1,6 @@
 import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
-import 'package:module_ekyc/core/values/values.src.dart';
+import 'package:module_ekyc/const.dart';
 
 import '../../shares/shares.src.dart';
 import '../authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
@@ -22,7 +22,7 @@ class ModulesEkyc {
     AppController appController = Get.put(AppController());
     Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;
-    hiveApp.put(AppKey.keyAPIKey, appController.sdkModel.apiKey);
+    AppConstSDK.apiKey = appController.sdkModel.apiKey;
     var result = await appController.checkPermissionApp();
     Get.delete<AppController>();
     return result;
