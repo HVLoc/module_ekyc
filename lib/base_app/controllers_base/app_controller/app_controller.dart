@@ -75,11 +75,7 @@ class AppController extends GetxController {
   Future<void> onInit() async {
     Get.put(BaseApi(), permanent: true);
     initializeMethod();
-    initHive().then((value) async {
-      //TODO: Chỉ chạy khi cần test module
-      // await demoModule();
-      // ModulesEkyc.readOnlyNFC();
-    });
+    await initHive();
 
     super.onInit();
   }
