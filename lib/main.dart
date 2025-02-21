@@ -71,6 +71,8 @@ class MyHomePage extends StatelessWidget {
                     merchantKey: "89f797ab-ec41-446a-8dc1-1dfda5e7e93d",
                     secretKey: "63f81c69722acaa42f622ec16d702fdb",
                     method: "INTEGRITY",
+                    apiKey:
+                        "eyJ4NXQjUzI1NiI6Ik5XUXdPVFJrTWpBNU9XRmpObVUyTnpCbE5UTTNaRFV3T0RVellqWXdabUpsWlROa1pEQTRPRFU0WlRVd1pHSXdObVV5TW1abVpUTmhaRGt5TmpRMlpBPT0iLCJraWQiOiJnYXRld2F5X2NlcnRpZmljYXRlX2FsaWFzIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ==.eyJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJpZCI6MSwidXVpZCI6Ijk3M2I2Mjg1LWNiNmYtNDIxYi1iMzg0LTlhNDIyN2FhMzRiOSJ9LCJpc3MiOiJodHRwczpcL1wvdWF0LWFwaW0uMmlkLnZuOjQ0M1wvb2F1dGgyXC90b2tlbiIsImtleXR5cGUiOiJTQU5EQk9YIiwicGVybWl0dGVkUmVmZXJlciI6IiIsInRva2VuX3R5cGUiOiJhcGlLZXkiLCJwZXJtaXR0ZWRJUCI6IiIsImlhdCI6MTczNzI3OTcxNCwianRpIjoiYTM2MGNmMDctZTQ1My00MTc1LWEwOTAtNWE3ODU4NWZiY2NkIn0=.smuXRLDclnOrc1oBWnVMhgXrOodww6ht3oPTZq-nHnDtspZKKYKoAwJCBrXDy18JweqZWFciZJJ-iLL0pKX_svl0qiddGXO4uxKiaZUbHvzFCtQ7kLYYCKWKqXqB1A8cGM8w0VoKp_VUPtwDj8Ren3adjyM6uF2rxx5ubVeXfxxuaAgpwTBEUTTFgI35VUQeiYHVaJPnN23LwzO6O2eX6YucF7p6OGg_XLs7NedlJnAEsp_LC15mnZnK6IJCzvrnKQAdeW16tXYFT-FGJdVqlyaQwBIStfhJpeQglOZ43FfvjtWdt0G-nYucevoywqeTBpkdvHvjjzDJPX9Xs8FaLw==",
                     isProd: false,
                   );
                   await ModulesEkyc.checkEKYC(sdkRequestModel).then((onValue) {
