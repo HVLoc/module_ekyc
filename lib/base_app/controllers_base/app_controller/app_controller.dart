@@ -174,8 +174,8 @@ Future<void> initHive() async {
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
   hiveApp = await Hive.openBox(LocaleKeys.app_name.tr);
-  registerAdapters();
-  await openBox();
+  // registerAdapters();
+  // await openBox();
   packageInfo = await PackageInfo.fromPlatform();
 }
 

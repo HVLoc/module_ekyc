@@ -118,8 +118,7 @@ class _SDSInputTextState extends State<SDSInputText> with FormatterEnum {
           textInputAction: widget.inputTextFormModel.iconNextTextInputAction,
           style: widget.inputTextFormModel.style ??
               Get.textTheme.bodyLarge?.copyWith(
-                fontSize:
-                    widget.inputTextFormModel.textSize ?? AppDimens.fontSmall(),
+                fontSize: widget.inputTextFormModel.textSize,
                 color: widget.inputTextFormModel.textColor ??
                     AppColors.primaryNavy,
               ),
