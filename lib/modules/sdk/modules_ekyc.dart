@@ -30,7 +30,7 @@ class ModulesEkyc {
     AppController appController = Get.put(AppController(), permanent: true);
     appController.isScanEKYC = true;
 
-    // Assets.isFromModules = true;
+    Assets.isFromModules = true;
     var result = await appController.checkPermissionApp();
     Get.delete<AppController>(force: true);
     return result;
