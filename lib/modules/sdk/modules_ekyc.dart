@@ -7,7 +7,7 @@ import 'sdk.src.dart';
 
 class ModulesEkyc {
   static Future<SendNfcRequestModel?> readOnlyNFC() async {
-    AppController appController = Get.put(AppController());
+    AppController appController = Get.put(AppController(), permanent: true);
 
     appController.isOnlyNFC = true;
     Assets.isFromModules = true;
@@ -18,7 +18,7 @@ class ModulesEkyc {
 
   static Future<SendNfcRequestModel?> checkEKYC(
       SdkRequestModel sdkRequestModel) async {
-    AppController appController = Get.put(AppController());
+    AppController appController = Get.put(AppController(), permanent: true);
     Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;
     var result = await appController.checkPermissionApp();
@@ -27,12 +27,12 @@ class ModulesEkyc {
   }
 
   static Future<SendNfcRequestModel?> scanEKYC() async {
-    AppController appController = Get.put(AppController());
+    AppController appController = Get.put(AppController(), permanent: true);
     appController.isScanEKYC = true;
 
-    Assets.isFromModules = true;
+    // Assets.isFromModules = true;
     var result = await appController.checkPermissionApp();
-    Get.delete<AppController>();
+    Get.delete<AppController>(force: true);
     return result;
   }
 }

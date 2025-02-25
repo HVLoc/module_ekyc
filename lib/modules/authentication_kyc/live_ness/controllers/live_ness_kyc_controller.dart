@@ -281,8 +281,10 @@ class LiveNessKycController extends BaseGetxController {
     /// Nếu chỉ scanNFC thì trả về giá trị luôn, không cần gọi API
     if (appController.isScanEKYC) {
       // Get.close(3);
-      Get.back();
-      Get.back();
+      // Get.back();
+      // Get.back();
+      // Sau khi xong thì back về màn đầu tiên để trả kết quả
+      Get.until((route) => Get.routing.current == "/");
     } else {
       showLoadingOverlay();
       await liveNessRepository
