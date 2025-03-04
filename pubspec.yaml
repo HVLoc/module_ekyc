@@ -141,6 +141,7 @@ flutter:
 
     - assets/jpg/
     - assets/locales/
+    - assets/png/
     - assets/svg/
 
   # assets end

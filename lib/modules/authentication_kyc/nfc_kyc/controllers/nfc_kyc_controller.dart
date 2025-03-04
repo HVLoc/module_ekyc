@@ -29,6 +29,8 @@ class ScanNfcKycController extends BaseGetxController
 
   final formKey = GlobalKey<FormState>();
 
+  final RxBool isGuide = false.obs;
+
   @override
   Future<void> onInit() async {
     nfcRepository = NfcRepository(this);

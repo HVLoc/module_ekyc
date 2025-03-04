@@ -6,14 +6,14 @@ Nơi chứa toàn bộ assets của dự án
 1. Active assets_generator:
 
 ```dart
-dart pub global activate assets_generator
+dart pub global activate -s git https://github.com/HVLoc/assets_generator_by_lochv.git
 ```
 
 2. Run command:
 
 ```dart
 <!-- agen -f lib/assets -t d -s -r uwu --no-watch -->
-sds_agen -f assets -t f -s -r uwu --no-watch
+lochv_agen -s -t d --const-array --rule uwu --package --no-watch
 
 ```
 

@@ -41,6 +41,14 @@ class Assets {
   static String get ASSETS_LOCALES_VI_VN_JSON =>
       '${isFromModules ? "packages/$package/" : ""}assets/locales/vi_VN.json';
 
+  /// {@macro assets_generator.ASSETS_PNG_NFC_ANDROID_PNG.preview}
+  static String get ASSETS_PNG_NFC_ANDROID_PNG =>
+      '${isFromModules ? "packages/$package/" : ""}assets/png/nfc_android.png';
+
+  /// {@macro assets_generator.ASSETS_PNG_NFC_IOS_PNG.preview}
+  static String get ASSETS_PNG_NFC_IOS_PNG =>
+      '${isFromModules ? "packages/$package/" : ""}assets/png/nfc_ios.png';
+
   /// {@macro assets_generator.ASSETS_SVG_ERROR_SVGREPO_COM_SVG.preview}
   static String get ASSETS_SVG_ERROR_SVGREPO_COM_SVG =>
       '${isFromModules ? "packages/$package/" : ""}assets/svg/error-svgrepo-com.svg';
@@ -564,6 +572,12 @@ final List<String> assetsArray = <String>[
   /// {@macro assets_generator.ASSETS_JPG_IMG_MAIL_PNG.preview}
   Assets.ASSETS_JPG_IMG_MAIL_PNG,
   Assets.ASSETS_LOCALES_VI_VN_JSON,
+
+  /// {@macro assets_generator.ASSETS_PNG_NFC_ANDROID_PNG.preview}
+  Assets.ASSETS_PNG_NFC_ANDROID_PNG,
+
+  /// {@macro assets_generator.ASSETS_PNG_NFC_IOS_PNG.preview}
+  Assets.ASSETS_PNG_NFC_IOS_PNG,
 
   /// {@macro assets_generator.ASSETS_SVG_ERROR_SVGREPO_COM_SVG.preview}
   Assets.ASSETS_SVG_ERROR_SVGREPO_COM_SVG,
