@@ -73,7 +73,8 @@ class MyHomePage extends StatelessWidget {
                   ).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
-                      print('NFC: ${sendNfcRequestModel.toJson()}');
+                      print(
+                          'NFC(${DateTime.now()}): ${sendNfcRequestModel.toJson()}');
                     }
                   });
                 },
@@ -111,7 +112,8 @@ class MyHomePage extends StatelessWidget {
                   ).then((onValue) {
                     if (onValue is SendNfcRequestModel) {
                       SendNfcRequestModel sendNfcRequestModel = onValue;
-                      print('EKYC: ${sendNfcRequestModel.toJson()}');
+                      print(
+                          'EKYC(${DateTime.now()}): ${sendNfcRequestModel.toJson()}');
                     }
                   });
                 },

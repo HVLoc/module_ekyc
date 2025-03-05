@@ -68,8 +68,11 @@ class AppController extends GetxController {
 
   void sendDataToModulesEkyc() async {
     try {
-      Get.offNamed(AppRoutes.initApp);
-      Get.close(3);
+      // Sau khi xong thì back về màn đầu tiên để trả kết quả
+      Get.until((route) => Get.routing.current == AppRoutes.initApp);
+
+      // Get.offNamed(AppRoutes.initApp);
+      // Get.close(3);
       Get.back();
       // Get.back(result: sendNfcRequestGlobalModel);
     } catch (e) {

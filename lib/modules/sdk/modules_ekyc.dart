@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/const.dart';
+import 'package:module_ekyc/core/core.src.dart';
 
 import '../../shares/shares.src.dart';
 import '../authentication_kyc/nfc_kyc/nfc_kyc.src.dart';
@@ -11,10 +12,12 @@ class ModulesEkyc {
   static Future<SendNfcRequestModel?> readOnlyNFC({
     GuidNFC? guidNFC,
   }) async {
+    Get.toNamed(AppRoutes.initApp);
     AppController appController = Get.put(AppController());
 
     appController.isOnlyNFC = true;
     appController.guidNFC = guidNFC;
+
     Assets.isFromModules = true;
     var result = await appController.checkPermissionApp();
     Get.delete<AppController>();
@@ -25,6 +28,7 @@ class ModulesEkyc {
     SdkRequestModel sdkRequestModel, {
     GuidNFC? guidNFC,
   }) async {
+    Get.toNamed(AppRoutes.initApp);
     AppController appController = Get.put(AppController());
     Assets.isFromModules = true;
     appController.sdkModel = sdkRequestModel;

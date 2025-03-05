@@ -9,7 +9,7 @@ class SplashPage extends GetView<AppController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(AppController(), permanent: true);
+    // Get.put(AppController(), permanent: true);
     return Container(
       color: AppColors.basicGrey4,
       alignment: Alignment.center,
