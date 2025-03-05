@@ -18,7 +18,6 @@ class AppRoutes {
   static const String routeRegisterInfo = "/register_info";
   static const String routeForgotPass = "/forgot_pass";
   static const String routeListClient = "/list_client";
-  static const String routeSupport= "/support";
+  static const String routeSupport = "/support";
   static const String routeFaceMatchingResult = "/face_matching_result";
-
 }

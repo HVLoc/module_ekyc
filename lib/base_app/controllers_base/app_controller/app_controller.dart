@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:hive/hive.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';
 import 'package:module_ekyc/core/core.src.dart';
@@ -17,6 +18,7 @@ import 'package:module_ekyc/modules/login/login.src.dart';
 import 'package:module_ekyc/shares/shares.src.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../modules/sdk/sdk.src.dart';
 
@@ -27,6 +29,8 @@ late PackageInfo packageInfo;
 late Box<LoginCaRequestModel> hiveUserLogin;
 
 const platform = MethodChannel('2id.ekyc');
+
+typedef GuidNFC = Widget? Function(ScanNfcKycController controller);
 
 class AppController extends GetxController {
   RxBool isBusinessHousehold = false.obs;
@@ -48,6 +52,8 @@ class AppController extends GetxController {
   bool isOnlyNFC = false;
   bool isScanEKYC = false;
 
+  GuidNFC? guidNFC;
+
   ///  Hàm gửi dữ liệu về native
   /// [isOnlyNFC] = true dữ liệu NFC về native không cần liveness và xác thực
   void sendDataToNative() async {
@@ -62,8 +68,9 @@ class AppController extends GetxController {
 
   void sendDataToModulesEkyc() async {
     try {
-      // Sau khi xong thì back về màn đầu tiên để trả kết quả
-      Get.until((route) => Get.routing.current == "/");
+      Get.offNamed(AppRoutes.initApp);
+      Get.close(3);
+      Get.back();
       // Get.back(result: sendNfcRequestGlobalModel);
     } catch (e) {
       print("Error sending data: $e");

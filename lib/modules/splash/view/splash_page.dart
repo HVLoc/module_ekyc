@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:module_ekyc/assets.dart';
 import 'package:module_ekyc/base_app/base_app.src.dart';

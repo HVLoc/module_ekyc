@@ -27,8 +27,16 @@ class ScanNfcKycPage extends BaseGetWidget<ScanNfcKycController> {
           leading: true,
           backgroundColor: AppColors.colorTransparent,
         ),
-        body: _body(controller),
+        body: _bodyView(),
       ),
     );
+  }
+
+  Widget _bodyView() {
+    if (controller.appController.guidNFC != null && controller.isGuide.value) {
+      return controller.appController.guidNFC!(controller)!;
+    }
+
+    return _body(controller);
   }
 }
