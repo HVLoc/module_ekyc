@@ -47,6 +47,7 @@ class BottomSheetCheckNfc extends StatelessWidget {
             ? ButtonUtils.buildButton(
                 LocaleKeys.check_nfc_setting.tr,
                 () {
+                  Get.back();
                   AppSettings.openAppSettings(type: AppSettingsType.nfc);
                 },
                 backgroundColor: AppColors.primaryBlue1,

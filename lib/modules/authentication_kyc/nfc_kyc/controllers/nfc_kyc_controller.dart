@@ -70,6 +70,7 @@ class ScanNfcKycController extends BaseGetxController
   }
 
   Future<void> scanNfc() async {
+    statusNFC = await CheckSupportNfc.checkNfcAvailability();
     // ShowDialog.funcOpenBottomSheet(const NfcDialog());
     KeyBoard.hide();
     if (statusNFC == AppConst.nfcAvailable) {
