@@ -65,6 +65,7 @@ unlinked_spec.ds
 **/android/key.properties
 *.jks
 *.aab
+*.android/
 
 # iOS/XCode related
 **/ios/**/*.mode1v3
@@ -93,6 +94,7 @@ unlinked_spec.ds
 **/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+.ios
 
 # macOS
 **/macos/Flutter/GeneratedPluginRegistrant.swift
