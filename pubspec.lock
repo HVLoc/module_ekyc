@@ -405,7 +405,7 @@ packages:
     source: hosted
     version: "2.13.0"
   flutter_nfc_kit:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       name: flutter_nfc_kit
       sha256: "3cc4059626fa672031261512299458dd274de4ccb57a7f0ee0951ddd70a048e5"
