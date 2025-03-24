@@ -49,7 +49,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_multi_formatter: ^2.12.4
-  flutter_nfc_kit: 3.6.0
   flutter_pdfview: ^1.2.7
   flutter_secure_storage: ^9.0.0
   flutter_svg: ^2.0.10+1
